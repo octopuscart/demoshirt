@@ -1,1 +1,1 @@
-# shirt customization by Octopuscart Ltd. 
+# Shirt Customization by Octopuscart Ltd. 

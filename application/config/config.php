@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $baselink = 'http://'.$_SERVER['SERVER_NAME'];
 
-$baselinkmain = strpos($baselink, '192.168') ? $baselink.'/classApartStore' : $baselink.'/';
+$baselinkmain = strpos($baselink, '192.168') ? $baselink.'/customshirt' : $baselink.'/';
 
 $config['base_url'] = $baselinkmain; 
 

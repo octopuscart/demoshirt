@@ -7,16 +7,18 @@ $this->load->view('layout/header');
     .product_image_back {
         background-size: contain!important;
         background-repeat: no-repeat!important;
-        height: 200px!important;
+        height: 300px!important;
         background-position-x: center!important;
         background-position-y: center!important;
     }
 
     .productblock{
-        padding: 10px;
-        border: 1px solid rgb(255, 214, 88);
-        margin-bottom: 30px;
-    }
+      padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 5px #00000017;
+}
+    
 </style>
 
 <!-- Slider -->
@@ -160,9 +162,9 @@ $this->load->view('layout/header');
                                     <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{product.file_name}})"></div>
                                     <!-- Sale -->
                                     <div class="item-sale" ng-if="product.sale_price > 0">Sale</div>
-                                    <div class="item-hover"> 
+                                    <div class="item-hover" style="background: url(<?php echo imageserver; ?>{{product.file_name1}});background-size: cover;"> 
                                         <a href="#." class="btn" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1)">add to cart</a> 
-                                        <a href="#." class="btn by" style="    font-size: 9px;">BUY NOW</a> 
+                                        <a href="#." class="btn by" style="    font-size: 9px;">Customize</a> 
                                     </div>
                                 </article>
                                 <div class="info" style="    height: 80px;"> 

@@ -52,7 +52,7 @@ $this->load->view('layout/header');
                                         ?>
                                         <li data-thumb="<?php echo imageserver . $value; ?>"> 
                                         <center> 
-                                            <img class="img-responsive" src="<?php echo imageserver . $value; ?>"  alt="" style="height: 500px;width: auto;">
+                                            <img class="img-responsive" src="<?php echo imageserver . $value; ?>"  alt="" style="height: auto;width: 500px;">
                                         </center>
                                         </li>
                                         <?php
@@ -85,7 +85,7 @@ $this->load->view('layout/header');
                                 ?>  
                         </div>
                         <div class="col-sm-12"> 
-                            <span class="code">Item Code: <?php echo $product_details['id']; ?></span>
+                            <span class="code">Item Code: <?php echo $product_details['sku']; ?></span>
                             <div class="some-info">
                                 <?php if ($product_details['stock_status'] == 'In Stock') { ?>
                                     <div class="in-stoke"> <i class="fa fa-check-circle"></i> IN STOCK</div>
@@ -145,7 +145,6 @@ $this->load->view('layout/header');
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active"><a href="#descr" role="tab" data-toggle="tab">DESCRIPTION</a></li>
-                    <li role="presentation" ><a href="#review" role="tab" data-toggle="tab">REVIEW (03)</a></li>
                 </ul>
 
                 <!-- Tab panes -->
@@ -155,113 +154,33 @@ $this->load->view('layout/header');
                         <?php echo $product_details['description']; ?> 
                     </div>
 
-                    <!-- REVIEW -->
-                    <div role="tabpanel" class="tab-pane fade " id="review">
-                        <h6>3 REVIEWS FOR SHIP YOUR IDEA</h6>
-
-                        <!-- REVIEW PEOPLE 1 -->
-                        <div class="media">
-                            <div class="media-left"> 
-                                <!--  Image -->
-                                <div class="avatar"> <a href="#"> <img class="media-object" src="images/avatar-1.jpg" alt=""> </a> </div>
-                            </div>
-                            <!--  Details -->
-                            <div class="media-body">
-                                <p>“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore magna aliqua.”</p>
-                                <h6>TYRION LANNISTER <span class="pull-right">June 7, 2013</span> </h6>
-                            </div>
-                        </div>
-
-                        <!-- REVIEW PEOPLE 1 -->
-
-                        <div class="media">
-                            <div class="media-left"> 
-                                <!--  Image -->
-                                <div class="avatar"> <a href="#"> <img class="media-object" src="images/avatar-2.jpg" alt=""> </a> </div>
-                            </div>
-                            <!--  Details -->
-                            <div class="media-body">
-                                <p>“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore magna aliqua.”</p>
-                                <h6>TYRION LANNISTER <span class="pull-right">June 7, 2013</span> </h6>
-                            </div>
-                        </div>
-
-                        <!-- ADD REVIEW -->
-                        <h6 class="margin-t-40">ADD REVIEW</h6>
-                        <form id="review-form">
-                            <ul class="row">
-                                <li class="col-sm-6">
-                                    <label> *NAME
-                                        <input type="text" value="" placeholder="">
-                                    </label>
-                                </li>
-                                <li class="col-sm-6">
-                                    <label> *EMAIL
-                                        <input type="email" value="" placeholder="">
-                                    </label>
-                                </li>
-                                <li class="col-sm-12">
-                                    <label> *YOUR REVIEW
-                                        <textarea></textarea>
-                                    </label>
-                                </li>
-                                <li class="col-sm-6"> 
-                                    <!-- Rating Stars -->
-                                    <div class="stars"> <span>YOUR RATING</span> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                                </li>
-                                <li class="col-sm-6">
-                                    <button type="submit" class="btn btn-dark btn-small pull-right no-margin">POST REVIEW</button>
-                                </li>
-                            </ul>
-                        </form>
-                    </div>
+               
 
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Shop Content -->
-    <section class="shop-content related-pro pad-t-b-130">
-        <div class="container"> 
-            <!-- Heading -->
-            <div class="heading-block margin-bottom-30">
-                <h3>Related Products</h3>
-                <hr>
-            </div>
-
-            <div class="row"> 
-
-                <!-- Item -->
-                <div class="col-sm-4">
-                    <article class="shop-artical"> <img class="img-responsive" src="images/new-ar-img-1.jpg" alt="" >
-                        <div class="item-hover"> <a href="#." class="btn">add to cart</a> <a href="#." class="btn by">BUY NOW</a> </div>
-                    </article>
-                    <div class="info"> <a href="#.">Vans Off The Wall T-Shirt In </a> <span class="price">169.00$</span> </div>
-                </div>
-
-                <!-- Item -->
-                <div class="col-sm-4">
-                    <article class="shop-artical"> <img class="img-responsive" src="images/new-ar-img-2.jpg" alt="" > 
-                        <!-- Sale -->
-                        <div class="item-sale">Sale</div>
-                        <div class="item-hover"> <a href="#." class="btn">add to cart</a> <a href="#." class="btn by">BUY NOW</a> </div>
-                    </article>
-                    <div class="info"> <a href="#.">Vans Off The Wall T-Shirt In </a> <span class="price disc"><span class="line-through">169.00$</span> <span> 99.00$</span></span> </div>
-                </div>
-
-                <!-- Item -->
-                <div class="col-sm-4">
-                    <article class="shop-artical"> <img class="img-responsive" src="images/new-ar-img-3.jpg" alt="" >
-                        <div class="item-hover"> <a href="#." class="btn">add to cart</a> <a href="#." class="btn by">BUY NOW</a> </div>
-                    </article>
-                    <div class="info"> <a href="#.">Vans Off The Wall T-Shirt In </a> <span class="price">169.00$</span> </div>
-                </div>
-            </div>
+    
+    
+    
+      <!-- Tesm Text -->
+    <section class="lookin-pro" data-stellar-background-ratio="0.5" style="background:url(<?php echo imageserver. $product_details['file_name1'];?>);background-size: cover; ">
+      <div class="container"> 
+        
+        <!-- Heading -->
+        <div class="heading-block white margin-bottom-20">
+          <h4>- <?php echo $product_details['sku']; ?> - </h4>
+          <h3><?php echo $product_details['title']; ?></h3>
+          <hr>
         </div>
+        <div class="intro-small col-md-11 center-auto margin-bottom-0">
+          <p><?php echo $product_details['short_description']; ?></p>
+        </div>
+      </div>
     </section>
+    
+
+  
 </div>
 <!-- End Content --> 
 

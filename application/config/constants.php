@@ -3,9 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $baselink = 'http://'.$_SERVER['SERVER_NAME'];
 
-$baselinkmain = strpos($baselink, '192.168') ? $baselink.'/classApartStoreAdmin/' : 'http://manage.classapartstore.com/';
+$baselinkmain = strpos($baselink, '192.168') ? $baselink.'/customshirtadmin/' : 'http://manage.classapartstore.com/';
 define('imageserver', $baselinkmain."assets_main/productimages/");
 
+//define('custome_image_server', 'http://api.octopuscart.com');
+//define('custome_image_server', 'http://w2p.nitafashions.com');
+define('custome_image_server', 'http://192.168.1.2/api');
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace

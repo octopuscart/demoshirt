@@ -76,9 +76,9 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'bookbnev_padaiv',
-	'password' => 'G7}=DZyZH5@Z',
-	'database' => 'bookbnev_class_apart_store',
+	'username' => 'n1c7v2s5_nf',
+	'password' => 'costcoin_nf',
+	'database' => 'n1c7v2s5_shirt',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

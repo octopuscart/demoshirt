@@ -8,6 +8,8 @@ ClassApartStore.controller('ProductController', function ($scope, $http, $timeou
     $scope.init = 0;
     $scope.checkproduct = 0;
     $scope.pricerange = {'min': 0, 'max': 0};
+    
+
 
     $scope.getProducts = function (attrs) {
 

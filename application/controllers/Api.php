@@ -83,8 +83,8 @@ class Api extends REST_Controller {
 
 
         if (isset($attrdatak["minprice"])) {
-            $mnpricr = $attrdatak["minprice"]-1;
-            $mxpricr = $attrdatak["maxprice"]+1;
+            $mnpricr = $attrdatak["minprice"] - 1;
+            $mxpricr = $attrdatak["maxprice"] + 1;
             unset($attrdatak["minprice"]);
             unset($attrdatak["maxprice"]);
             $pricequery = " and (price between '$mnpricr' and '$mxpricr') ";
@@ -97,7 +97,7 @@ class Api extends REST_Controller {
                 $val = str_replace("-", ", ", $atv);
                 $query_attr = "SELECT product_id FROM product_attribute
                            where attribute_id in ($key) and attribute_value_id in ($val)
-                           group by product_id";
+                           group by product_id ";
                 $queryat = $this->db->query($query_attr);
                 $productslist = $queryat->result();
                 foreach ($productslist as $key => $value) {
@@ -129,8 +129,9 @@ class Api extends REST_Controller {
         $categoriesString = $this->Product_model->stringCategories($category_id) . ", " . $category_id;
         $categoriesString = ltrim($categoriesString, ", ");
 
-        $product_query = "select pt.id as product_id, pt.title, pt.sale_price, pt.regular_price, pt.price, pt.file_name 
-            from products as pt where pt.category_id in ($categoriesString) $pricequery $proquery";
+        $product_query = "select pt.id as product_id, pt.title, pt.sale_price, pt.regular_price, pt.price, pt.file_name, pt.file_name1 
+            from products as pt where pt.category_id in ($categoriesString) $pricequery $proquery 
+                order by pt.id desc";
         $product_result = $this->Product_model->query_exe($product_query);
 
         $productListSt = [];
@@ -197,6 +198,444 @@ class Api extends REST_Controller {
     function orderMailVender_get($order_id) {
         $this->Product_model->order_mail_to_vendor($order_id);
         $this->response("hell");
+    }
+
+    function customeElements_get() {
+        $customeele = array(
+            "keys" => [
+                array(
+                    "title" => "Collar",
+                    "viewtype" => "front",
+                    "type" => "main",
+                ),
+                array(
+                    "title" => "Collar Insert",
+                    "viewtype" => "front",
+                    "type" => "submain",
+                ),
+                array(
+                    "title" => "Cuff & Sleeve",
+                    "viewtype" => "front",
+                    "type" => "main",
+                ),
+                array(
+                    "title" => "Cuff Insert",
+                    "viewtype" => "front",
+                    "type" => "submain",
+                ),
+                array(
+                    "title" => "Front",
+                    "viewtype" => "front",
+                    "type" => "main",
+                ),
+                array(
+                    "title" => "Back",
+                    "viewtype" => "back",
+                    "type" => "main",
+                ),
+                array(
+                    "title" => "Pocket",
+                    "viewtype" => "front",
+                    "type" => "main",
+                ),
+                array(
+                    "title" => "Bottom",
+                    "viewtype" => "front",
+                    "type" => "main",
+                ),
+//                array(
+//                    "title" => "Buttons",
+//                    "viewtype" => "front",
+//                    "type" => "main",
+//                ),
+                array(
+                    "title" => "Monogram",
+                    "viewtype" => "front",
+                    "type" => "main",
+                ),
+            ],
+            "collar_cuff_insert" => array(),
+            "data" => array(
+                "Monogram" => [
+                    array(
+                        "status" => "1",
+                        "title" => "No",
+                        "css_class" => "monogramtext_posistion_none",
+                        "not_show_when" => [],
+                        "checkwith" => "",
+                        "image" => "no_monogram.jpg"
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Collar",
+                        "css_class" => "monogramtext_posistion_collar",
+                        "not_show_when" => [],
+                        "image" => "monogram_inside_coller_band.jpg"
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Cuff",
+                        "css_class" => "monogramtext_posistion_cuff_left",
+                        "not_show_when" => ["Short Sleeve Without Cuff", "Short Sleeve With Cuff"],
+                        "checkwith" => "Cuff & Sleeve",
+                        "image" => "monogram_left_cuff.jpg"
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Pocket",
+                        "css_class" => "monogramtext_posistion_left_pocket",
+                        "not_show_when" => ["No Pocket"],
+                        "checkwith" => "Pocket",
+                        "image" => "monogram_left_chest_pocket.jpg"
+                    )],
+                "Buttons" => [
+                    array(
+                        "status" => "1",
+                        "title" => "Standard",
+                        "customization_category_id" => "8",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Matching",
+                        "customization_category_id" => "8",
+                    )],
+                "Bottom" => [
+                    array(
+                        "status" => "1",
+                        "title" => "Rounded",
+                        "elements" => ["body_round0001.png"],
+                        "customization_category_id" => "6",
+                        "image" => "bottom_rounded.jpeg"
+                    ), array(
+                        "status" => "0",
+                        "title" => "Squared",
+                        "elements" => ["body_squre0001.png"],
+                        "customization_category_id" => "6",
+                        "image" => "bottom_squred.jpeg"
+                    )],
+                "Cuff & Sleeve" => [
+                    array(
+                        "status" => "0",
+                        "title" => "Short Sleeve Without Cuff",
+                        "elements" => ["sleev_half0001.png"],
+                        "customization_category_id" => "3",
+                        "image" => "withoutcuff_sort.jpg",
+                        "sleeve" => "back_half_sleeve0001.png",
+                        "monogram_change_css" => "monogramtext_posistion_collar",
+                        "monogram_position" => array(
+                            "status" => "0",
+                            "title" => "Collar",
+                            "css_class" => "monogramtext_posistion_collar",
+                        ),
+                    ), array(
+                        "status" => "0",
+                        "title" => "Short Sleeve With Cuff",
+                        "elements" => ["sleev_half_cuff0001.png", "sleev_half0001.png"],
+                        "customization_category_id" => "3",
+                        "image" => "withcuff_sort.jpg",
+                        "sleeve" => "back_half_sleeve0001.png",
+                        "monogram_change_css" => "monogramtext_posistion_collar",
+                        "monogram_position" => array(
+                            "status" => "0",
+                            "title" => "Collar",
+                            "css_class" => "monogramtext_posistion_collar",
+                        ),
+                    ), array(
+                        "status" => "1",
+                        "title" => "Single Cuff Rounded",
+                        "elements" => ["sleev_full0001.png", "cuff_single_rounded0001.png"],
+                        "customization_category_id" => "3",
+                        "image" => "cuff_single_rounded.jpg",
+                        "insert_style_css" => "",
+                        "insert_style" => "cuff_single_insert10001.png",
+                        "insert_overlay" => "cuff_single_insert_overlay.png",
+                        "insert_overlay_css" => "",
+                        "sleeve" => "back_full_sleeve0001.png",
+                        "buttons" => "buttons_1_round.png",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Single Cuff Cutaway",
+                        "elements" => ["sleev_full0001.png", "cuff_single_cutaway0001.png"],
+                        "customization_category_id" => "3",
+                        "image" => "single_cuff_cutaway.jpg",
+                        "insert_style_css" => "",
+                        "insert_style" => "cuff_single_insert10001.png",
+                        "insert_overlay" => "cuff_single_insert_overlay.png",
+                        "insert_overlay_css" => "",
+                        "sleeve" => "back_full_sleeve0001.png",
+                        "buttons" => "buttons_1_cutaway.png",
+                    ), array(
+                        "status" => "0",
+                        "title" => "2 Buttons Cutaway",
+                        "customization_category_id" => "3",
+                        "elements" => ["sleev_full0001.png", "cuff_single_cutaway0001.png"],
+                        "image" => "2_buttons_cutaway.jpg",
+                        "insert_style_css" => "",
+                        "insert_style" => "cuff_single_insert10001.png",
+                        "insert_overlay" => "cuff_single_insert_overlay.png",
+                        "insert_overlay_css" => "",
+                        "sleeve" => "back_full_sleeve0001.png",
+                        "buttons" => "buttons_2_cutaway.png",
+                    ), array(
+                        "status" => "0",
+                        "title" => "2 Buttons Rounded",
+                        "elements" => ["sleev_full0001.png", "cuff_single_rounded0001.png"],
+                        "customization_category_id" => "3",
+                        "image" => "2_buttons_rounded.jpg",
+                        "insert_style_css" => "",
+                        "insert_style" => "cuff_single_insert10001.png",
+                        "insert_overlay" => "cuff_single_insert_overlay.png",
+                        "insert_overlay_css" => "",
+                        "sleeve" => "back_full_sleeve0001.png",
+                        "buttons" => "buttons_2_round.png",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Convertible Cuff Rounded",
+                        "elements" => ["sleev_full0001.png", "cuff_single_rounded0001.png"],
+                        "customization_category_id" => "3",
+                        "image" => "single_cuff_convertible.jpg",
+                        "insert_style_css" => "",
+                        "insert_style" => "cuff_single_insert10001.png",
+                        "insert_overlay" => "cuff_single_insert_overlay.png",
+                        "insert_overlay_css" => "",
+                        "sleeve" => "back_full_sleeve0001.png",
+                        "buttons" => "buttons_1_convertible_round.png",
+                    ), array(
+                        "status" => "0",
+                        "title" => "French Cuff Rounded",
+                        "customization_category_id" => "3",
+                        "elements" => ["sleev_full0001.png", "cuff_franch_rounded0001.png"],
+                        "image" => "cuff_franch_rounded.jpg",
+                        "insert_style_css" => "",
+                        "insert_style" => "cuff_franch_insert0001.png",
+                        "insert_overlay" => "cuff_franch_insert_overlay.png",
+                        "insert_overlay_css" => "",
+                        "sleeve" => "back_full_sleeve0001.png"
+                    )],
+                "Back" => [
+                    array(
+                        "status" => "1",
+                        "title" => "Plain",
+                        "customization_category_id" => "5",
+                        "halfsleeve" => "back_half_sleeve0001.png",
+                        "fullsleeve" => "back_full_sleeve0001.png",
+                        "elements" => [],
+                        "overlay" => "",
+                        "image" => "back_plain.jpeg"
+                    ), array(
+                        "status" => "0",
+                        "title" => "Two Side",
+                        "customization_category_id" => "5",
+                        "halfsleeve" => "back_half_sleeve0001.png",
+                        "fullsleeve" => "back_full_sleeve0001.png",
+                        "overlay" => "shritbacktwoside.png",
+                        "elements" => ["back_two_side_pleat10001.png"],
+                        "image" => "back_two_side.jpeg"
+                    ), array(
+                        "status" => "0",
+                        "title" => "Boxpleat",
+                        "customization_category_id" => "5",
+                        "halfsleeve" => "back_half_sleeve0001.png",
+                        "fullsleeve" => "back_full_sleeve0001.png",
+                        "overlay" => "shirtbackpleat.png",
+                        "elements" => ["back_box_pleat0001.png"],
+                        "image" => "back_box_pleat.jpeg"
+                    )],
+                "Pocket" => [
+                    array(
+                        "status" => "0",
+                        "title" => "No Pocket",
+                        "customization_category_id" => "7",
+                        "elements" => [],
+                        "image" => "pocket_no.jpeg",
+                        "monogram_change_css" => "monogramtext_posistion_collar",
+                        "monogram_position" => array(
+                            "status" => "0",
+                            "title" => "Collar",
+                            "css_class" => "monogramtext_posistion_collar",
+                        ),
+                    ), array(
+                        "status" => "1",
+                        "title" => "1 Pocket",
+                        "customization_category_id" => "7",
+                        "elements" => ["pocket_l0001.png",],
+                        "image" => "pocket_one.jpeg"
+                    ), array(
+                        "status" => "0",
+                        "title" => "2 Pocket",
+                        "customization_category_id" => "7",
+                        "elements" => ["pocket_l0001.png", "pocket_r0001.png"],
+                        "image" => "pocket_two.jpeg"
+                    )],
+                "Front" => [
+                    array(
+                        "status" => "1",
+                        "title" => "Plain Front",
+                        "customization_category_id" => "4",
+                        "elements" => [],
+                        "image" => "front_plain.jpeg",
+                        "show_buttons" => "true",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Front Fly",
+                        "elements" => ["ivy0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "front_fly.jpeg",
+                        "show_buttons" => "false",
+                    ), array(
+                        "status" => "0",
+                        "title" => "IVY Pleat",
+                        "elements" => ["ivy0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "front_ivy.jpeg",
+                        "show_buttons" => "true",
+                    )],
+                "Collar" => [
+                    array(
+                        "status" => "1",
+                        "title" => "Regular",
+                        "elements" => ["collar_regular0001.png"],
+                        "customization_category_id" => "2",
+                        "style" => "margin-left: -3px;",
+                        "insert_style_css" => "margin-top: 1px;margin-left: -4px;",
+                        "insert_style" => "collar_regular_insert0001.png",
+                        "insert_overlay" => "collar_simple_insert_overlay.png",
+                        "insert_overlay_css" => "margin-top: -4px;margin-left: -1px;",
+                        "image" => "collar_regular.jpeg",
+                        "buttons" => "buttonsh1.png",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Medium Spread",
+                        "customization_category_id" => "2",
+                        "style" => "margin-top:-2px;margin-left: -2px;",
+                        "insert_style_css" => "margin-top: 1px;margin-left: -4px;",
+                        "insert_style" => "collar_regular_insert0001.png",
+                        "insert_overlay" => "collar_simple_insert_overlay.png",
+                        "insert_overlay_css" => "margin-top: -4px;margin-left: -2px;",
+                        "elements" => ["collar_spread_medium0001.png"],
+                        "image" => "collar_medium_spread.jpeg",
+                        "buttons" => "buttonsh1.png",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Wide Spread",
+                        "customization_category_id" => "2",
+                        "elements" => ["collar_spread_wide0001.png"],
+                        "image" => "collar_wide_spread.jpeg",
+                        "insert_style_css" => "margin-top: 1px;margin-left: -4px;",
+                        "insert_style" => "collar_regular_insert0001.png",
+                        "insert_overlay" => "collar_simple_insert_overlay.png",
+                        "insert_overlay_css" => "margin-top: -4px;margin-left: -1px;",
+                        "buttons" => "buttonsh1.png",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Short Point",
+                        "elements" => ["collar_short_point0001.png"],
+                        "customization_category_id" => "2",
+                        "style" => "    margin-top: -4px;margin-left: -2px;",
+                        "insert_style_css" => "margin-top: 1px;margin-left: -4px;",
+                        "insert_style" => "collar_regular_insert0001.png",
+                        "insert_overlay" => "collar_simple_insert_overlay.png",
+                        "insert_overlay_css" => "margin-top: -4px;margin-left: -2px;",
+                        "image" => "collar_shirt_point.jpeg",
+                        "buttons" => "buttonsh1.png",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Regular Button Down",
+                        "customization_category_id" => "2",
+                        "elements" => ["collar_regular0001.png"],
+                        "style" => "margin-left: -3px;",
+                        "insert_style_css" => "margin-top: 1px;margin-left: -4px;",
+                        "insert_style" => "collar_regular_insert0001.png",
+                        "insert_overlay" => "collar_simple_insert_overlay.png",
+                        "insert_overlay_css" => "margin-top: -4px;margin-left: -1px;",
+                        "image" => "collar_regular_button_down.jpeg",
+                        "button_down" => "buttons_collar_down.png",
+                        "buttons" => "buttonsh1.png",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Full Cutaway",
+                        "customization_category_id" => "2",
+                        "style" => "margin-top:-6px;margin-left:-3px",
+                        "insert_style_css" => "margin-top: 1px;margin-left: -2px;",
+                        "insert_style" => "collar_regular_insert0001.png",
+                        "insert_overlay" => "collar_simple_insert_overlay.png",
+                        "insert_overlay_css" => "margin-top: -4px;margin-left: -0px;",
+                        "elements" => ["collar_full_cutaway0001.png"],
+                        "image" => "collar_full_cutaway.jpeg",
+                        "buttons" => "buttonsh1.png",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Wing Tip",
+                        "customization_category_id" => "2",
+                        "insert_style_css" => "margin-top: -3px;",
+                        "insert_style" => "collar_wintip_insert0001.png",
+                        "insert_overlay" => "collar_wintip_insert_overlay.png",
+                        "insert_overlay_css" => "opacity:1;",
+                        "elements" => ["collar_wintip0001.png"],
+                        "image" => "collar_wingtip.jpeg",
+                        "buttons" => "buttons_m_w_collar.png",
+                        "monogram_style" => "top:11px;height: 8px;",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Mandarin",
+                        "elements" => ["collar_manderian0001.png"],
+                        "customization_category_id" => "2",
+                        "insert_style_css" => "margin-top: 0px;",
+                        "insert_style" => "collar_manderian_insert0001.png",
+                        "insert_overlay" => "collar_manderian_insert_overlay.png",
+                        "insert_overlay_css" => "",
+                        "image" => "collar_mandarin.jpeg",
+                        "monogram_style" => "top:11px;height: 8px;",
+                        "buttons" => "buttons_m_w_collar.png",
+                    )]
+            ),
+            "cuff_collar_insert" => ["p10", "p11", "p12", "p13", "p14", "p15", "p16", "p18", "p2",
+                "p23", "p28", "p33", "s1", "s10", "s11", "s12", "s13", "s17",
+                "s2", "s3", "s4", "s5", "s6", "s8"],
+            "monogram_colors" => [
+                array(
+                    "color" => "white",
+                    "backcolor" => "black",
+                ),
+                array(
+                    "color" => "red",
+                    "backcolor" => "white",
+                ),
+                array(
+                    "color" => "white",
+                    "backcolor" => "red",
+                ),
+                array(
+                    "color" => "#7d0a24",
+                    "backcolor" => "#ff5600",
+                ),
+            ],
+            "monogram_style" => [
+                array(
+                    "font_style" => "font-family: 'Orbitron';",
+                    "title"=>"Style 1"
+                    ),
+                array(
+                    "font_style" => "font-family: 'Black Ops One';",
+                    "title"=>"Style 2"
+                    ),
+                array(
+                    "font_style" => "font-family: 'Bungee';",
+                    "title"=>"Style 3"
+                    ),
+                array(
+                    "font_style" => "font-family: 'Six Caps';margin-left: 1px;font-size: 12px;letter-spacing: 1px;",
+                    "title"=>"Style 4"
+                    ),
+                array(
+                    "font_style" => "font-family: 'Wallpoet';",
+                    "title"=>"Style 5"
+                    ),
+            ],
+        );
+        foreach ($customeele as $key => $value) {
+            
+        }
+        $this->response($customeele);
     }
 
 }

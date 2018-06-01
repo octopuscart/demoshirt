@@ -8,12 +8,12 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="author" content="varbinSoftwares" />
         <!-- Document Title -->
-       <?php
-       meta_tags();
-       ?>
+        <?php
+        meta_tags();
+        ?>
         <!-- Favicon -->
-        <link rel="shortcut icon" href="<?php echo  base_url().'assets/images/logo73.jpg';?>" type="image/x-icon">
-        <link rel="icon" href="<?php echo  base_url().'assets/images/logo73.jpg';?>" type="image/x-icon">
+        <link rel="shortcut icon" href="<?php echo base_url() . 'assets/images/logo73.jpg'; ?>" type="image/x-icon">
+        <link rel="icon" href="<?php echo base_url() . 'assets/images/logo73.jpg'; ?>" type="image/x-icon">
 
         <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme/rs-plugin/css/settings.css" media="screen" />
@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/css/main.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/css/style.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/css/responsive.css">
+        
 
         <!-- Fonts Online -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900|Raleway:200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -40,6 +41,8 @@
 
         <!--angular js-->
         <script src="<?php echo base_url(); ?>assets/theme/angular/angular.min.js"></script>
+        <script src='<?php echo base_url(); ?>assets/theme/angular/angular-route.js'></script>
+
 
 
 
@@ -53,11 +56,11 @@
     <body ng-app="ClassApartStore">
 
         <!--LOADER--> 
-        <div id="loader">
+<!--        <div id="loader">
             <div class="position-center-center">
                 <div class="loader"></div>
             </div>
-        </div>
+        </div>-->
 
 
 
@@ -72,18 +75,18 @@
             var baseurl = "<?php echo base_url(); ?>index.php/";
             var avaiblecredits = 0;
         </script>
-        
+
         <style>
             .ownmenu .dropdown.megamenu .dropdown-menu li:last-child{
                 margin-bottom: 20px;
             }
-            
-             .ownmenu .dropdown.megamenu .dropdown-menu li a{
-               line-height: 25px;
+
+            .ownmenu .dropdown.megamenu .dropdown-menu li a{
+                line-height: 25px;
             }
-                
+
         </style>
-        
+
 
         <!-- Page Wrapper -->
         <div id="wrap" class="shop-page" ng-controller="ShopController"> 
@@ -93,7 +96,7 @@
                 <div class="sticky">
                     <div class="container">
                         <div class="logo">
-                            <a href="<?php echo site_url("/");?>">
+                            <a href="<?php echo site_url("/"); ?>">
                                 <img src="<?php echo base_url(); ?>assets/images/logo73.jpg" alt="">
                             </a> 
                         </div>
@@ -108,7 +111,7 @@
                             <div class="collapse navbar-collapse" id="nav-open-btn">
                                 <ul class="nav">
                                     <li class="active"> 
-                                        <a href="<?php echo site_url("/");?>">Home </a>
+                                        <a href="<?php echo site_url("/"); ?>">Home </a>
                                     </li>
 
 
@@ -143,8 +146,8 @@
                                         ?>
                                         <li class="dropdown"> <a href="contact_us_1.html" class="dropdown-toggle" data-toggle="dropdown">Hi, <?php echo $session_data['first_name'] ? $session_data['first_name'] : 'User'; ?>! </a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="<?php echo site_url("Account/profile");?>">Profile</a></li>
-                                                <li><a href="<?php echo site_url("Account/orderList");?>">My Order</a></li>
+                                                <li><a href="<?php echo site_url("Account/profile"); ?>">Profile</a></li>
+                                                <li><a href="<?php echo site_url("Account/orderList"); ?>">My Order</a></li>
                                                 <li><a href="<?php echo site_url("Account/logout"); ?>">Logout</a></li>
                                             </ul>
                                         </li>

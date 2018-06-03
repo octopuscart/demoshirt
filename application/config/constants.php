@@ -14,7 +14,7 @@ if (strpos($baselink, '192.168')) {
     define('custome_image_server', 'http://192.168.1.2/api');
 } else {
     define('custome_image_server', 'http://w2p.nitafashions.com');
-}
+} 
 define("globle_currency_type", '$HK ');
 /*
   |--------------------------------------------------------------------------

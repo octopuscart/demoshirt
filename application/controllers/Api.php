@@ -349,6 +349,7 @@ class Api extends REST_Controller {
                         "insert_style" => "cuff_single_insert10001.png",
                         "insert_overlay" => "cuff_single_insert_overlay.png",
                         "insert_overlay_css" => "",
+                         "insert_full"=> ["cuff_single_rounded0001.png"],
                         "sleeve" => "back_full_sleeve0001.png",
                         "buttons" => "buttons_1_round.png",
                     ), array(
@@ -361,6 +362,7 @@ class Api extends REST_Controller {
                         "insert_style" => "cuff_single_insert10001.png",
                         "insert_overlay" => "cuff_single_insert_overlay.png",
                         "insert_overlay_css" => "",
+                        "insert_full"=> ["cuff_single_cutaway0001.png"],
                         "sleeve" => "back_full_sleeve0001.png",
                         "buttons" => "buttons_1_cutaway.png",
                     ), array(
@@ -373,6 +375,7 @@ class Api extends REST_Controller {
                         "insert_style" => "cuff_single_insert10001.png",
                         "insert_overlay" => "cuff_single_insert_overlay.png",
                         "insert_overlay_css" => "",
+                        "insert_full"=> ["cuff_single_cutaway0001.png"],
                         "sleeve" => "back_full_sleeve0001.png",
                         "buttons" => "buttons_2_cutaway.png",
                     ), array(
@@ -385,6 +388,7 @@ class Api extends REST_Controller {
                         "insert_style" => "cuff_single_insert10001.png",
                         "insert_overlay" => "cuff_single_insert_overlay.png",
                         "insert_overlay_css" => "",
+                        "insert_full"=> ["cuff_single_rounded0001.png"],
                         "sleeve" => "back_full_sleeve0001.png",
                         "buttons" => "buttons_2_round.png",
                     ), array(
@@ -397,6 +401,7 @@ class Api extends REST_Controller {
                         "insert_style" => "cuff_single_insert10001.png",
                         "insert_overlay" => "cuff_single_insert_overlay.png",
                         "insert_overlay_css" => "",
+                        "insert_full"=> ["cuff_single_rounded0001.png"],
                         "sleeve" => "back_full_sleeve0001.png",
                         "buttons" => "buttons_1_convertible_round.png",
                     ), array(
@@ -409,6 +414,7 @@ class Api extends REST_Controller {
                         "insert_style" => "cuff_franch_insert0001.png",
                         "insert_overlay" => "cuff_franch_insert_overlay.png",
                         "insert_overlay_css" => "",
+                         "insert_full"=> ["cuff_franch_rounded0001.png"],
                         "sleeve" => "back_full_sleeve0001.png"
                     )],
                 "Back" => [
@@ -500,6 +506,7 @@ class Api extends REST_Controller {
                         "insert_style" => "collar_regular_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
                         "insert_overlay_css" => "margin-top: -4px;margin-left: -1px;",
+                        "insert_full"=> ["collar_regular0001.png"],
                         "image" => "collar_regular.jpeg",
                         "buttons" => "buttonsh1.png",
                     ), array(
@@ -512,6 +519,7 @@ class Api extends REST_Controller {
                         "insert_overlay" => "collar_simple_insert_overlay.png",
                         "insert_overlay_css" => "margin-top: -4px;margin-left: -2px;",
                         "elements" => ["collar_spread_medium0001.png"],
+                        "insert_full"=> ["collar_spread_medium0001.png"],
                         "image" => "collar_medium_spread.jpeg",
                         "buttons" => "buttonsh1.png",
                     ), array(
@@ -524,6 +532,7 @@ class Api extends REST_Controller {
                         "insert_style" => "collar_regular_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
                         "insert_overlay_css" => "margin-top: -4px;margin-left: -1px;",
+                         "insert_full"=> ["collar_spread_wide0001.png"],
                         "buttons" => "buttonsh1.png",
                     ), array(
                         "status" => "0",
@@ -535,6 +544,7 @@ class Api extends REST_Controller {
                         "insert_style" => "collar_regular_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
                         "insert_overlay_css" => "margin-top: -4px;margin-left: -2px;",
+                        "insert_full"=> ["collar_short_point0001.png"],
                         "image" => "collar_shirt_point.jpeg",
                         "buttons" => "buttonsh1.png",
                     ), array(
@@ -547,6 +557,7 @@ class Api extends REST_Controller {
                         "insert_style" => "collar_regular_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
                         "insert_overlay_css" => "margin-top: -4px;margin-left: -1px;",
+                        "insert_full"=> ["collar_regular0001.png"],
                         "image" => "collar_regular_button_down.jpeg",
                         "button_down" => "buttons_collar_down.png",
                         "buttons" => "buttonsh1.png",
@@ -559,6 +570,7 @@ class Api extends REST_Controller {
                         "insert_style" => "collar_regular_insert0001.png",
                         "insert_overlay" => "collar_simple_insert_overlay.png",
                         "insert_overlay_css" => "margin-top: -4px;margin-left: -0px;",
+                        "insert_full"=> ["collar_full_cutaway0001.png"],
                         "elements" => ["collar_full_cutaway0001.png"],
                         "image" => "collar_full_cutaway.jpeg",
                         "buttons" => "buttonsh1.png",
@@ -571,6 +583,7 @@ class Api extends REST_Controller {
                         "insert_overlay" => "collar_wintip_insert_overlay.png",
                         "insert_overlay_css" => "opacity:1;",
                         "elements" => ["collar_wintip0001.png"],
+                        "insert_full"=> ["collar_wintip0001.png"],
                         "image" => "collar_wingtip.jpeg",
                         "buttons" => "buttons_m_w_collar.png",
                         "monogram_style" => "top:11px;height: 8px;",
@@ -583,6 +596,7 @@ class Api extends REST_Controller {
                         "insert_style" => "collar_manderian_insert0001.png",
                         "insert_overlay" => "collar_manderian_insert_overlay.png",
                         "insert_overlay_css" => "",
+                        "insert_full"=> ["collar_manderian0001.png"],
                         "image" => "collar_mandarin.jpeg",
                         "monogram_style" => "top:11px;height: 8px;",
                         "buttons" => "buttons_m_w_collar.png",
@@ -595,18 +609,22 @@ class Api extends REST_Controller {
                 array(
                     "color" => "white",
                     "backcolor" => "black",
+                    "title"=>"White-Black"
                 ),
                 array(
                     "color" => "red",
                     "backcolor" => "white",
+                    "title"=>"Red-White"
                 ),
                 array(
                     "color" => "white",
                     "backcolor" => "red",
+                    "title"=>"White-Red"
                 ),
                 array(
                     "color" => "#7d0a24",
                     "backcolor" => "#ff5600",
+                    "title"=>"Pink-Orange"
                 ),
             ],
             "monogram_style" => [
@@ -623,12 +641,8 @@ class Api extends REST_Controller {
                     "title"=>"Style 3"
                     ),
                 array(
-                    "font_style" => "font-family: 'Six Caps';margin-left: 1px;font-size: 12px;letter-spacing: 1px;",
-                    "title"=>"Style 4"
-                    ),
-                array(
                     "font_style" => "font-family: 'Wallpoet';",
-                    "title"=>"Style 5"
+                    "title"=>"Style 4"
                     ),
             ],
         );

@@ -5,27 +5,27 @@ $this->load->view('layout/header');
 
 <style>
     .product_image_back {
-        background-size: contain!important;
+        background-size: cover!important;
         background-repeat: no-repeat!important;
-        height: 300px!important;
+        height: 288px!important;
         background-position-x: center!important;
         background-position-y: center!important;
     }
 
     .productblock{
-      padding: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.07);
-    margin-bottom: 30px;
-    box-shadow: 0px 0px 5px #00000017;
-}
-    
+        padding: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.07);
+        margin-bottom: 30px;
+        box-shadow: 0px 0px 5px #00000017;
+    }
+
 </style>
 
 <!-- Slider -->
 <section class="sub-bnr" data-stellar-background-ratio="0.5">
     <div class="position-center-center">
         <div class="container">
-            <h4>Shop page</h4>
+            <h4>Shop Shirts</h4>
 
             <!-- Breadcrumb -->
             <ol class="breadcrumb">
@@ -47,7 +47,7 @@ $this->load->view('layout/header');
 <div id="content" ng-controller="ProductController"> 
 
     <!-- Shop Content -->
-    <div class="shop-content pad-t-b-60">
+    <div class="shop-content ">
         <div class="container" >
             <div class="row"> 
 
@@ -55,25 +55,11 @@ $this->load->view('layout/header');
                 <!-- Shop Side Bar -->
                 <div class="col-md-3" ng-if="checkproduct == 1">
                     <div class="side-bar">
-
-
-
-
-                        <div class="search">
-                            <form>
-                                <input type="text" placeholder="SEARCH">
-                                <button type="submit"> <i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
-
                         <!-- HEADING -->
                         <div class="heading">
                             <h6>Products Categories</h6>
                             <hr class="dotted">
                         </div>
-
-
-
 
                         <!-- CATEGORIES -->
                         <ul class="cate">
@@ -121,15 +107,13 @@ $this->load->view('layout/header');
 
 
                 <!-- Main Shop Itesm -->
-                <div class="col-md-9" ng-if="checkproduct == 1"> 
+                <div class="col-md-9" ng-if="checkproduct == 1" style="margin-top: 30px;"> 
                     <!-- SHOWING INFO -->
-                    <div class="showing-info">
+<!--                    <div class="showing-info">
 
                         <div class="side-bar" style="float: left;
                              width: 68%;padding: 0 5px">
-                            
-
-                            <ul class="tags" ng-if="pricerange.min>0" style="float: left;    float: left;
+                            <ul class="tags" ng-if="pricerange.min > 0" style="float: left;    float: left;
                                 border: 1px solid #eee;padding-right:10px;    margin-left: 10px;
                                 padding-top: 5px;">
                                 <li>
@@ -137,7 +121,6 @@ $this->load->view('layout/header');
                                         Price Range :  {{pricerange.min}} - {{pricerange.max}}
                                     </a>
                                 </li>
-                               
                             </ul>
 
                             <ul class="tags" ng-repeat="(k, attr) in attribute_checked_pre" style="float: left;    float: left;
@@ -148,50 +131,48 @@ $this->load->view('layout/header');
                                     <a href="#." style="padding: 5px;    margin: 0;    margin-left: 10px;">{{av.attribute_value}}</a>
                                 </li>
                             </ul>
-
-
                         </div>
 
                         <p class="pull-right"  ng-if="productResults.products.length">Showing {{productResults.products.length}} results</p>
-                    </div>
+                    </div>-->
                     <div class="row" ng-if="productResults.products.length"> 
                         <!-- Item -->
                         <div class="col-sm-4" ng-repeat="(k, product) in productResults.products">
                             <div class="productblock">
-                                <article class="shop-artical"> 
+                                <article class="shop-artical" style="    margin-bottom: 0px;"> 
                                     <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{product.file_name}})"></div>
                                     <!-- Sale -->
                                     <div class="item-sale" ng-if="product.sale_price > 0">Sale</div>
                                     <div class="item-hover" style="background: url(<?php echo imageserver; ?>{{product.file_name1}});background-size: cover;"> 
-                                        <a href="#." class="btn" style="    font-size: 9px;" ng-click="addToCart(product.product_id, 1)">add to cart</a> 
-                                        <a href="#." class="btn by" style="    font-size: 9px;">Customize</a> 
+                                        <a href="#." class="btn" style="    font-size: 9px;color: white;" ng-click="addToCart(product.product_id, 1)">add to cart</a> 
+                                        <a href="#." class="btn by" style="    font-size: 9px;color: white;">Customize</a> 
                                     </div>
                                 </article>
                                 <div class="info" style="    height: 80px;"> 
                                     <a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}">{{product.title}} </a> 
                                     <span class="price disc">
-                                        <span class="line-through" ng-if="product.sale_price > 0">{{product.regular_price|currency:" Rs. "}}</span>
-                                        <span>{{product.price|currency:" Rs. "}}</span>
+                                        <span class="line-through" ng-if="product.sale_price > 0">{{product.regular_price|currency:"<?php echo globle_currency_type;?>"}}</span>
+                                        <span>{{product.price|currency:"<?php echo globle_currency_type;?>"}}</span>
                                     </span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div ng-if="!productResults.products.length">
                         <h1 style="font-size: 40px;text-align: center;">No Product Found</h1>
                         <p style="text-align: center;">Products Will Comming Soon</p>
                         <hr class="dotted">
-                      
+
                     </div>
 
                     <!-- Pagination -->
-<!--                    <ul class="pagination" ng-if="productResults.products.length">
-                        <li><a href="#.">1</a></li>
-                        <li><a href="#.">2</a></li>
-                        <li><a href="#.">....</a></li>
-                        <li><a href="#.">&gt;</a></li>
-                    </ul>-->
+                    <!--                    <ul class="pagination" ng-if="productResults.products.length">
+                                            <li><a href="#.">1</a></li>
+                                            <li><a href="#.">2</a></li>
+                                            <li><a href="#.">....</a></li>
+                                            <li><a href="#.">&gt;</a></li>
+                                        </ul>-->
                 </div>
 
 

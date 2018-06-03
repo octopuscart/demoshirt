@@ -185,6 +185,7 @@ class Product_model extends CI_Model {
             $cartdata = $this->cartData($user_id);
             $product_details = $this->productDetails($product_id);
             $product_dict = array(
+                'sku' => $product_details['sku'],
                 'title' => $product_details['title'],
                 'price' => $product_details['price'],
                 'total_price' => $product_details['price'],
@@ -231,6 +232,7 @@ class Product_model extends CI_Model {
             } else {
                 $product_details = $this->productDetails($product_id);
                 $product_dict = array(
+                    'sku' => $product_details['sku'],
                     'title' => $product_details['title'],
                     'price' => $product_details['price'],
                     'total_price' => $product_details['price'],

@@ -9,6 +9,8 @@ define('imageserver', $baselinkmain."assets_main/productimages/");
 //define('custome_image_server', 'http://api.octopuscart.com');
 //define('custome_image_server', 'http://w2p.nitafashions.com');
 define('custome_image_server', 'http://192.168.1.2/api');
+
+define("globle_currency_type", '$HK ');
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace

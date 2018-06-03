@@ -23,6 +23,7 @@ $this->load->view('layout/header');
     }
 
 </style>
+<!-- Slider -->
 
 
 <div class="" ng-controller="customizationShirt">
@@ -42,7 +43,7 @@ $this->load->view('layout/header');
     <div id="content"> 
 
         <!--======= PAGES INNER =========-->
-        <section class="item-detail-page padding-top-30 padding-bottom-30">
+        <section class="item-detail-page padding-top-30 ">
             <div class="container" style="width: 100%">
                 <div class="row"> 
                     <div class="col-md-12">
@@ -52,6 +53,7 @@ $this->load->view('layout/header');
                                     <div class=" fabricblockmobile ">
                                         <a href="#fabric_{{fab.sku}}" class="fabricblock_a" aria-controls="collars_area" role="tab" data-toggle="tab" ng-click="selectFabric(fab)">
                                             <div class="elementStyle customization_box_elements fabricblock {{  fab.sku == screencustom.fabric?'active' :'noselected' }}" style="background:url('<?php echo custome_image_server; ?>/output/{{fab.sku}}/cloth0001.png');" > </div>
+                                            <p class="fabric_title">{{fab.sku}}</p>
                                         </a>
                                     </div>
                                 </div>
@@ -68,6 +70,7 @@ $this->load->view('layout/header');
                                 <li role="presentation" class="{{$index === 0?'active':''}} " ng-repeat="fab in cartFabrics" >
                                     <a href="#fabric_{{fab.sku}}" class="fabricblock_a" aria-controls="collars_area" role="tab" data-toggle="tab" ng-click="selectFabric(fab)">
                                         <div class="elementStyle customization_box_elements fabricblock {{  fab.sku == screencustom.fabric?'active' :'noselected' }}" style="background:url('<?php echo custome_image_server; ?>/output/{{fab.sku}}/cloth0001.png');" > </div>
+                                        <p class="fabric_title">{{fab.sku}}</p>
                                     </a>
                                 </li>
                             </ul>
@@ -82,14 +85,15 @@ $this->load->view('layout/header');
                                         <div ng-if="selecteElements[screencustom.fabric]['Monogram Initial']">
                                             <div class="monogramtext_posistion
                                                  {{selecteElements[fab.sku]['Cuff & Sleeve'].monogram_change_css?selecteElements[fab.sku]['Cuff & Sleeve'].monogram_change_css :selecteElements[fab.sku]['Monogram'].css_class}} 
+                                                 {{selecteElements[fab.sku]['Pocket'].monogram_change_css?selecteElements[fab.sku]['Pocket'].monogram_change_css :selecteElements[fab.sku]['Monogram'].css_class}} 
                                                  monogramcss_main"
                                                  style="
                                                  background: {{selecteElements[fab.sku]['Monogram Background']}};
                                                  color: {{selecteElements[fab.sku]['Monogram Color']}};
-                                              
+
                                                  {{selecteElements[fab.sku]['Monogram'].title=='Collar'?selecteElements[fab.sku]['Collar'].monogram_style:''}} ;
                                                  margin-left: {{(-1) * (2 * (selecteElements[screencustom.fabric]['Monogram Initial'].length - 3))}}px;
-                                                    {{selecteElements[screencustom.fabric]['Monogram Font'].font_style}};
+                                                 {{selecteElements[screencustom.fabric]['Monogram Font'].font_style}};
                                                  " 
                                                  ng-if="selecteElements[fab.sku]['Monogram'].title != 'No'">
                                                 {{selecteElements[screencustom.fabric]['Monogram Initial']}}
@@ -97,6 +101,7 @@ $this->load->view('layout/header');
                                         </div>
                                         <!--cuff section-->
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Cuff & Sleeve'].elements">
+                                        <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Cuff Insert']}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.sku]['Cuff & Sleeve'].insert_full" style="{{selecteElements[fab.sku]['Cuff & Sleeve'].style}}"  ng-if="selecteElements[fab.sku]['Cuff Insert Full'] == 'Full Insert'">
                                         <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Cuff Insert']}}/{{selecteElements[fab.sku]['Cuff & Sleeve'].insert_style}}" class="fixpos animated" style="{{selecteElements[fab.sku]['Cuff & Sleeve'].insert_style_css}}"    ng-if="selecteElements[fab.sku]['Cuff Insert'] != 'No'">
                                         <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Cuff & Sleeve'].insert_overlay}}" class="fixpos animated" style="{{selecteElements[fab.sku]['Cuff & Sleeve'].insert_overlay_css}}"   ng-if="selecteElements[fab.sku]['Cuff Insert'] != 'No'"   >
                                         <img src="<?php echo custome_image_server; ?>/output/{{selecteElements[fab.sku]['Cuff & Sleeve'].buttons}}" class="fixpos animated" ng-if="selecteElements[fab.sku]['Cuff & Sleeve'].buttons" >
@@ -112,10 +117,14 @@ $this->load->view('layout/header');
 
                                         <!--collar section-->
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Collar'].elements" style="{{selecteElements[fab.sku]['Collar'].style}}">
+                                        <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Collar Insert']}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.sku]['Collar'].insert_full" style="{{selecteElements[fab.sku]['Collar'].style}}"  ng-if="selecteElements[fab.sku]['Collar Insert Full'] == 'Full Insert'">
                                         <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Collar Insert']}}/{{selecteElements[fab.sku]['Collar'].insert_style}}" class="fixpos animated" style="{{selecteElements[fab.sku]['Collar'].insert_style_css}}"    ng-if="selecteElements[fab.sku]['Collar Insert'] != 'No'">
-                                        <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Collar'].insert_overlay}}" class="fixpos animated" style="{{selecteElements[fab.sku]['Collar'].insert_overlay_css}}"   ng-if="selecteElements[fab.sku]['Collar Insert'] != 'No'"   >
+
+                                        <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Collar'].insert_overlay}}" class="fixpos animated" style="{{selecteElements[fab.sku]['Collar'].insert_overlay_css}}"   ng-if="(selecteElements[fab.sku]['Collar Insert'] != 'No')"   >
+
                                         <img src="<?php echo custome_image_server; ?>/output/{{selecteElements[fab.sku].collar_buttons}}" class="fixpos animated" style="margin-top: -3px;margin-left: 0px;" ng-if="selecteElements[fab.sku].show_buttons == 'true'">
                                         <img src="<?php echo custome_image_server; ?>/output/{{selecteElements[fab.sku]['Collar'].button_down}}" class="fixpos animated" style="margin-left: -3px;" ng-if="selecteElements[fab.sku]['Collar'].button_down">
+
                                     </div>   
                                     <div class="backview_custom customization_block  animated " ng-if="screencustom.view_type == 'back'">
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.sku}}/{{selecteElements[fab.sku].sleeve}}" class="fixpos animated" >
@@ -136,6 +145,29 @@ $this->load->view('layout/header');
                         </div>
                     </div>
                 </div>
+
+                <div class="row customization_order_block">
+
+                    <div class="col-md-8 col-xs-3">
+                        <button class="btn btn-inverse pull-left" style="    padding: 20px 5px;" ng-click="pullUp()"><i class="fa fa-arrow-up"></i></button>
+                    </div>
+                    <div class="col-md-2 col-xs-5">
+                        <div class="total_price_block">
+                            <h5> {{fabricCartData['grand_total']|currency:"<?php echo globle_currency_type; ?>"}}</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-4">
+                        <button class="btn btn-inverse pull-right" style="    padding: 20px 5px;">
+                            Order Now  <i class="fa fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+
+
+
+
+                </div>
+
             </div>
         </section>
 

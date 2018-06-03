@@ -75,7 +75,7 @@ $this->load->view('layout/header');
                             <div class="media-body">
                                 <div class="position-center-center">
                                     <h5>{{product.title}}</h5>
-                                    <!--<p>Lorem ipsum dolor sit amet</p>-->
+                                    <p>{{product.sku}}</p>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +99,7 @@ $this->load->view('layout/header');
 
                     <!-- TOTAL PRICE -->
                     <li class="col-sm-2">
-                        <div class="position-center-center"> <span class="price">{{product.total_price|currency:" "}}</span> </div>
+                        <div class="position-center-center"> <span class="price">{{product.total_price|currency:"<?php echo globle_currency_type;?>"}}</span> </div>
                     </li>
 
                     <!-- REMOVE -->
@@ -130,16 +130,16 @@ $this->load->view('layout/header');
                         <h6>grand total</h6>
                         <div class="grand-total">
                             <div class="order-detail">
-                                <p ng-repeat="product in globleCartData.products">{{product.title}} <span>{{product.total_price|currency:" "}}</span></p>
+                                <p ng-repeat="product in globleCartData.products">{{product.title}} <span>{{product.total_price|currency:"<?php echo globle_currency_type;?>"}}</span></p>
                          
 
                                 <!-- SUB TOTAL -->
-                                <p class="all-total">TOTAL COST <span>{{globleCartData.total_price |currency:" "}}</span></p>
+                                <p class="all-total">TOTAL COST <span>{{globleCartData.total_price |currency:"<?php echo globle_currency_type;?>"}}</span></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-12 text-right margin-top-30">
-                        <div class="coupn-btn"> <a href="<?php echo site_url("Cart/checkout"); ?>" class="btn btn-inverse">continue to order</a> </div>
+                        <div class="coupn-btn"> <a href="<?php echo site_url("Product/customizationShirt"); ?>" class="btn btn-inverse">Customize Now</a> </div>
                     </div>
                 </div>
             </div>

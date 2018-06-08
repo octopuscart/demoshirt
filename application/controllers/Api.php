@@ -17,7 +17,7 @@ class Api extends REST_Controller {
         $this->load->view('welcome_message');
     }
 
-    //function for product list
+//function for product list
     function cartOperation_post() {
         $product_id = $this->post('product_id');
         $quantity = $this->post('quantity');
@@ -74,8 +74,8 @@ class Api extends REST_Controller {
         }
     }
 
-    //Product 
-    //ProductList APi
+//Product 
+//ProductList APi
     public function productListApi_get($category_id) {
         $attrdatak = $this->get();
         $products = [];
@@ -105,14 +105,14 @@ class Api extends REST_Controller {
                 }
             }
         }
-        //print_r($products);
+//print_r($products);
 
         $productdict = [];
 
         $productcheck = array_count_values($products);
 
 
-        //print_r($productcheck);
+//print_r($productcheck);
 
         foreach ($productcheck as $key => $value) {
             if ($value == $countpr) {
@@ -133,9 +133,11 @@ class Api extends REST_Controller {
         $product_query = "select pt.id as product_id, pt.title, pt.sale_price, pt.regular_price, pt.price, pt.file_name, pt.file_name1 
             from products as pt where pt.category_id in ($categoriesString) $pricequery $proquery 
                 order by pt.id desc";
-        $product_result = $this->Product_model->query_exe($product_query);
-     
-
+        try {
+            $product_result = $this->Product_model->query_exe($product_query);
+        } catch (Exception $e) {
+            $product_result = [];
+        }
         $product_list_st = [];
 
         $pricecount = [];
@@ -180,13 +182,13 @@ class Api extends REST_Controller {
         $this->response($productArray);
     }
 
-    //category list api
+//category list api
     function categoryMenu_get() {
         $categories = $this->Product_model->productListCategories(0);
         $this->response($categories);
     }
 
-    //order detail get
+//order detail get
     function orderDetails_get($order_id) {
         $order_details = $this->Product_model->getOrderDetails($order_id);
         $this->response($order_details);
@@ -352,7 +354,7 @@ class Api extends REST_Controller {
                         "insert_overlay" => "cuff_single_insert_overlay.png",
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_rounded0001.png"],
-                        "sleeve" =>  ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
+                        "sleeve" => ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
                         "buttons" => "buttons_1_round.png",
                     ), array(
                         "status" => "0",
@@ -365,7 +367,7 @@ class Api extends REST_Controller {
                         "insert_overlay" => "cuff_single_insert_overlay.png",
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_cutaway0001.png"],
-                        "sleeve" =>  ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
+                        "sleeve" => ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
                         "buttons" => "buttons_1_cutaway.png",
                     ), array(
                         "status" => "0",
@@ -378,7 +380,7 @@ class Api extends REST_Controller {
                         "insert_overlay" => "cuff_single_insert_overlay.png",
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_cutaway0001.png"],
-                        "sleeve" =>  ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
+                        "sleeve" => ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
                         "buttons" => "buttons_2_cutaway.png",
                     ), array(
                         "status" => "0",
@@ -391,7 +393,7 @@ class Api extends REST_Controller {
                         "insert_overlay" => "cuff_single_insert_overlay.png",
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_rounded0001.png"],
-                        "sleeve" =>  ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
+                        "sleeve" => ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
                         "buttons" => "buttons_2_round.png",
                     ), array(
                         "status" => "0",
@@ -404,7 +406,7 @@ class Api extends REST_Controller {
                         "insert_overlay" => "cuff_single_insert_overlay.png",
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_rounded0001.png"],
-                        "sleeve" =>  ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
+                        "sleeve" => ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
                         "buttons" => "buttons_1_convertible_round.png",
                     ), array(
                         "status" => "0",
@@ -417,7 +419,7 @@ class Api extends REST_Controller {
                         "insert_overlay" => "cuff_franch_insert_overlay.png",
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_franch_rounded0001.png"],
-                        "sleeve" =>  ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
+                        "sleeve" => ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
                     )],
                 "Back" => [
                     array(

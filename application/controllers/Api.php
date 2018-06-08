@@ -121,6 +121,7 @@ class Api extends REST_Controller {
         }
 
         $proquery = "";
+        $pricequery = "";
         if (count($productdict)) {
             $proquerylist = implode(",", $productdict);
             $proquery = " and pt.id in ($proquerylist) ";
@@ -133,23 +134,24 @@ class Api extends REST_Controller {
             from products as pt where pt.category_id in ($categoriesString) $pricequery $proquery 
                 order by pt.id desc";
         $product_result = $this->Product_model->query_exe($product_query);
+     
 
-        $productListSt = [];
+        $product_list_st = [];
 
         $pricecount = [];
 
         foreach ($product_result as $key => $value) {
-            array_push($productListSt, $value['product_id']);
+            array_push($product_list_st, $value['product_id']);
             array_push($pricecount, $value['price']);
         }
 
         $attr_filter = array();
         $pricelist = array();
-        if (count($productListSt)) {
+        if (count($product_list_st)) {
             $pricelist = array('maxprice' => max($pricecount), 'minprice' => min($pricecount));
 
 
-            $productString = implode(",", $productListSt);
+            $productString = implode(",", $product_list_st);
 
 
             $attr_query = "select count(cav.id) product_count, '' as checked, cav.attribute_value, cav.id, pa.attribute, pa.attribute_id from product_attribute as pa

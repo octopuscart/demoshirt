@@ -116,7 +116,8 @@
                                                     <br/>
                                                     <div class="btn-group" role="group" aria-label="...">
                                                         <button class="btn btn-danger btn-small insert_button" ng-click="selectCollarCuffInsertType('Collar Insert Full', 'No')">Inner</button>
-                                                        <button class="btn btn-danger btn-small  insert_button" ng-click="selectCollarCuffInsertType('Collar Insert Full', 'Full Insert')">Outer</button>
+                                                        <button class="btn btn-danger btn-small  insert_button" ng-click="selectCollarCuffInsertType('Collar Insert Full', 'Outer')">Outer</button>
+                                                        <button class="btn btn-danger btn-small  insert_button" ng-click="selectCollarCuffInsertType('Collar Insert Full', 'Full Insert')">Both</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -184,6 +185,7 @@
                                                     <br/>
                                                     <div class="btn-group" role="group" aria-label="...">
                                                         <button class="btn btn-danger btn-small insert_button" ng-click="selectCollarCuffInsertType('Cuff Insert Full', 'No')">Inner</button>
+                                                        <button class="btn btn-danger btn-small  insert_button" ng-click="selectCollarCuffInsertType('Cuff Insert Full', 'Outer')">Outer</button>
                                                         <button class="btn btn-danger btn-small  insert_button" ng-click="selectCollarCuffInsertType('Cuff Insert Full', 'Full Insert')">Outer</button>
                                                     </div>
                                                 </div>

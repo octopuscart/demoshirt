@@ -104,7 +104,14 @@ $this->load->view('layout/header');
                                         <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Cuff Insert']}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.sku]['Cuff & Sleeve'].insert_full" style="{{selecteElements[fab.sku]['Cuff & Sleeve'].style}}"  ng-if="selecteElements[fab.sku]['Cuff Insert Full'] == 'Full Insert'">
                                         <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Cuff Insert']}}/{{selecteElements[fab.sku]['Cuff & Sleeve'].insert_style}}" class="fixpos animated" style="{{selecteElements[fab.sku]['Cuff & Sleeve'].insert_style_css}}"    ng-if="selecteElements[fab.sku]['Cuff Insert'] != 'No'">
                                         <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Cuff & Sleeve'].insert_overlay}}" class="fixpos animated" style="{{selecteElements[fab.sku]['Cuff & Sleeve'].insert_overlay_css}}"   ng-if="selecteElements[fab.sku]['Cuff Insert'] != 'No'"   >
+                                        <div ng-if="selecteElements[fab.sku]['Cuff Insert Full'] == 'Outer'">
+                                            <img src="<?php echo custome_image_server; ?>/output/{{fab.sku}}/{{selecteElements[fab.sku]['Cuff & Sleeve'].insert_style}}" class="fixpos animated"  style="{{selecteElements[fab.sku]['Cuff & Sleeve'].insert_style_css}};    z-index: 200;"  >
+                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Cuff Insert']}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.sku]['Cuff & Sleeve'].insert_full" style="{{selecteElements[fab.sku]['Cuff & Sleeve'].style}}" >
+                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Cuff & Sleeve'].insert_overlay}}" class="fixpos animated" style="{{selecteElements[fab.sku]['Cuff & Sleeve'].insert_overlay_css}};    z-index: 200;"   ng-if="(selecteElements[fab.sku]['Cuff Insert'] != 'No')"   >
+                                        </div>
                                         <img src="<?php echo custome_image_server; ?>/output/{{selecteElements[fab.sku]['Cuff & Sleeve'].buttons}}" class="fixpos animated" ng-if="selecteElements[fab.sku]['Cuff & Sleeve'].buttons" >
+
+
 
                                         <!--back-->
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Bottom'].elements">
@@ -117,17 +124,27 @@ $this->load->view('layout/header');
 
                                         <!--collar section-->
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Collar'].elements" style="{{selecteElements[fab.sku]['Collar'].style}}">
-                                        <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Collar Insert']}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.sku]['Collar'].insert_full" style="{{selecteElements[fab.sku]['Collar'].style}}"  ng-if="selecteElements[fab.sku]['Collar Insert Full'] == 'Full Insert'">
-                                        <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Collar Insert']}}/{{selecteElements[fab.sku]['Collar'].insert_style}}" class="fixpos animated" style="{{selecteElements[fab.sku]['Collar'].insert_style_css}}"    ng-if="selecteElements[fab.sku]['Collar Insert'] != 'No'">
 
-                                        <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Collar'].insert_overlay}}" class="fixpos animated" style="{{selecteElements[fab.sku]['Collar'].insert_overlay_css}}"   ng-if="(selecteElements[fab.sku]['Collar Insert'] != 'No')"   >
+
+
+                                        <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Collar Insert']}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.sku]['Collar'].insert_full" style="{{selecteElements[fab.sku]['Collar'].style}}"  ng-if="selecteElements[fab.sku]['Collar Insert Full'] == 'Full Insert'">
+
+                                        <div  ng-if="selecteElements[fab.sku]['Collar Insert'] != 'No'">
+                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Collar Insert']}}/{{selecteElements[fab.sku]['Collar'].insert_style}}" class="fixpos animated" style="{{selecteElements[fab.sku]['Collar'].insert_style_css}}"   >
+                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Collar'].insert_overlay}}" class="fixpos animated" style="{{selecteElements[fab.sku]['Collar'].insert_overlay_css}};    z-index: 200;">
+                                        </div>
+                                        <div ng-if="selecteElements[fab.sku]['Collar Insert Full'] == 'Outer'">
+                                            <img src="<?php echo custome_image_server; ?>/output/{{fab.sku}}/{{selecteElements[fab.sku]['Collar'].insert_style}}" class="fixpos animated"  style="{{selecteElements[fab.sku]['Collar'].insert_style_css}};    z-index: 200;"  >
+                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Collar Insert']}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.sku]['Collar'].insert_full" style="{{selecteElements[fab.sku]['Collar'].style}}" >
+                                            <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Collar'].insert_overlay}}" class="fixpos animated" style="{{selecteElements[fab.sku]['Collar'].insert_overlay_css}};    z-index: 200;"   ng-if="(selecteElements[fab.sku]['Collar Insert'] != 'No')"   >
+                                        </div>
 
                                         <img src="<?php echo custome_image_server; ?>/output/{{selecteElements[fab.sku].collar_buttons}}" class="fixpos animated" style="margin-top: -3px;margin-left: 0px;" ng-if="selecteElements[fab.sku].show_buttons == 'true'">
                                         <img src="<?php echo custome_image_server; ?>/output/{{selecteElements[fab.sku]['Collar'].button_down}}" class="fixpos animated" style="margin-left: -3px;" ng-if="selecteElements[fab.sku]['Collar'].button_down">
 
                                     </div>   
                                     <div class="backview_custom customization_block  animated " ng-if="screencustom.view_type == 'back'">
-                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.sku}}/{{selecteElements[fab.sku].sleeve}}" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.sku}}/{{img}}" ng-repeat="img in selecteElements[fab.sku].sleeve" class="fixpos animated" >
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Back'].elements" >
                                         <img src="<?php echo custome_image_server; ?>/output/{{selecteElements[fab.sku]['Back'].overlay}}" class="fixpos animated" ng-if="selecteElements[fab.sku]['Back'].overlay">
                                     </div> 

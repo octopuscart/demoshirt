@@ -26,7 +26,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
     $scope.shirtimplement = function () {
         for (i in $scope.cartFabrics) {
             var fb = $scope.cartFabrics[i];
-            $scope.selecteElements[fb.sku] = {'sleeve': 'back_full_sleeve0001.png',
+            $scope.selecteElements[fb.sku] = {'sleeve':["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",], 
                 'collar_buttons': 'buttonsh1.png',
                 'show_buttons': 'true',
                 "Monogram Initial": "ABC",
@@ -153,7 +153,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
         var collarinsert = $scope.selecteElements[$scope.screencustom.fabric]['Collar Insert'];
         var collarinsertfull = $scope.selecteElements[$scope.screencustom.fabric]['Collar Insert Full'];
         collarinsert = collarinsert == 'No' ? '' : ", " + collarinsert;
-        collarinsertfull = collarinsertfull == 'No' ? '' : collarinsertfull;
+        collarinsertfull = collarinsertfull == 'No' ? '' : ", " + collarinsertfull;
         $scope.selecteElements[$scope.screencustom.fabric]['summary']['Collar'] = collar.title + collarinsert + collarinsertfull;
         //
 
@@ -187,6 +187,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
 
 
     $scope.selectElement = function (obj, element) {
+         console.log(element)
 
         $scope.screencustom.view_type = obj.viewtype;
         $scope.selecteElements[$scope.screencustom.fabric][obj.title] = element;

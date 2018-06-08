@@ -258,7 +258,7 @@ code {
 }
 
 .monogramtext_posistion_left_pocket{
-    left: 250px;
+    left: 262px;
     display: block;
     top: 111px;
 }
@@ -383,7 +383,8 @@ p.selected-element-title_text_price{
 
 
 .insert_button {
-    padding: 3px 13px;
+       padding: 3px 5px;
+    margin-top: 2px;
     margin-top: 2px;
 }
 .total_price_block h5 {
@@ -393,6 +394,12 @@ p.selected-element-title_text_price{
 
 @media only screen and (max-width: 768px) {
 
+    .insert_button {
+    padding: 3px 3px;
+    margin-top: 2px;
+    margin-top: 2px;
+}
+    
     .customization_order_block {
         height: 54px;
         background: #000;
@@ -443,7 +450,7 @@ p.selected-element-title_text_price{
     }
 
     .monogramtext_posistion_left_pocket {
-        left: 56%;
+        left: 59%;
         display: block;
         top: 83px;
     }

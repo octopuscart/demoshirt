@@ -24,6 +24,118 @@ class Product extends CI_Controller {
         $this->load->view('Product/productList', $data);
     }
 
+    //list of product api
+    //ProductList APi
+    public function productListApi($category_id) {
+//        $attrdatak = $this->get();
+        $attrdatak = $_GET;
+        $products = [];
+        $countpr = 0;
+
+
+        if (isset($attrdatak["minprice"])) {
+            $mnpricr = $attrdatak["minprice"] - 1;
+            $mxpricr = $attrdatak["maxprice"] + 1;
+            unset($attrdatak["minprice"]);
+            unset($attrdatak["maxprice"]);
+            $pricequery = " and (price between '$mnpricr' and '$mxpricr') ";
+        }
+
+        foreach ($attrdatak as $key => $atv) {
+            if ($atv) {
+                $countpr += 1;
+                $key = str_replace("a", "", $key);
+                $val = str_replace("-", ", ", $atv);
+                $query_attr = "SELECT product_id FROM product_attribute
+                           where attribute_id in ($key) and attribute_value_id in ($val)
+                           group by product_id ";
+                $queryat = $this->db->query($query_attr);
+                $productslist = $queryat->result();
+                foreach ($productslist as $key => $value) {
+                    array_push($products, $value->product_id);
+                }
+            }
+        }
+//print_r($products);
+
+        $productdict = [];
+
+        $productcheck = array_count_values($products);
+
+
+//print_r($productcheck);
+
+        foreach ($productcheck as $key => $value) {
+            if ($value == $countpr) {
+                array_push($productdict, $key);
+            }
+        }
+
+        $proquery = "";
+        $pricequery = "";
+        if (count($productdict)) {
+            $proquerylist = implode(",", $productdict);
+            $proquery = " and pt.id in ($proquerylist) ";
+        }
+
+        $categoriesString = $this->Product_model->stringCategories($category_id) . ", " . $category_id;
+        $categoriesString = ltrim($categoriesString, ", ");
+
+        $product_query = "select pt.id as product_id, pt.title, pt.sale_price, pt.regular_price, pt.price, pt.file_name, pt.file_name1 
+            from products as pt where pt.category_id in ($categoriesString) $pricequery $proquery 
+                order by pt.id desc";
+        try {
+            $product_result = $this->Product_model->query_exe($product_query);
+        } catch (Exception $e) {
+            $product_result = [];
+        }
+        $product_list_st = [];
+
+        $pricecount = [];
+
+        foreach ($product_result as $key => $value) {
+            array_push($product_list_st, $value['product_id']);
+            array_push($pricecount, $value['price']);
+        }
+
+        $attr_filter = array();
+        $pricelist = array();
+        if (count($product_list_st)) {
+            $pricelist = array('maxprice' => max($pricecount), 'minprice' => min($pricecount));
+
+
+            $productString = implode(",", $product_list_st);
+
+
+            $attr_query = "select count(cav.id) product_count, '' as checked, cav.attribute_value, cav.id, pa.attribute, pa.attribute_id from product_attribute as pa
+        join category_attribute_value as cav on cav.id = pa.attribute_value_id
+        where pa.product_id in ($productString)
+        group by cav.id";
+            $attr_result = $this->Product_model->query_exe($attr_query);
+
+
+            foreach ($attr_result as $key => $value) {
+                $filter = $value['attribute'];
+                if (isset($attr_filter[$filter])) {
+                    array_push($attr_filter[$filter], $value);
+                } else {
+                    $attr_filter[$filter] = [];
+                    array_push($attr_filter[$filter], $value);
+                }
+            }
+        }
+        //ob_clean();
+        $this->output->set_header('Content-type: application/json');
+        $productArray = array('attributes' => $attr_filter,
+            'products' => $product_result,
+            'product_count' => count($product_result),
+            'price' => $pricelist);
+        print_r($productArray);
+        
+       // $this->response($productArray);
+    }
+
+    //api
     //function for details
     function ProductDetails($product_id) {
         $prodct_details = $this->Product_model->productDetails($product_id);

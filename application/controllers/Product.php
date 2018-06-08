@@ -100,32 +100,8 @@ class Product extends CI_Controller {
 
         $attr_filter = array();
         $pricelist = array();
-        if (count($product_list_st)) {
-            $pricelist = array('maxprice' => max($pricecount), 'minprice' => min($pricecount));
+     
 
-
-            $productString = implode(",", $product_list_st);
-
-
-            $attr_query = "select count(cav.id) product_count, '' as checked, cav.attribute_value, cav.id, pa.attribute, pa.attribute_id from product_attribute as pa
-        join category_attribute_value as cav on cav.id = pa.attribute_value_id
-        where pa.product_id in ($productString)
-        group by cav.id";
-            $attr_result = $this->Product_model->query_exe($attr_query);
-
-
-            foreach ($attr_result as $key => $value) {
-                $filter = $value['attribute'];
-                if (isset($attr_filter[$filter])) {
-                    array_push($attr_filter[$filter], $value);
-                } else {
-                    $attr_filter[$filter] = [];
-                    array_push($attr_filter[$filter], $value);
-                }
-            }
-        }
-        //ob_clean();
-        $this->output->set_header('Content-type: application/json');
         $productArray = array('attributes' => $attr_filter,
             'products' => $product_result,
             'product_count' => count($product_result),

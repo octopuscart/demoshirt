@@ -146,12 +146,24 @@ $this->load->view('layout/header');
 
                                         <img src="<?php echo custome_image_server; ?>/output/{{selecteElements[fab.sku].collar_buttons}}" class="fixpos animated" style="margin-top: -3px;margin-left: 0px;" ng-if="selecteElements[fab.sku].show_buttons == 'true'">
                                         <img src="<?php echo custome_image_server; ?>/output/{{selecteElements[fab.sku]['Collar'].button_down}}" class="fixpos animated" style="margin-left: -3px;" ng-if="selecteElements[fab.sku]['Collar'].button_down">
+                                        <!--<img src="http://w2p.nitafashions.com/output_insert/p23/pocket_l0001.png" class="fixpos animated" >-->
+
+                                        <!--<img src="http://w2p.nitafashions.com/output_insert/{{selecteElements[fab.sku]['Collar Insert']}}/pocket_border_l0001.png" class="fixpos animated" >-->
 
                                     </div>   
                                     <div class="backview_custom customization_block  animated " ng-if="screencustom.view_type == 'back'">
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.sku}}/{{img}}" ng-repeat="img in selecteElements[fab.sku].sleeve" class="fixpos animated" >
+
+                                        <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.sku]['Collar Insert']}}/back_collar0001.png" class="fixpos animated" ng-if="selecteElements[fab.sku]['Collar Insert Full'] == 'Full Insert'">
+                                        <img src="<?php echo custome_image_server; ?>/output/{{fab.sku}}/back_collar0001.png" class="fixpos animated" ng-if="selecteElements[fab.sku]['Collar Insert Full'] != 'Full Insert'">
+
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Back'].elements" >
+
+
                                         <img src="<?php echo custome_image_server; ?>/output/{{selecteElements[fab.sku]['Back'].overlay}}" class="fixpos animated" ng-if="selecteElements[fab.sku]['Back'].overlay">
+
+
+
 
                                     </div> 
                                 </div>

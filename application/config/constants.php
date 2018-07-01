@@ -9,12 +9,14 @@ define('imageserver', $baselinkmain . "assets_main/productimages/");
 
 //define('custome_image_server', 'http://api.octopuscart.com');
 
+//
+//if (strpos($baselink, '192.168')) {
+//    define('custome_image_server', 'http://127.0.0.1/fabrics');
+//} else {
+//    define('custome_image_server', 'http://w2p.nitafashions.com');
+//} 
 
-if (strpos($baselink, '192.168')) {
-    define('custome_image_server', 'http://127.0.0.1/fabrics');
-} else {
-    define('custome_image_server', 'http://w2p.nitafashions.com');
-} 
+define('custome_image_server', $baselink.'/fabrics');
 
  // define('custome_image_server', 'http://w2p.nitafashions.com');
 

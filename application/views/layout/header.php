@@ -96,8 +96,8 @@
                 <div class="sticky">
                     <div class="container">
                         <div class="logo">
-                            <a href="<?php echo site_url("/"); ?>">
-                                <img src="<?php echo base_url(); ?>assets/images/logo73.jpg" alt="">
+                            <a href="<?php echo site_url("/"); ?>" style="font-size: 31px;">
+                                Octopuscart
                             </a> 
                         </div>
 
@@ -193,7 +193,7 @@
                                             </li>
                                             <li class="margin-0 padding-0"> 
                                                 <a href="<?php echo site_url("Cart/details"); ?>" class="btn margin-bottom-20">VIEW CART</a> 
-                                                <a href="<?php echo site_url("Cart/checkout"); ?>" class="btn">CHECK OUT</a>
+                                                <a href="<?php echo site_url("Product/customizationShirt"); ?>" class="btn">CUSTOMIZE</a>
                                             </li>
                                         </ul>
 

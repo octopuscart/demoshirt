@@ -92,7 +92,7 @@ $this->load->view('layout/header');
                                                  color: {{selecteElements[fab.sku]['Monogram Color']}};
 
                                                  {{selecteElements[fab.sku]['Monogram'].title=='Collar'?selecteElements[fab.sku]['Collar'].monogram_style:''}} ;
-                                                 margin-left: {{(-1) * (2 * (selecteElements[screencustom.fabric]['Monogram Initial'].length - 3))}}px;
+                                                 margin-left: {{(-1) * (2 * (selecteElements[screencustom.fabric]['Monogram Initial'].length - 3))}}px;z-index:2000;
                                                  {{selecteElements[screencustom.fabric]['Monogram Font'].font_style}};
                                                  " 
                                                  ng-if="selecteElements[fab.sku]['Monogram'].title != 'No'">

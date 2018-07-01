@@ -140,16 +140,16 @@ $this->load->view('layout/header');
                         <div class="col-sm-4" ng-repeat="(k, product) in productResults.products">
                             <div class="productblock">
                                 <article class="shop-artical" style="    margin-bottom: 0px;"> 
-                                    <div class="product_image_back" style="background: url(<?php echo imageserver; ?>{{product.file_name}})"></div>
+                                    <div class="product_image_back" style="background: url(<?php echo custome_image_server; ?>/output/{{product.sku}}/shirt0001.png)"></div>
                                     <!-- Sale -->
                                     <div class="item-sale" ng-if="product.sale_price > 0">Sale</div>
-                                    <div class="item-hover" style="background: url(<?php echo imageserver; ?>{{product.file_name1}});background-size: cover;"> 
+                                    <div class="item-hover" style="background: url(<?php echo custome_image_server; ?>/output/{{product.sku}}/cloth0001.png);background-size: cover;"> 
                                         <a href="#." class="btn" style="    font-size: 9px;color: white;" ng-click="addToCart(product.product_id, 1)">add to cart</a> 
                                         <a href="#." class="btn by" style="    font-size: 9px;color: white;">Customize</a> 
                                     </div>
                                 </article>
                                 <div class="info" style="    height: 80px;"> 
-                                    <a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}">{{product.title}} </a> 
+                                    <a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}">{{product.title}} ({{product.sku}}) </a> 
                                     <span class="price disc">
                                         <span class="line-through" ng-if="product.sale_price > 0">{{product.regular_price|currency:"<?php echo globle_currency_type;?>"}}</span>
                                         <span>{{product.price|currency:"<?php echo globle_currency_type;?>"}}</span>

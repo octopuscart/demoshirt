@@ -11,12 +11,12 @@ define('imageserver', $baselinkmain . "assets_main/productimages/");
 
 
 if (strpos($baselink, '192.168')) {
-//    define('custome_image_server', 'http://192.168.1.2/api');
+    define('custome_image_server', 'http://127.0.0.1/fabrics');
 } else {
     define('custome_image_server', 'http://w2p.nitafashions.com');
 } 
 
-  define('custome_image_server', 'http://w2p.nitafashions.com');
+ // define('custome_image_server', 'http://w2p.nitafashions.com');
 
 define("globle_currency_type", '$HK ');
 /*

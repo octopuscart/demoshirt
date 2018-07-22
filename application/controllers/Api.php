@@ -39,6 +39,23 @@ class Api extends REST_Controller {
         } else {
             $session_cart = $this->Product_model->cartData();
         }
+
+        $this->response($session_cart);
+    }
+
+    function cartOperationSuit_get() {
+        if ($this->checklogin) {
+            $session_cart = $this->Product_model->cartData($this->user_id);
+        } else {
+            $session_cart = $this->Product_model->cartData();
+        }
+        $tempss = array();
+        foreach ($session_cart['products'] as $key => $value) {
+            if ($value['item_type'] == 'Jacket') {
+                $tempss[$key] = $value;
+            };
+        }
+        $session_cart['products'] = $tempss;
         $this->response($session_cart);
     }
 
@@ -130,7 +147,7 @@ class Api extends REST_Controller {
         $categoriesString = $this->Product_model->stringCategories($category_id) . ", " . $category_id;
         $categoriesString = ltrim($categoriesString, ", ");
 
-        $product_query = "select pt.id as product_id, pt.sku, pt.title, pt.sale_price, pt.regular_price, pt.price, pt.file_name, pt.file_name1 
+        $product_query = "select pt.id as product_id, pt.item_type, pt.sku, pt.title, pt.sale_price, pt.regular_price, pt.price, pt.file_name, pt.file_name1 
             from products as pt where pt.category_id in ($categoriesString) $pricequery $proquery 
                 order by pt.id desc";
         try {
@@ -299,7 +316,7 @@ class Api extends REST_Controller {
                         "elements" => ["sleev_half0001.png",],
                         "customization_category_id" => "3",
                         "image" => "withoutcuff_sort.jpg",
-                        "sleeve" => ["back_half_sleeve_cuff0001.png", "back_half_sleeve0001.png", ],
+                        "sleeve" => ["back_half_sleeve_cuff0001.png", "back_half_sleeve0001.png",],
                         "monogram_change_css" => "monogramtext_posistion_collar",
                         "monogram_position" => array(
                             "status" => "0",
@@ -423,7 +440,7 @@ class Api extends REST_Controller {
                         "halfsleeve" => ["back_half_sleeve0001.png", "back_half_sleeve_cuff0001.png"],
                         "fullsleeve" => ["back_full_sleeve0001.png", "back_full_sleeve_cuff0001.png"],
                         "overlay" => "box_pleat_overlay1.png",
-                        "elements" => [ "back_body_round0001.png","back_box_pleat20001.png", "yoke0001.png"],
+                        "elements" => [ "back_body_round0001.png", "back_box_pleat20001.png", "yoke0001.png"],
                         "image" => "back_box_pleat.jpeg"
                     ), array(
                         "status" => "0",
@@ -484,6 +501,655 @@ class Api extends REST_Controller {
                         "image" => "front_ivy.jpeg",
                         "show_buttons" => "true",
                     )],
+                "Collar" => [
+                    array(
+                        "status" => "1",
+                        "title" => "Regular",
+                        "elements" => ["collar_regular0001.png"],
+                        "customization_category_id" => "2",
+                        "style" => "margin-left: -3px;",
+                        "insert_style_css" => "margin-top: 1px;margin-left: -4px;",
+                        "insert_style" => "collar_regular_insert0001.png",
+                        "insert_overlay" => "collar_simple_insert_overlay.png",
+                        "insert_overlay_css" => "margin-top: -4px;margin-left: -1px;",
+                        "insert_full" => ["collar_regular0001.png"],
+                        "image" => "collar_regular.jpeg",
+                        "buttons" => "buttonsh1.png",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Medium Spread",
+                        "customization_category_id" => "2",
+                        "style" => "margin-top:-2px;margin-left: -2px;",
+                        "insert_style_css" => "margin-top: 1px;margin-left: -4px;",
+                        "insert_style" => "collar_regular_insert0001.png",
+                        "insert_overlay" => "collar_simple_insert_overlay.png",
+                        "insert_overlay_css" => "margin-top: -4px;margin-left: -2px;",
+                        "elements" => ["collar_spread_medium0001.png"],
+                        "insert_full" => ["collar_spread_medium0001.png"],
+                        "image" => "collar_medium_spread.jpeg",
+                        "buttons" => "buttonsh1.png",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Wide Spread",
+                        "customization_category_id" => "2",
+                        "elements" => ["collar_spread_wide0001.png"],
+                        "image" => "collar_wide_spread.jpeg",
+                        "insert_style_css" => "margin-top: 1px;margin-left: -4px;",
+                        "insert_style" => "collar_regular_insert0001.png",
+                        "insert_overlay" => "collar_simple_insert_overlay.png",
+                        "insert_overlay_css" => "margin-top: -4px;margin-left: -1px;",
+                        "insert_full" => ["collar_spread_wide0001.png"],
+                        "buttons" => "buttonsh1.png",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Short Point",
+                        "elements" => ["collar_short_point0001.png"],
+                        "customization_category_id" => "2",
+                        "style" => "    margin-top: -4px;margin-left: -2px;",
+                        "insert_style_css" => "margin-top: 1px;margin-left: -4px;",
+                        "insert_style" => "collar_regular_insert0001.png",
+                        "insert_overlay" => "collar_simple_insert_overlay.png",
+                        "insert_overlay_css" => "margin-top: -4px;margin-left: -2px;",
+                        "insert_full" => ["collar_short_point0001.png"],
+                        "image" => "collar_shirt_point.jpeg",
+                        "buttons" => "buttonsh1.png",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Regular Button Down",
+                        "customization_category_id" => "2",
+                        "elements" => ["collar_regular0001.png"],
+                        "style" => "margin-left: -3px;",
+                        "insert_style_css" => "margin-top: 1px;margin-left: -4px;",
+                        "insert_style" => "collar_regular_insert0001.png",
+                        "insert_overlay" => "collar_simple_insert_overlay.png",
+                        "insert_overlay_css" => "margin-top: -4px;margin-left: -1px;",
+                        "insert_full" => ["collar_regular0001.png"],
+                        "image" => "collar_regular_button_down.jpeg",
+                        "button_down" => "buttons_collar_down.png",
+                        "buttons" => "buttonsh1.png",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Full Cutaway",
+                        "customization_category_id" => "2",
+                        "style" => "margin-top:-6px;margin-left:-3px",
+                        "insert_style_css" => "margin-top: 1px;margin-left: -2px;",
+                        "insert_style" => "collar_regular_insert0001.png",
+                        "insert_overlay" => "collar_simple_insert_overlay.png",
+                        "insert_overlay_css" => "margin-top: -4px;margin-left: -0px;",
+                        "insert_full" => ["collar_full_cutaway0001.png"],
+                        "elements" => ["collar_full_cutaway0001.png"],
+                        "image" => "collar_full_cutaway.jpeg",
+                        "buttons" => "buttonsh1.png",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Wing Tip",
+                        "customization_category_id" => "2",
+                        "insert_style_css" => "margin-top: -3px;",
+                        "insert_style" => "collar_wintip_insert0001.png",
+                        "insert_overlay" => "collar_wintip_insert_overlay.png",
+                        "insert_overlay_css" => "opacity:1;",
+                        "elements" => ["collar_wintip0001.png"],
+                        "insert_full" => ["collar_wintip0001.png"],
+                        "image" => "collar_wingtip.jpeg",
+                        "buttons" => "buttons_m_w_collar.png",
+                        "monogram_style" => "top:11px;height: 8px;",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Mandarin",
+                        "elements" => ["collar_manderian0001.png"],
+                        "customization_category_id" => "2",
+                        "insert_style_css" => "margin-top: 0px;",
+                        "insert_style" => "collar_manderian_insert0001.png",
+                        "insert_overlay" => "collar_manderian_insert_overlay.png",
+                        "insert_overlay_css" => "",
+                        "insert_full" => ["collar_manderian0001.png"],
+                        "image" => "collar_mandarin.jpeg",
+                        "monogram_style" => "top:11px;height: 8px;",
+                        "buttons" => "buttons_m_w_collar.png",
+                    )]
+            ),
+            "cuff_collar_insert" => ["p10", "p11", "p12", "p13", "p14", "p15", "p16", "p18", "p2",
+                "p23", "p28", "p33", "s1", "s10", "s11", "s12", "s13", "s17",
+                "s2", "s3", "s4", "s5", "s6", "s8"],
+            "monogram_colors" => [
+                array(
+                    "color" => "white",
+                    "backcolor" => "black",
+                    "title" => "White-Black"
+                ),
+                array(
+                    "color" => "red",
+                    "backcolor" => "white",
+                    "title" => "Red-White"
+                ),
+                array(
+                    "color" => "white",
+                    "backcolor" => "red",
+                    "title" => "White-Red"
+                ),
+                array(
+                    "color" => "#7d0a24",
+                    "backcolor" => "#ff5600",
+                    "title" => "Pink-Orange"
+                ),
+            ],
+            "monogram_style" => [
+                array(
+                    "font_style" => "font-family: 'Orbitron';",
+                    "title" => "Style 1"
+                ),
+                array(
+                    "font_style" => "font-family: 'Black Ops One';",
+                    "title" => "Style 2"
+                ),
+                array(
+                    "font_style" => "font-family: 'Bungee';",
+                    "title" => "Style 3"
+                ),
+                array(
+                    "font_style" => "font-family: 'Wallpoet';",
+                    "title" => "Style 4"
+                ),
+            ],
+        );
+        foreach ($customeele as $key => $value) {
+            
+        }
+        $this->response($customeele);
+    }
+
+    function customeElementsSuit_get() {
+        $customeele = array(
+            "keys" => [
+                array(
+                    "title" => "Jacket Style",
+                    "viewtype" => "front",
+                    "type" => "main",
+                ),
+                array(
+                    "title" => "Lapel Style & Width",
+                    "viewtype" => "front",
+                    "type" => "main",
+                ),
+                
+                array(
+                    "title" => "Breast Pocket",
+                    "viewtype" => "front",
+                    "type" => "main",
+                ),
+                
+                array(
+                    "title" => "Lower Pocket",
+                    "viewtype" => "front",
+                    "type" => "main",
+                ),
+                
+                array(
+                    "title" => "Sleeve Buttons",
+                    "viewtype" => "front",
+                    "type" => "main",
+                ),
+                
+               
+                array(
+                    "title" => "Back Vent",
+                    "viewtype" => "back",
+                    "type" => "main",
+                ),
+               
+                
+            ],
+            "collar_cuff_insert" => array(),
+            "data" => array(
+                
+                "Buttons" => [
+                    array(
+                        "status" => "1",
+                        "title" => "Standard",
+                        "customization_category_id" => "8",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Matching",
+                        "customization_category_id" => "8",
+                    )],
+             
+               
+                
+                "Breast Pocket" => [
+                    array(
+                        "status" => "1",
+                        "title" => "Slanted Pocket",
+                        "customization_category_id" => "4",
+                        "elements" => ["breast_pocket0001.png"],
+                        "image" => "slented_pocket.jpeg",
+                        "show_buttons" => "true",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Patch Pocket",
+                        "elements" => ["breast_pocket_patch0001.png", "breast_pocket0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "patch_pocket.jpeg",
+                        "show_buttons" => "false",
+                    ), array(
+                        "status" => "0",
+                        "title" => "No Pocket",
+                        "elements" => [],
+                        "customization_category_id" => "4",
+                        "image" => "no_pocket.jpeg",
+                        "show_buttons" => "true",
+                    )],
+                
+                
+                "Back Vent" => [
+                    array(
+                        "status" => "0",
+                        "title" => "No Vent",
+                        "customization_category_id" => "4",
+                        "elements" => ["back_sleeve0001.png", "back_side__no_vent0001.png"],
+                        "image" => "no_vent.jpeg",
+                        "show_buttons" => "true",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Center Vent",
+                       "elements" => ["back_sleeve0001.png", "back_side_center_vent0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "center_vent.jpeg",
+                        "show_buttons" => "false",
+                    ), array(
+                        "status" => "1",
+                        "title" => "Side Vent",
+                        "elements" => ["back_sleeve0001.png", "back_side__side_vent0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "side_vent.jpeg",
+                        "show_buttons" => "true",
+                    )],
+                
+                
+                
+                "Sleeve Buttons" => [
+                    array(
+                        "status" => "1",
+                        "title" => "4 Flat Buttons",
+                        "customization_category_id" => "4",
+                        "elements" => ["sleeve_buttons_flat_3_hole0001.png", "sleeve_buttons_flat_3_4_hole0001.png",
+                             "sleeve_buttons_flat_30001.png", "sleeve_buttons_flat_3_40001.png",],
+                        "image" => "4fbuttons.jpeg",
+                        "show_buttons" => "true",
+                    ), array(
+                        "status" => "0",
+                        "title" => "4 Kissing Buttons",
+                        "elements" => ["sleeve_buttons_kissing_3_hole0001.png", "sleeve_buttons_kissing_4_hole0001.png",
+                             "sleeve_buttons_kissing_30001.png", "sleeve_buttons_kissing_40001.png" ],
+                        "customization_category_id" => "4",
+                        "image" => "4kbuttons.jpeg",
+                        "show_buttons" => "false",
+                    ),array(
+                        "status" => "1",
+                        "title" => "3 Flat Buttons",
+                        "customization_category_id" => "4",
+                        "elements" => ["sleeve_buttons_flat_3_hole0001.png", 
+                             "sleeve_buttons_flat_30001.png", ],
+                        "image" => "4fbuttons.jpeg",
+                        "show_buttons" => "true",
+                    ), array(
+                        "status" => "0",
+                        "title" => "3 Kissing Buttons",
+                        "elements" => ["sleeve_buttons_kissing_3_hole0001.png",
+                             "sleeve_buttons_kissing_30001.png",  ],
+                        "customization_category_id" => "4",
+                        "image" => "4kbuttons.jpeg",
+                        "show_buttons" => "false",
+                    ),],
+                
+                
+                
+                "Lower Pocket" => [
+                    array(
+                        "status" => "1",
+                        "title" => "Slanted Flap Pocket",
+                        "customization_category_id" => "4",
+                        "elements" => ["lower_pocket_flap0001.png"],
+                        "image" => "lower_flap_pocket.jpeg",
+                        "show_buttons" => "true",
+                    )
+                    , array(
+                        "status" => "0",
+                        "title" => "Patch Pocket",
+                        "elements" => ["lower_pocket_patch0001.png","lower_pocket_pipe0001.png",],
+                        "customization_category_id" => "4",
+                        "image" => "lower_patch_pocket.jpeg",
+                        "show_buttons" => "false",
+                    )
+                    , array(
+                        "status" => "0",
+                        "title" => "Pipe Pocket",
+                        "elements" => ["lower_pocket_pipe0001.png",],
+                        "customization_category_id" => "4",
+                        "image" => "lower_pipe_pocket.jpeg",
+                        "show_buttons" => "false",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Slanting Pipe Pocket",
+                        "elements" => ["lower_pocket_pipe_slanting0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "lower_slanting_pipe.jpeg",
+                        "show_buttons" => "true",
+                    )],
+                
+                "Jacket Style" => [
+                    array(
+                        "status" => "1",
+                        "title" => "1 Button",
+                        "customization_category_id" => "4",
+                        "elements" => ['body_single_1_left0001.png', 'body_single_1_right0001.png', 'button_1_hole0001.png'],
+                        "image" => "1_button.jpg",
+                        "show_buttons" => "true",
+                    ), array(
+                        "status" => "0",
+                        "title" => "2 Buttons",
+                        "elements" => ['body_single_1_left0001.png', 'body_single_1_right0001.png', 'button_1_hole0001.png', 'button_2_hole0001.png'],
+                        "customization_category_id" => "4",
+                        "image" => "2_buttons.jpg",
+                        "show_buttons" => "false",
+                    ), array(
+                        "status" => "0",
+                        "title" => "3 Buttons",
+                        "elements" => ["body_single_34_left0001.png", "body_single_34_right0001.png", "buttons_3_hole0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "3_buttons.jpg",
+                        "show_buttons" => "true",
+                    )
+                    , array(
+                        "status" => "0",
+                        "title" => "4 Buttons",
+                        "elements" => ["body_single_34_left0001.png", "body_single_34_right0001.png", "buttons_4_hole0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "4_buttons.jpg",
+                        "show_buttons" => "true",
+                    )
+                    , array(
+                        "status" => "0",
+                        "title" => "4 Buttons 1 Button Fasten",
+                        "elements" => ["body_double_left0001.png", "body_double_right_40001.png", "button_41_hole0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "41_button.jpg",
+                        "show_buttons" => "true",
+                    )
+                    , array(
+                        "status" => "0",
+                        "title" => "4 Buttons 2 Buttons Fasten",
+                        "elements" => ["body_double_left0001.png", "body_double_right_40001.png", "button_41_hole0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "42_button.jpg",
+                        "show_buttons" => "true",
+                    )
+                    , array(
+                        "status" => "0",
+                        "title" => "6 Buttons 1 Button Fasten",
+                        "elements" => ["body_double_left0001.png", "body_double_right_60001.png", "button_41_hole0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "61_button.jpg",
+                        "show_buttons" => "true",
+                    )
+                    , array(
+                        "status" => "0",
+                        "title" => "6 Buttons 2 Buttons Fasten",
+                        "elements" => ["body_double_left0001.png", "body_double_right_60001.png", "button_41_hole0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "62_button.jpg",
+                        "show_buttons" => "true",
+                    )
+                ],
+                "Lapel Style & Width" => [
+                    array(
+                        "status" => "1",
+                        "title" => "Notch Laple Morden",
+                        "elements" => ["body_round0001.png"],
+                        "laple_style" => array(
+                            "1 Button" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_notch_modern0001.png"
+                            ],
+                            "2 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_notch_modern0001.png"
+                            ],
+                            "3 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_3_notch_modern0001.png"
+                            ],
+                            "4 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_3_notch_modern0001.png"
+                            ],
+                            "4 Buttons 1 Button Fasten" => [
+                                "laple_notch_upper0001.png",
+                                "laple_4_notch_modern0001.png",
+                            ],
+                            "4 Buttons 2 Buttons Fasten" => [
+                                "laple_notch_upper0001.png",
+                                "laple_4_notch_modern0001.png",
+                            ],
+                            "6 Buttons 1 Button Fasten" => [
+                                "laple_notch_upper0001.png",
+                                "laple_6_notch_modrn0001.png",
+                            ],
+                            "6 Buttons 2 Buttons Fasten" => [
+                                "laple_notch_upper0001.png",
+                                "laple_6_notch_modrn0001.png",
+                            ]
+                        ),
+                        "customization_category_id" => "6",
+                        "image" => "notch_modern.jpeg"
+                    ),
+                    array(
+                        "status" => "1",
+                        "title" => "Notch Laple Classic",
+                        "elements" => ["body_round0001.png"],
+                        "laple_style" => array(
+                            "1 Button" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_notch_classic0001.png"
+                            ],
+                            "2 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_notch_classic0001.png"
+                            ],
+                            "3 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_3_notch_classic0001.png"
+                            ],
+                            "4 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_3_notch_classic0001.png"
+                            ],
+                            "4 Buttons 1 Button Fasten" => [
+                                "laple_notch_upper0001.png",
+                                "laple_4_notch_classic0001.png",
+                            ],
+                            "4 Buttons 2 Buttons Fasten" => [
+                                "laple_notch_upper0001.png",
+                                "laple_4_notch_classic0001.png",
+                            ],
+                            "6 Buttons 1 Button Fasten" => [
+                                "laple_notch_upper0001.png",
+                                "laple_6_notch_classic0001.png",
+                            ],
+                            "6 Buttons 2 Buttons Fasten" => [
+                                "laple_notch_upper0001.png",
+                                "laple_6_notch_classic0001.png",
+                            ]
+                        ),
+                        "customization_category_id" => "6",
+                        "image" => "notch_classic.jpeg"
+                    ),
+                    array(
+                        "status" => "1",
+                        "title" => "Peak Laple Morden",
+                        "elements" => ["body_round0001.png"],
+                        "laple_style" => array(
+                            "1 Button" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_peak_morden0001.png"
+                            ],
+                            "2 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_peak_morden0001.png"
+                            ],
+                            "3 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_3_peak_morden0001.png"
+                            ],
+                            "4 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_3_peak_morden0001.png"
+                            ],
+                            "4 Buttons 1 Button Fasten" => [
+                                "laple_peak_upper0001.png",
+                                "laple_4_peack_modern0001.png",
+                            ],
+                            "4 Buttons 2 Buttons Fasten" => [
+                                "laple_peak_upper0001.png",
+                                "laple_4_peack_modern0001.png",
+                            ],
+                            "6 Buttons 1 Button Fasten" => [
+                                "laple_peak_upper0001.png",
+                                "laple_6_peack_morden0001.png",
+                            ],
+                            "6 Buttons 2 Buttons Fasten" => [
+                                "laple_peak_upper0001.png",
+                                "laple_6_peack_morden0001.png",
+                            ]
+                        ),
+                        "customization_category_id" => "6",
+                        "image" => "peak_modern.jpeg"
+                    ),
+                    array(
+                        "status" => "1",
+                        "title" => "Peak Laple Classic",
+                        "elements" => ["body_round0001.png"],
+                        "laple_style" => array(
+                            "1 Button" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_peak_classic0001.png"
+                            ],
+                            "2 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_peak_classic0001.png"
+                            ],
+                            "3 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_3_peak_classic0001.png"
+                            ],
+                            "4 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_3_peak_classic0001.png"
+                            ],
+                            "4 Buttons 1 Button Fasten" => [
+                                "laple_peak_upper0001.png",
+                                "laple_4_peack_classic0001.png",
+                            ],
+                            "4 Buttons 2 Buttons Fasten" => [
+                                "laple_peak_upper0001.png",
+                                "laple_4_peack_classic0001.png",
+                            ],
+                            "6 Buttons 1 Button Fasten" => [
+                                "laple_peak_upper0001.png",
+                                "laple_6_peack_classic0001.png",
+                            ],
+                            "6 Buttons 2 Buttons Fasten" => [
+                                "laple_peak_upper0001.png",
+                                "laple_6_peack_classic0001.png",
+                            ]
+                        ),
+                        "customization_category_id" => "6",
+                        "image" => "peak_classic.jpeg"
+                    ),
+                    array(
+                        "status" => "1",
+                        "title" => "Shawal Laple Modern",
+                        "elements" => ["body_round0001.png"],
+                        "laple_style" => array(
+                            "1 Button" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_shwal_mordern0001.png"
+                            ],
+                            "2 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_shwal_mordern0001.png"
+                            ],
+                            "3 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_3_shwal_modern0001.png"
+                            ],
+                            "4 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_3_shwal_modern0001.png"
+                            ],
+                            "4 Buttons 1 Button Fasten" => [
+                                "laple_peak_upper0001.png",
+                                "laple_4_shwal_morden0001.png",
+                            ],
+                            "4 Buttons 2 Buttons Fasten" => [
+                                "laple_peak_upper0001.png",
+                                "laple_4_shwal_morden0001.png",
+                            ],
+                            "6 Buttons 1 Button Fasten" => [
+                                "laple_peak_upper0001.png",
+                                "laple_6_shwal_modern0001.png",
+                            ],
+                            "6 Buttons 2 Buttons Fasten" => [
+                                "laple_peak_upper0001.png",
+                                "laple_6_shwal_modern0001.png",
+                            ]
+                        ),
+                        "customization_category_id" => "6",
+                        "image" => "shawl_modern.jpeg"
+                    ),
+                    array(
+                        "status" => "1",
+                        "title" => "Shawal Laple Classic",
+                        "elements" => ["body_round0001.png"],
+                        "laple_style" => array(
+                            "1 Button" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_shwal_classic0001.png"
+                            ],
+                            "2 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_shwal_classic0001.png"
+                            ],
+                            "3 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_3_shwal_classic0001.png"
+                            ],
+                            "4 Buttons" => [
+                                "laple_single_notch_peak_upper0001.png",
+                                "laple_single_3_shwal_classic0001.png"
+                            ],
+                            "4 Buttons 1 Button Fasten" => [
+                                "laple_peak_upper0001.png",
+                                "laple_4_shwal_classic0001.png",
+                            ],
+                            "4 Buttons 2 Buttons Fasten" => [
+                                "laple_peak_upper0001.png",
+                                "laple_4_shwal_classic0001.png",
+                            ],
+                            "6 Buttons 1 Button Fasten" => [
+                                "laple_peak_upper0001.png",
+                                "laple_6_shwal_classic0001.png",
+                            ],
+                            "6 Buttons 2 Buttons Fasten" => [
+                                "laple_peak_upper0001.png",
+                                "laple_6_shwal_classic0001.png",
+                            ]
+                        ),
+                        "customization_category_id" => "6",
+                        "image" => "shawl_classic.jpeg"
+                    ),
+                ],
+                
+                
                 "Collar" => [
                     array(
                         "status" => "1",

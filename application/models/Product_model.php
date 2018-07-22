@@ -103,7 +103,7 @@ class Product_model extends CI_Model {
 
     /////Cart management 
     //get cart data
-    function cartData($user_id = 0) {
+    function cartData($user_id = 0, $item_type=0) {
         if ($user_id != 0) {
             $this->db->where('user_id', $user_id);
             $this->db->where('order_id', '0');
@@ -189,14 +189,18 @@ class Product_model extends CI_Model {
                 'sku' => $product_details['sku'],
                 'title' => $product_details['title'],
                 'price' => $product_details['price'],
+                'item_type' => $product_details['item_type'],
                 'total_price' => $product_details['price'],
-                'file_name' => custome_image_server .'/output/' . $product_details['sku']."/shirt0001.png",
+                'file_name' => custome_image_server . '/output/' . $product_details['sku'] . "/shirt0001.png",
                 'quantity' => $quantity,
                 'user_id' => $user_id,
                 'credit_limit' => $product_details['credit_limit'] ? $product_details['credit_limit'] : 0,
                 'product_id' => $product_id,
                 'op_date_time' => date('Y-m-d H:i:s'),
             );
+            if ($product_details['item_type'] == 'Jacket') {
+                $product_dict['file_name'] = custome_image_server_suit . '/' . $product_details['sku'] . "/" . $product_details['sku'] . "_h0001.png";
+            }
             if (isset($cartdata['products'][$product_id])) {
                 if ($setSession) {
                     $total_price = $product_details['price'] * $quantity;
@@ -235,14 +239,18 @@ class Product_model extends CI_Model {
                 $product_dict = array(
                     'sku' => $product_details['sku'],
                     'title' => $product_details['title'],
+                    'item_type' => $product_details['item_type'],
                     'price' => $product_details['price'],
                     'total_price' => $product_details['price'],
-                    'file_name' => custome_image_server .'/output/' . $product_details['sku']."/shirt0001.png",
+                    'file_name' => custome_image_server . '/output/' . $product_details['sku'] . "/shirt0001.png",
                     'quantity' => 1,
                     'product_id' => $product_id,
                     'date' => date('Y-m-d'),
                     'time' => date('H:i:s'),
                 );
+                if ($product_details['item_type'] == 'Jacket') {
+                    $product_dict['file_name'] = custome_image_server_suit . '/' . $product_details['sku'] . "/" . $product_details['sku'] . "_h0001.png";
+                }
                 $session_cart['products'][$product_id] = $product_dict;
                 $this->session->set_userdata('session_cart', $session_cart);
             }
@@ -433,7 +441,7 @@ class Product_model extends CI_Model {
                     'vendor_order_no' => $vendor_order,
                     'vendor_id' => $value['vendor']->id,
                     'vendor_email' => $value['vendor']->email,
-                    'vendor_name'=>$value['vendor']->first_name ." ". $value['vendor']->last_name,
+                    'vendor_name' => $value['vendor']->first_name . " " . $value['vendor']->last_name,
                     'status' => "Order Generated",
                     'remark' => "Vendor Order Generated",
                 );

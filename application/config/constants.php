@@ -7,6 +7,9 @@ $baselink = 'http://' . $_SERVER['SERVER_NAME'];
 $baselinkmain = strpos($baselink, '192.168') ? $baselink . '/customshirtadmin/' : 'http://nitafashions.com/customshirtadmin/';
 define('imageserver', $baselinkmain . "assets_main/productimages/");
 
+
+
+
 //define('custome_image_server', 'http://api.octopuscart.com');
 
 //
@@ -17,6 +20,11 @@ define('imageserver', $baselinkmain . "assets_main/productimages/");
 //} 
 
 define('custome_image_server', $baselink.'/fabrics');
+
+
+define('custome_image_server_suit', $baselink.'/suitapi');
+
+
 
  // define('custome_image_server', 'http://w2p.nitafashions.com');
 

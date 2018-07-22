@@ -150,6 +150,13 @@ class Product extends CI_Controller {
         $data = [];
         $this->load->view('Product/customization_shirt', $data);
     }
+    
+    
+    function customizationSuit() {
+        $session_cart = $this->Product_model->cartData();
+        $data = [];
+        $this->load->view('Product/customization_suit', $data);
+    }
 
     //end of customization shrit
 

@@ -8,6 +8,12 @@ $this->load->view('layout/header');
         padding: 6px;
         color: #fff!important;
     }
+    
+    .custom_block_item{
+        padding:10px;
+        border:3px solid #000;
+        margin:10px;
+    }
 </style>
 
 <!-- Slider -->
@@ -61,54 +67,114 @@ $this->load->view('layout/header');
                 </div>
 
                 <!-- Cart Details -->
-                <ul class="row cart-details" ng-repeat="product in globleCartData.products" >
-                    <li class="col-sm-6">
-                        <div class="media"> 
-                            <!-- Media Image -->
-                            <div class="media-left media-middle"> 
-                                <a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}" class="item-img"> 
-                                    <img class="media-object" src="{{product.file_name}}" alt="" style="height: 100px;width: auto;"> 
-                                </a> 
-                            </div>
+                <div class="custom_block_item">
+                    <ul class="row cart-details" ng-repeat="product in globleCartData.products" ng-if="product.item_type == 'Jacket'">
+                        <li class="col-sm-6">
+                            <div class="media"> 
+                                <!-- Media Image -->
+                                <div class="media-left media-middle"> 
+                                    <a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}" class="item-img"> 
+                                        <img class="media-object" src="{{product.file_name}}" alt="" style="height: 100px;width: auto;"> 
+                                    </a> 
+                                </div>
 
-                            <!-- Item Name -->
-                            <div class="media-body">
-                                <div class="position-center-center">
-                                    <h5>{{product.title}}</h5>
-                                    <p>{{product.sku}}</p>
+                                <!-- Item Name -->
+                                <div class="media-body">
+                                    <div class="position-center-center">
+                                        <h5>{{product.title}}</h5>
+                                        <p>{{product.sku}}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
 
-                    <!-- PRICE -->
-                    <li class="col-sm-2">
-                        <div class="position-center-center"> <span class="price">{{product.price|currency:" "}}</span> </div>
-                    </li>
+                        <!-- PRICE -->
+                        <li class="col-sm-2">
+                            <div class="position-center-center"> <span class="price">{{product.price|currency:" "}}</span> </div>
+                        </li>
 
-                    <!-- QTY -->
-                    <li class="col-sm-1">
-                        <div class="position-center-center">
-                            <div class="quinty"> 
-                                <!-- QTY -->
-                                <input type="number" value="{{product.quantity}}"  ng-model="product.quantity" min="1" max="5">
-                                <button class="btn btn-default btn-xs cartbutton" style="color: white" ng-click="updateCart(product.product_id, product.quantity)">Update</button>
+                        <!-- QTY -->
+                        <li class="col-sm-1">
+                            <div class="position-center-center">
+                                <div class="quinty"> 
+                                    <!-- QTY -->
+                                    <input type="number" value="{{product.quantity}}"  ng-model="product.quantity" min="1" max="5">
+                                    <button class="btn btn-default btn-xs cartbutton" style="color: white" ng-click="updateCart(product.product_id, product.quantity)">Update</button>
+                                </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
 
-                    <!-- TOTAL PRICE -->
-                    <li class="col-sm-2">
-                        <div class="position-center-center"> <span class="price">{{product.total_price|currency:"<?php echo globle_currency_type;?>"}}</span> </div>
-                    </li>
+                        <!-- TOTAL PRICE -->
+                        <li class="col-sm-2">
+                            <div class="position-center-center"> <span class="price">{{product.total_price|currency:"<?php echo globle_currency_type; ?>"}}</span> </div>
+                        </li>
 
-                    <!-- REMOVE -->
-                    <li class="col-sm-1">
-                        <div class="position-center-center"> <a href="#." ng-click="removeCart(product.product_id)"><i class="icon-close"></i></a> </div>
-                    </li>
+                        <!-- REMOVE -->
+                        <li class="col-sm-1">
+                            <div class="position-center-center"> <a href="#." ng-click="removeCart(product.product_id)"><i class="icon-close"></i></a> </div>
+                        </li>
 
-                </ul>
+                    </ul>
+                    <div class=" text-right margin-top-30">
+                        <div class="coupn-btn"> <a href="<?php echo site_url("Product/customizationSuit"); ?>" class="btn btn-inverse">Customize Now</a> </div>
+                    </div>
+                </div>
 
+
+                <!-- Cart Details -->
+                <div class="custom_block_item">
+                    <ul class="row cart-details" ng-repeat="product in globleCartData.products" ng-if="product.item_type != 'Jacket'">
+                        <li class="col-sm-6">
+                            <div class="media"> 
+                                <!-- Media Image -->
+                                <div class="media-left media-middle"> 
+                                    <a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}" class="item-img"> 
+                                        <img class="media-object" src="{{product.file_name}}" alt="" style="height: 100px;width: auto;"> 
+                                    </a> 
+                                </div>
+
+                                <!-- Item Name -->
+                                <div class="media-body">
+                                    <div class="position-center-center">
+                                        <h5>{{product.title}}</h5>
+                                        <p>{{product.sku}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- PRICE -->
+                        <li class="col-sm-2">
+                            <div class="position-center-center"> <span class="price">{{product.price|currency:" "}}</span> </div>
+                        </li>
+
+                        <!-- QTY -->
+                        <li class="col-sm-1">
+                            <div class="position-center-center">
+                                <div class="quinty"> 
+                                    <!-- QTY -->
+                                    <input type="number" value="{{product.quantity}}"  ng-model="product.quantity" min="1" max="5">
+                                    <button class="btn btn-default btn-xs cartbutton" style="color: white" ng-click="updateCart(product.product_id, product.quantity)">Update</button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- TOTAL PRICE -->
+                        <li class="col-sm-2">
+                            <div class="position-center-center"> <span class="price">{{product.total_price|currency:"<?php echo globle_currency_type; ?>"}}</span> </div>
+                        </li>
+
+                        <!-- REMOVE -->
+                        <li class="col-sm-1">
+                            <div class="position-center-center"> <a href="#." ng-click="removeCart(product.product_id)"><i class="icon-close"></i></a> </div>
+                        </li>
+
+                    </ul>
+
+                    <div class=" text-right margin-top-30">
+                        <div class="coupn-btn"> <a href="<?php echo site_url("Product/customizationShirt"); ?>" class="btn btn-inverse">Customize Now</a> </div>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -121,26 +187,24 @@ $this->load->view('layout/header');
             <!-- SHOPPING INFORMATION -->
             <div class="cart-ship-info margin-top-0"> 
 
-           
+
                 <div class="row">
-                    
+
 
                     <!-- SUB TOTAL -->
                     <div class="col-sm-12">
                         <h6>grand total</h6>
                         <div class="grand-total">
                             <div class="order-detail">
-                                <p ng-repeat="product in globleCartData.products">{{product.title}} <span>{{product.total_price|currency:"<?php echo globle_currency_type;?>"}}</span></p>
-                         
+                                <p ng-repeat="product in globleCartData.products">{{product.title}} <span>{{product.total_price|currency:"<?php echo globle_currency_type; ?>"}}</span></p>
+
 
                                 <!-- SUB TOTAL -->
-                                <p class="all-total">TOTAL COST <span>{{globleCartData.total_price |currency:"<?php echo globle_currency_type;?>"}}</span></p>
+                                <p class="all-total">TOTAL COST <span>{{globleCartData.total_price|currency:"<?php echo globle_currency_type; ?>"}}</span></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 text-right margin-top-30">
-                        <div class="coupn-btn"> <a href="<?php echo site_url("Product/customizationShirt"); ?>" class="btn btn-inverse">Customize Now</a> </div>
-                    </div>
+
                 </div>
             </div>
         </div>

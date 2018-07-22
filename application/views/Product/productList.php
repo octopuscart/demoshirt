@@ -149,7 +149,7 @@ $this->load->view('layout/header');
                                     </div>
                                 </article>
                                 <div class="info" style="    height: 80px;"> 
-                                    <a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}">{{product.title}} ({{product.sku}}) </a> 
+                                    <a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}">{{product.title}} ({{product.sku}}) {{product.item_type}} </a> 
                                     <span class="price disc">
                                         <span class="line-through" ng-if="product.sale_price > 0">{{product.regular_price|currency:"<?php echo globle_currency_type;?>"}}</span>
                                         <span>{{product.price|currency:"<?php echo globle_currency_type;?>"}}</span>

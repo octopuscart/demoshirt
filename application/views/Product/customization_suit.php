@@ -33,12 +33,12 @@ $this->load->view('layout/header');
 
     .shirt11_model{
         z-index: 200;
-        margin-top: 2.49px;
-        margin-left: 1px;
+        margin-top: 1px;
+        margin-left: -0.5px;
     }
 
     .shirt_model{
-        margin-top: 1.50px
+        /*margin-top: 1.50px*/
     }
 
 
@@ -103,43 +103,58 @@ $this->load->view('layout/header');
                                     </button>
                                     <div class="fontview_custom customization_block animated " ng-if="screencustom.view_type == 'front'">
                                         <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/back_no_vent0001.png" class="fixpos animated" >
-                                       
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/shirtcuff.png" class="fixpos animated" >
+
+
                                         <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/sleeve_new_rl_n0001.png" class="fixpos animated" >
+
+
+
+
 
                                         <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in [selecteElements[fab.sku]['Lapel Style & Width'].laple_style[selecteElements[fab.sku]['Jacket Style'].title][0]]">
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/shirt.png" class="fixpos animated shirt_model" >
+
+
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/shirto1.png" class="fixpos animated shirt_model" >
 
                                         <!--front-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].elements">
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].elements" style="{{$index==0?'    margin-left: -1px;':''}}">
+
+                                        <!--buttons-->
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].buttons" >
+                                          <!--buttons-->
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].extra_button" >
 
 
 
                                         <!--breast pocket-->
                                         <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Breast Pocket'].elements">
 
-                                        
+
                                         <!--lower pocket-->
                                         <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Lower Pocket'].elements">
 
-                                        
+
                                         <!--Sleeve Buttons-->
                                         <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Sleeve Buttons'].elements">
 
-                                        
+
                                         <!--laple-->
                                         <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Lapel Style & Width'].laple_style[selecteElements[fab.sku]['Jacket Style'].title]">
 
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/shirt1.png" class="fixpos animated shirt11_model" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/shirto.png" class="fixpos animated shirt11_model" >
 
 
-                                       
+
                                     </div>   
                                     <div class="backview_custom customization_block  animated " ng-if="screencustom.view_type == 'back'">
-                           
 
-                                          <!--pocket-->
+
+                                        <!--pocket-->
                                         <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Back Vent'].elements">
 
                                     </div> 

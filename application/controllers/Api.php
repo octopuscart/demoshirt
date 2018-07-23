@@ -726,7 +726,7 @@ class Api extends REST_Controller {
                     ), array(
                         "status" => "0",
                         "title" => "Patch Pocket",
-                        "elements" => ["breast_pocket_patch0001.png", "breast_pocket0001.png"],
+                        "elements" => ["breast_patch_pocket0001.png", ],
                         "customization_category_id" => "4",
                         "image" => "patch_pocket.jpeg",
                         "show_buttons" => "false",
@@ -808,14 +808,22 @@ class Api extends REST_Controller {
                         "status" => "1",
                         "title" => "Slanted Flap Pocket",
                         "customization_category_id" => "4",
-                        "elements" => ["lower_pocket_flap0001.png"],
+                        "elements" => ["lower_pocket_slanting_flap0001.png"],
+                        "image" => "lower_flap_pocket.jpeg",
+                        "show_buttons" => "true",
+                    )
+                    ,array(
+                        "status" => "1",
+                        "title" => "Straight Flap Pocket",
+                        "customization_category_id" => "4",
+                        "elements" => ["lower_pocket_flap0001.png", ],
                         "image" => "lower_flap_pocket.jpeg",
                         "show_buttons" => "true",
                     )
                     , array(
                         "status" => "0",
                         "title" => "Patch Pocket",
-                        "elements" => ["lower_pocket_patch0001.png","lower_pocket_pipe0001.png",],
+                        "elements" => ["lower_pocket_patch0001.png",],
                         "customization_category_id" => "4",
                         "image" => "lower_patch_pocket.jpeg",
                         "show_buttons" => "false",
@@ -823,14 +831,14 @@ class Api extends REST_Controller {
                     , array(
                         "status" => "0",
                         "title" => "Pipe Pocket",
-                        "elements" => ["lower_pocket_pipe0001.png",],
+                        "elements" => ["lower_pipe_pocket0001.png",],
                         "customization_category_id" => "4",
                         "image" => "lower_pipe_pocket.jpeg",
                         "show_buttons" => "false",
                     ), array(
                         "status" => "0",
                         "title" => "Slanting Pipe Pocket",
-                        "elements" => ["lower_pocket_pipe_slanting0001.png"],
+                        "elements" => ["lower_slanting_pocket0001.png"],
                         "customization_category_id" => "4",
                         "image" => "lower_slanting_pipe.jpeg",
                         "show_buttons" => "true",
@@ -843,28 +851,32 @@ class Api extends REST_Controller {
                         "customization_category_id" => "4",
                         "elements" => ['body_single_1_left0001.png', 'body_single_1_right0001.png', 'button_1_hole0001.png'],
                         "image" => "1_button.jpg",
+                        "buttons"=>["buttons_10001.png"],
                         "show_buttons" => "true",
                     ), array(
                         "status" => "0",
                         "title" => "2 Buttons",
-                        "elements" => ['body_single_1_left0001.png', 'body_single_1_right0001.png', 'button_1_hole0001.png', 'button_2_hole0001.png'],
+                        "elements" => ['body_single_1_left0001.png', 'body_single_1_right0001.png', 'button_2_hole0001.png'],
                         "customization_category_id" => "4",
                         "image" => "2_buttons.jpg",
+                        "buttons"=>["buttons_10001.png", "buttons_20001.png"],
                         "show_buttons" => "false",
                     ), array(
                         "status" => "0",
                         "title" => "3 Buttons",
-                        "elements" => ["body_single_34_left0001.png", "body_single_34_right0001.png", "buttons_3_hole0001.png"],
+                        "elements" => ["body_single_34_right0001.png", "body_single_34_left0001.png", "buttons_3_hole0001.png",],
                         "customization_category_id" => "4",
                         "image" => "3_buttons.jpg",
+                        "buttons"=>["button_30001.png", "buttons_3_last0001.png"],
                         "show_buttons" => "true",
                     )
                     , array(
                         "status" => "0",
                         "title" => "4 Buttons",
-                        "elements" => ["body_single_34_left0001.png", "body_single_34_right0001.png", "buttons_4_hole0001.png"],
+                        "elements" => ["body_single_34_right0001.png", "body_single_34_left0001.png", "buttons_4_hole0001.png"],
                         "customization_category_id" => "4",
                         "image" => "4_buttons.jpg",
+                        "buttons"=>["buttons_40001.png", "buttons_4_last0001.png"],
                         "show_buttons" => "true",
                     )
                     , array(
@@ -873,6 +885,7 @@ class Api extends REST_Controller {
                         "elements" => ["body_double_left0001.png", "body_double_right_40001.png", "button_41_hole0001.png"],
                         "customization_category_id" => "4",
                         "image" => "41_button.jpg",
+                        "buttons"=>["button_410001.png",],
                         "show_buttons" => "true",
                     )
                     , array(
@@ -880,23 +893,28 @@ class Api extends REST_Controller {
                         "title" => "4 Buttons 2 Buttons Fasten",
                         "elements" => ["body_double_left0001.png", "body_double_right_40001.png", "button_41_hole0001.png"],
                         "customization_category_id" => "4",
+                        "buttons"=>["button_410001.png", "button_420001.png"],
                         "image" => "42_button.jpg",
                         "show_buttons" => "true",
                     )
                     , array(
                         "status" => "0",
                         "title" => "6 Buttons 1 Button Fasten",
-                        "elements" => ["body_double_left0001.png", "body_double_right_60001.png", "button_41_hole0001.png"],
+                        "elements" => ["body_double_left0001.png", "body_double_right_60001.png", "button_61_hole0001.png"],
                         "customization_category_id" => "4",
                         "image" => "61_button.jpg",
+                        "buttons"=>["button_610001.png"],
+                        "extra_button"=>["button_61_last0001.png"],
                         "show_buttons" => "true",
                     )
                     , array(
                         "status" => "0",
                         "title" => "6 Buttons 2 Buttons Fasten",
-                        "elements" => ["body_double_left0001.png", "body_double_right_60001.png", "button_41_hole0001.png"],
+                        "elements" => ["body_double_left0001.png", "body_double_right_60001.png", "button_61_hole0001.png"],
                         "customization_category_id" => "4",
                         "image" => "62_button.jpg",
+                        "buttons"=>["button_610001.png", "button_620001.png"],
+                         "extra_button"=>["button_61_last0001.png"],
                         "show_buttons" => "true",
                     )
                 ],
@@ -943,7 +961,7 @@ class Api extends REST_Controller {
                         "image" => "notch_modern.jpeg"
                     ),
                     array(
-                        "status" => "1",
+                        "status" => "0",
                         "title" => "Notch Laple Classic",
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
@@ -984,7 +1002,7 @@ class Api extends REST_Controller {
                         "image" => "notch_classic.jpeg"
                     ),
                     array(
-                        "status" => "1",
+                        "status" => "0",
                         "title" => "Peak Laple Morden",
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
@@ -1025,7 +1043,7 @@ class Api extends REST_Controller {
                         "image" => "peak_modern.jpeg"
                     ),
                     array(
-                        "status" => "1",
+                        "status" => "0",
                         "title" => "Peak Laple Classic",
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
@@ -1066,40 +1084,40 @@ class Api extends REST_Controller {
                         "image" => "peak_classic.jpeg"
                     ),
                     array(
-                        "status" => "1",
+                        "status" => "0",
                         "title" => "Shawal Laple Modern",
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => [
-                                "laple_single_notch_peak_upper0001.png",
+                              
                                 "laple_single_shwal_mordern0001.png"
                             ],
                             "2 Buttons" => [
-                                "laple_single_notch_peak_upper0001.png",
+                               
                                 "laple_single_shwal_mordern0001.png"
                             ],
                             "3 Buttons" => [
-                                "laple_single_notch_peak_upper0001.png",
+                              
                                 "laple_single_3_shwal_modern0001.png"
                             ],
                             "4 Buttons" => [
-                                "laple_single_notch_peak_upper0001.png",
+                              
                                 "laple_single_3_shwal_modern0001.png"
                             ],
                             "4 Buttons 1 Button Fasten" => [
-                                "laple_peak_upper0001.png",
+                               
                                 "laple_4_shwal_morden0001.png",
                             ],
                             "4 Buttons 2 Buttons Fasten" => [
-                                "laple_peak_upper0001.png",
+                              
                                 "laple_4_shwal_morden0001.png",
                             ],
                             "6 Buttons 1 Button Fasten" => [
-                                "laple_peak_upper0001.png",
+                               
                                 "laple_6_shwal_modern0001.png",
                             ],
                             "6 Buttons 2 Buttons Fasten" => [
-                                "laple_peak_upper0001.png",
+                               
                                 "laple_6_shwal_modern0001.png",
                             ]
                         ),
@@ -1107,40 +1125,40 @@ class Api extends REST_Controller {
                         "image" => "shawl_modern.jpeg"
                     ),
                     array(
-                        "status" => "1",
+                        "status" => "0",
                         "title" => "Shawal Laple Classic",
                         "elements" => ["body_round0001.png"],
                         "laple_style" => array(
                             "1 Button" => [
-                                "laple_single_notch_peak_upper0001.png",
+                          
                                 "laple_single_shwal_classic0001.png"
                             ],
                             "2 Buttons" => [
-                                "laple_single_notch_peak_upper0001.png",
+                              
                                 "laple_single_shwal_classic0001.png"
                             ],
                             "3 Buttons" => [
-                                "laple_single_notch_peak_upper0001.png",
+                              
                                 "laple_single_3_shwal_classic0001.png"
                             ],
                             "4 Buttons" => [
-                                "laple_single_notch_peak_upper0001.png",
+                               
                                 "laple_single_3_shwal_classic0001.png"
                             ],
                             "4 Buttons 1 Button Fasten" => [
-                                "laple_peak_upper0001.png",
+                                
                                 "laple_4_shwal_classic0001.png",
                             ],
                             "4 Buttons 2 Buttons Fasten" => [
-                                "laple_peak_upper0001.png",
+                                
                                 "laple_4_shwal_classic0001.png",
                             ],
                             "6 Buttons 1 Button Fasten" => [
-                                "laple_peak_upper0001.png",
+                               
                                 "laple_6_shwal_classic0001.png",
                             ],
                             "6 Buttons 2 Buttons Fasten" => [
-                                "laple_peak_upper0001.png",
+                              
                                 "laple_6_shwal_classic0001.png",
                             ]
                         ),

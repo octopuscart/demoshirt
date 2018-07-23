@@ -109,50 +109,62 @@ $this->load->view('layout/header');
                 <!-- Main Shop Itesm -->
                 <div class="col-md-9" ng-if="checkproduct == 1" style="margin-top: 30px;"> 
                     <!-- SHOWING INFO -->
-<!--                    <div class="showing-info">
-
-                        <div class="side-bar" style="float: left;
-                             width: 68%;padding: 0 5px">
-                            <ul class="tags" ng-if="pricerange.min > 0" style="float: left;    float: left;
-                                border: 1px solid #eee;padding-right:10px;    margin-left: 10px;
-                                padding-top: 5px;">
-                                <li>
-                                    <a href="#." style="padding: 5px;background: #fff; margin: 0;    margin-left: 10px;">
-                                        Price Range :  {{pricerange.min}} - {{pricerange.max}}
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <ul class="tags" ng-repeat="(k, attr) in attribute_checked_pre" style="float: left;    float: left;
-                                border: 1px solid #eee;padding-right:10px;    margin-left: 10px;
-                                padding-top: 5px;">
-                                <li><a href="#." style="padding: 5px;background: #fff; margin: 0;    margin-left: 10px;">{{k}}</a></li>
-                                <li ng-repeat="av in attr"> 
-                                    <a href="#." style="padding: 5px;    margin: 0;    margin-left: 10px;">{{av.attribute_value}}</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <p class="pull-right"  ng-if="productResults.products.length">Showing {{productResults.products.length}} results</p>
-                    </div>-->
+                    <!--                    <div class="showing-info">
+                    
+                                            <div class="side-bar" style="float: left;
+                                                 width: 68%;padding: 0 5px">
+                                                <ul class="tags" ng-if="pricerange.min > 0" style="float: left;    float: left;
+                                                    border: 1px solid #eee;padding-right:10px;    margin-left: 10px;
+                                                    padding-top: 5px;">
+                                                    <li>
+                                                        <a href="#." style="padding: 5px;background: #fff; margin: 0;    margin-left: 10px;">
+                                                            Price Range :  {{pricerange.min}} - {{pricerange.max}}
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                    
+                                                <ul class="tags" ng-repeat="(k, attr) in attribute_checked_pre" style="float: left;    float: left;
+                                                    border: 1px solid #eee;padding-right:10px;    margin-left: 10px;
+                                                    padding-top: 5px;">
+                                                    <li><a href="#." style="padding: 5px;background: #fff; margin: 0;    margin-left: 10px;">{{k}}</a></li>
+                                                    <li ng-repeat="av in attr"> 
+                                                        <a href="#." style="padding: 5px;    margin: 0;    margin-left: 10px;">{{av.attribute_value}}</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                    
+                                            <p class="pull-right"  ng-if="productResults.products.length">Showing {{productResults.products.length}} results</p>
+                                        </div>-->
                     <div class="row" ng-if="productResults.products.length"> 
                         <!-- Item -->
                         <div class="col-sm-4" ng-repeat="(k, product) in productResults.products">
                             <div class="productblock">
                                 <article class="shop-artical" style="    margin-bottom: 0px;"> 
-                                    <div class="product_image_back" style="background: url(<?php echo custome_image_server; ?>/output/{{product.sku}}/shirt0001.png)"></div>
+
+                                    <div ng-if ="product.item_type == 'Jacket'">
+
+                                        <div class="product_image_back" style="background: url(<?php echo custome_image_server_suit; ?>/{{product.sku}}/fabric0001.png)"></div>
+                                    </div>
+
+                                    <div ng-if ="product.item_type != 'Jacket'">
+
+                                        <div class="product_image_back" style="background: url(<?php echo custome_image_server; ?>/output/{{product.sku}}/shirt0001.png)"></div>
+                                    </div>
+
                                     <!-- Sale -->
                                     <div class="item-sale" ng-if="product.sale_price > 0">Sale</div>
+
                                     <div class="item-hover" style="background: url(<?php echo custome_image_server; ?>/output/{{product.sku}}/cloth0001.png);background-size: cover;"> 
+
                                         <a href="#." class="btn" style="    font-size: 9px;color: white;" ng-click="addToCart(product.product_id, 1)">add to cart</a> 
                                         <a href="#." class="btn by" style="    font-size: 9px;color: white;">Customize</a> 
                                     </div>
                                 </article>
                                 <div class="info" style="    height: 80px;"> 
-                                    <a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}">{{product.title}} ({{product.sku}}) {{product.item_type}} </a> 
+                                    <a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}">{{product.title}} ({{product.sku}})  </a> 
                                     <span class="price disc">
-                                        <span class="line-through" ng-if="product.sale_price > 0">{{product.regular_price|currency:"<?php echo globle_currency_type;?>"}}</span>
-                                        <span>{{product.price|currency:"<?php echo globle_currency_type;?>"}}</span>
+                                        <span class="line-through" ng-if="product.sale_price > 0">{{product.regular_price|currency:"<?php echo globle_currency_type; ?>"}}</span>
+                                        <span>{{product.price|currency:"<?php echo globle_currency_type; ?>"}}</span>
                                     </span>
                                 </div>
                             </div>

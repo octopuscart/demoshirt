@@ -138,7 +138,7 @@ $this->load->view('layout/header');
 
                                         <!--front-->
                                         <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].elements" >
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].overlay" >
+                                       
                                         <img src="<?php echo custome_image_server_suit; ?>/body_overlay.png" class="fixpos animated shirt_model" >
                                         <img src="<?php echo custome_image_server_suit; ?>/threads/{{selecteElements[fab.sku]['Button Thread'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].button_hole">
                                         <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].button_hole" ng-if="selecteElements[fab.sku]['Button Thread'].title=='Matching'">
@@ -148,6 +148,7 @@ $this->load->view('layout/header');
                                         <!--buttons-->
                                       <!--<img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].extra_button" >-->
                                         <img src="<?php echo custome_image_server_suit; ?>/buttons/{{selecteElements[fab.sku]['Buttons'].folder}}/{{img}}.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].extra_button" >
+                                         <img src="<?php echo custome_image_server_suit; ?>/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].overlay" >
 
 
                                         <!--breast pocket-->

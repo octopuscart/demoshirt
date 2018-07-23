@@ -926,15 +926,15 @@ class Api extends REST_Controller {
                         "buttons" => ["sleeve_buttons_kissing_30001"],
                         "show_buttons" => "false",
                     ),
-                    array(
-                        "status" => "1",
-                        "title" => "4 Flat Buttons First Contrast",
-                        "customization_category_id" => "4",
-                        "elements" => ["sleeve_buttons_flat_3_hole0001.png", "sleeve_buttons_flat_3_4_hole0001.png",],
-                        "image" => "4fbuttons.jpeg",
-                        "buttons" => ["sleeve_buttons_flat_30001",],
-                        "show_buttons" => "true",
-                    ),
+//                    array(
+//                        "status" => "0",
+//                        "title" => "4 Flat Buttons First Contrast",
+//                        "customization_category_id" => "4",
+//                        "elements" => ["sleeve_buttons_flat_3_hole0001.png", "sleeve_buttons_flat_3_4_hole0001.png",],
+//                        "image" => "4fbuttons.jpeg",
+//                        "buttons" => ["sleeve_buttons_flat_30001",],
+//                        "show_buttons" => "true",
+//                    ),
                 ],
                 "Lower Pocket" => [
                     array(

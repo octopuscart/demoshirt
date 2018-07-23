@@ -44,7 +44,8 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
         $scope.screencustom = {
             'view_type': 'front',
             "fabric": $scope.cartFabrics[0].sku,
-            "productobj": $scope.cartFabrics[0]
+            "productobj": $scope.cartFabrics[0],
+            "style_select":"with_shirt",
         };
         var url = baseurl + "Api/customeElementsSuit";
         $http.get(url).then(function (rdata) {
@@ -72,6 +73,9 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
     }
 
 
+     $scope.show_shirt = function(shirtstyle){
+         $scope.screencustom.style_select = shirtstyle;
+     }
 
 
     $scope.fabricCartData = {};//cart data

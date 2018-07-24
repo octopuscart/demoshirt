@@ -199,7 +199,7 @@ class Product_model extends CI_Model {
                 'op_date_time' => date('Y-m-d H:i:s'),
             );
             if ($product_details['item_type'] == 'Jacket') {
-                $product_dict['file_name'] = custome_image_server_suit . '/' . $product_details['sku'] . "/" . $product_details['sku'] . "_h0001.png";
+                $product_dict['file_name'] = custome_image_server_suit . '/' . $product_details['sku'] . "/fabric0001.png";
             }
             if (isset($cartdata['products'][$product_id])) {
                 if ($setSession) {
@@ -249,7 +249,7 @@ class Product_model extends CI_Model {
                     'time' => date('H:i:s'),
                 );
                 if ($product_details['item_type'] == 'Jacket') {
-                    $product_dict['file_name'] = custome_image_server_suit . '/' . $product_details['sku'] . "/" . $product_details['sku'] . "_h0001.png";
+                    $product_dict['file_name'] = custome_image_server_suit . '/' . $product_details['sku'] .  "/fabric0001.png";
                 }
                 $session_cart['products'][$product_id] = $product_dict;
                 $this->session->set_userdata('session_cart', $session_cart);

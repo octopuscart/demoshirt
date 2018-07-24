@@ -1075,11 +1075,11 @@ class Api extends REST_Controller {
                             "1 Button" => array("elements" => [
                                     "laple_single_3_notch_peak_upper0001.png",
                                     "laple_single_notch_modern0001.png"
-                                ], "overelay" => ["13notchpeaklapleoverlay.png"]),
+                                ], "overelay" => ["13notchpeaklapleoverlay.png", "laple_single_notch_modern_overlay.png"]),
                             "2 Buttons" => array("elements" => [
                                     "laple_single_3_notch_peak_upper0001.png",
                                     "laple_single_notch_modern0001.png"
-                                ], "overelay" => ["13notchpeaklapleoverlay.png"]),
+                                ], "overelay" => ["13notchpeaklapleoverlay.png", "laple_single_notch_modern_overlay.png"]),
                             "3 Buttons" => array("elements" => [
                                     "laple_single_3_notch_peak_upper0001.png",
                                     "laple_single_3_notch_modern0001.png"
@@ -1116,11 +1116,11 @@ class Api extends REST_Controller {
                             "1 Button" => array("elements" => [
                                     "laple_single_3_notch_peak_upper0001.png",
                                     "laple_single_notch_classic0001.png"
-                                ], "overelay" => ["13notchpeaklapleoverlay.png"]),
+                                ], "overelay" => ["13notchpeaklapleoverlay.png", "laple_single_notch_classic_overlay.png"]),
                             "2 Buttons" => array("elements" => [
                                     "laple_single_3_notch_peak_upper0001.png",
                                     "laple_single_notch_classic0001.png"
-                                ], "overelay" => ["13notchpeaklapleoverlay.png"]),
+                                ], "overelay" => ["13notchpeaklapleoverlay.png", "laple_single_notch_classic_overlay.png"]),
                             "3 Buttons" => array("elements" => [
                                     "laple_single_3_notch_peak_upper0001.png",
                                     "laple_single_3_notch_classic0001.png"
@@ -1173,19 +1173,19 @@ class Api extends REST_Controller {
                             "4 Buttons 1 Button Fasten" => array("elements" => [
                                     "laple_peak_upper0001.png",
                                     "laple_4_peack_modern0001.png"
-                                ], "overelay" => []),
+                                ], "overelay" => ["4_peak_m.png"]),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
                                     "laple_peak_upper0001.png",
                                     "laple_4_peack_modern0001.png"
-                                ], "overelay" => []),
+                                ], "overelay" => ["4_peak_m.png"]),
                             "6 Buttons 1 Button Fasten" => array("elements" => [
                                     "laple_peak_upper0001.png",
                                     "laple_6_peack_morden0001.png"
-                                ], "overelay" => []),
+                                ], "overelay" => ["4_peak_m.png"]),
                             "6 Buttons 2 Buttons Fasten" => array("elements" => [
                                     "laple_peak_upper0001.png",
                                     "laple_6_peack_morden0001.png"
-                                ], "overelay" => []),
+                                ], "overelay" => ["4_peak_m.png"]),
                         ),
                         "customization_category_id" => "6",
                         "image" => "peak_modern.jpeg"
@@ -1210,23 +1210,23 @@ class Api extends REST_Controller {
                             "4 Buttons" => array("elements" => [
                                     "laple_single_3_notch_peak_upper0001.png",
                                     "laple_single_3_peak_classic0001.png"
-                                ], "overelay" => ["13notchpeaklapleoverlay.png"]),
+                                ], "overelay" => ["13notchpeaklapleoverlay.png", ]),
                             "4 Buttons 1 Button Fasten" => array("elements" => [
                                     "laple_peak_upper0001.png",
                                     "laple_4_peack_classic0001.png"
-                                ], "overelay" => []),
+                                ], "overelay" => ["4_peak_c.png"]),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
                                     "laple_peak_upper0001.png",
                                     "laple_4_peack_classic0001.png"
-                                ], "overelay" => []),
+                                ], "overelay" => ["4_peak_c.png"]),
                             "6 Buttons 1 Button Fasten" => array("elements" => [
                                     "laple_peak_upper0001.png",
                                     "laple_6_peack_classic0001.png"
-                                ], "overelay" => []),
+                                ], "overelay" => ["4_peak_c.png"]),
                             "6 Buttons 2 Buttons Fasten" => array("elements" => [
                                     "laple_peak_upper0001.png",
                                     "laple_6_peack_classic0001.png"
-                                ], "overelay" => []),
+                                ], "overelay" => ["4_peak_c.png"]),
                         ),
                         "customization_category_id" => "6",
                         "image" => "peak_classic.jpeg"
@@ -1238,10 +1238,10 @@ class Api extends REST_Controller {
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
                                     "laple_single_shwal_mordern0001.png",
-                                ], "overelay" => []),
+                                ], "overelay" => ["laple_single_shwal_modern_overlay.png"]),
                             "2 Buttons" => array("elements" => [
                                     "laple_single_shwal_mordern0001.png",
-                                ], "overelay" => []),
+                                ], "overelay" => ["laple_single_shwal_modern_overlay.png"]),
                             "3 Buttons" => array("elements" => [
                                     "laple_single_3_shwal_modern0001.png",
                                 ], "overelay" => []),
@@ -1273,10 +1273,10 @@ class Api extends REST_Controller {
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
                                     "laple_single_shwal_classic0001.png",
-                                ], "overelay" => []),
+                                ], "overelay" => ["laple_single_shwal_modern_overlay.png"]),
                             "2 Buttons" => array("elements" => [
                                     "laple_single_shwal_classic0001.png",
-                                ], "overelay" => []),
+                                ], "overelay" => ["laple_single_shwal_modern_overlay.png"]),
                             "3 Buttons" => array("elements" => [
                                     "laple_single_3_shwal_classic0001.png",
                                 ], "overelay" => []),

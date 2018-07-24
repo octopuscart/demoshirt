@@ -800,14 +800,14 @@ class Api extends REST_Controller {
                 "Buttons" => [
                     array(
                         "status" => "1",
-                        "title" => "Brown Liphell",
+                        "title" => "Brown Lipshell",
                         "customization_category_id" => "4",
                         "image" => "buttonlipsell.png",
                         "folder" => "buttonlipsell",
                         "show_buttons" => "true",
                     ), array(
                         "status" => "0",
-                        "title" => "Emerald Liphell",
+                        "title" => "Emerald Lipshell",
                         "folder" => "buttonemrald",
                         "customization_category_id" => "4",
                         "image" => "buttonemrald.png",

@@ -119,6 +119,7 @@ $this->load->view('layout/header');
                                     </button>
                                     <div class="fontview_custom customization_block animated " ng-if="screencustom.view_type == 'front'">
 
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/back_no_vent_v20001.png" class="fixpos animated" >
 
                                         <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/sleeve_new_left_v20001.png" class="fixpos animated" >
 
@@ -136,7 +137,9 @@ $this->load->view('layout/header');
 
                                         <img src="<?php echo custome_image_server_suit; ?>/single_over_lay.png" class="fixpos animated" >
 
-                                        
+                                        <img src="<?php echo custome_image_server_suit; ?>/shirtss.png" class="fixpos animated" >
+
+
 
 
 

@@ -134,6 +134,13 @@ $this->load->view('layout/header');
 
 
                                         <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/lower_pocket_pipe_v20001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/button_hole_2_v20001.png" class="fixpos animated" >
+                                        
+                                         <img src="<?php echo custome_image_server_suit; ?>/2_buttons_v20001.png" class="fixpos animated" >
+                                        
+                                        
+                                        
+                                        
 
                                         <img src="<?php echo custome_image_server_suit; ?>/single_over_lay.png" class="fixpos animated" >
 

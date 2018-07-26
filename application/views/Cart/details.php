@@ -116,7 +116,10 @@ $this->load->view('layout/header');
 
                     </ul>
                     <div class=" text-right margin-top-30">
-                        <div class="coupn-btn"> <a href="<?php echo site_url("Product/customizationSuit"); ?>" class="btn btn-inverse">Customize Now</a> </div>
+                        <div class="coupn-btn"> 
+                            <a href="<?php echo site_url("Product/customizationSuit"); ?>" class="btn btn-inverse">Customize Now</a> 
+                            <a href="<?php echo site_url("Product/customizationSuitV2"); ?>" class="btn btn-inverse">Customization V2</a> 
+                        </div>
                     </div>
                 </div>
 

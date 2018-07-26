@@ -118,63 +118,26 @@ $this->load->view('layout/header');
                                         <img src="<?php echo base_url(); ?>assets/images/customization_suit/jacket_without_shirt.png" class="show_shirt_image" >
                                     </button>
                                     <div class="fontview_custom customization_block animated " ng-if="screencustom.view_type == 'front'">
-                                        <img src="<?php echo custome_image_server_suit; ?>/lining/{{selecteElements[fab.sku]['Lining Style'].folder}}/back_no_vent0001.png" class="fixpos animated" >
-
-                                        <img src="<?php echo custome_image_server_suit; ?>/shirtcuff.png" class="fixpos animated" ng-if="screencustom.style_select == 'with_shirt'">
 
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/sleeve_new_rl_nv20001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/sleeve_new_left_v20001.png" class="fixpos animated" >
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/sleeve_new_right_v20001.png" class="fixpos animated" >
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/body_single_v20001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/breast_pocket_v20001.png" class="fixpos animated" >
 
 
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/laple_single_3_notch_upper_v20001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/laple_single_notch_classic_v20001.png" class="fixpos animated" >
 
 
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/lower_pocket_pipe_v20001.png" class="fixpos animated" >
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in [selecteElements[fab.sku]['Lapel Style & Width'].laple_style[selecteElements[fab.sku]['Jacket Style'].title].elements[0]]">
+                                        <img src="<?php echo custome_image_server_suit; ?>/single_over_lay.png" class="fixpos animated" >
 
+                                        
 
-
-
-                                        <img src="<?php echo custome_image_server_suit; ?>/shirto1.png" class="fixpos animated shirt_model" ng-if="screencustom.style_select == 'with_shirt'"> 
-
-                                        <!--front-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].elements" >
-                                       
-                                        <img src="<?php echo custome_image_server_suit; ?>/body_overlay.png" class="fixpos animated shirt_model" >
-                                        <img src="<?php echo custome_image_server_suit; ?>/threads/{{selecteElements[fab.sku]['Button Thread'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].button_hole">
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].button_hole" ng-if="selecteElements[fab.sku]['Button Thread'].title=='Matching'">
-
-                                        <!--buttons-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/buttons/{{selecteElements[fab.sku]['Buttons'].folder}}/{{img}}.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].buttons" >
-                                        <!--buttons-->
-                                      <!--<img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].extra_button" >-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/buttons/{{selecteElements[fab.sku]['Buttons'].folder}}/{{img}}.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].extra_button" >
-                                         <img src="<?php echo custome_image_server_suit; ?>/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].overlay" >
-
-
-                                        <!--breast pocket-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Breast Pocket'].elements">
-
-
-                                        <!--lower pocket-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Lower Pocket'].elements">
-
-
-                                        <!--Sleeve Buttons-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Sleeve Buttons'].elements">
-                                        <img src="<?php echo custome_image_server_suit; ?>/threads/{{selecteElements[fab.sku]['Button Thread'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Sleeve Buttons'].elements" ng-if="selecteElements[fab.sku]['Button Thread'].title!='Matching'">
-
-
-
-                                        <img src="<?php echo custome_image_server_suit; ?>/buttons/{{selecteElements[fab.sku]['Buttons'].folder}}/{{img}}.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Sleeve Buttons'].buttons" >
-
-
-                                        <!--laple-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Lapel Style & Width'].laple_style[selecteElements[fab.sku]['Jacket Style'].title].elements">
-
-                                        <img src="<?php echo custome_image_server_suit; ?>/shirto.png" class="fixpos animated shirt11_model" ng-if="screencustom.style_select == 'with_shirt'">
-
-                                        <!--laple overlay-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Lapel Style & Width'].laple_style[selecteElements[fab.sku]['Jacket Style'].title].overelay">
 
 
 
@@ -195,7 +158,7 @@ $this->load->view('layout/header');
                         <!--shirt customization-->
                         <div class="row" style="margin-top: -10px;padding: 5px;">
                             <?php
-                            $this->load->view('Product/custome_support_suit');
+//                            $this->load->view('Product/custome_support_suit');
                             ?>
                         </div>
                     </div>

@@ -123,7 +123,7 @@ $this->load->view('layout/header');
                                         <img src="<?php echo custome_image_server_suit; ?>/shirtcuff.png" class="fixpos animated" ng-if="screencustom.style_select == 'with_shirt'">
 
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/sleeve_new_rl_nv20001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/sleeve_new_rl_n0001.png" class="fixpos animated" >
 
 
 

@@ -191,15 +191,16 @@ class Product_model extends CI_Model {
                 'price' => $product_details['price'],
                 'item_type' => $product_details['item_type'],
                 'total_price' => $product_details['price'],
-                'file_name' => custome_image_server . '/output/' . $product_details['sku'] . "/shirt0001.png",
+                'file_name' => custome_image_server . '/output/' . $product_details['folder'] . "/shirt0001.png",
                 'quantity' => $quantity,
                 'user_id' => $user_id,
                 'credit_limit' => $product_details['credit_limit'] ? $product_details['credit_limit'] : 0,
                 'product_id' => $product_id,
+                'folder'=>$product_details['folder'],
                 'op_date_time' => date('Y-m-d H:i:s'),
             );
             if ($product_details['item_type'] == 'Jacket') {
-                $product_dict['file_name'] = custome_image_server_suit . '/' . $product_details['sku'] . "/fabric0001.png";
+                $product_dict['file_name'] = custome_image_server_suit . '/' . $product_details['folder'] . "/fabric0001.png";
             }
             if (isset($cartdata['products'][$product_id])) {
                 if ($setSession) {
@@ -242,14 +243,15 @@ class Product_model extends CI_Model {
                     'item_type' => $product_details['item_type'],
                     'price' => $product_details['price'],
                     'total_price' => $product_details['price'],
-                    'file_name' => custome_image_server . '/output/' . $product_details['sku'] . "/shirt0001.png",
+                    'file_name' => custome_image_server . '/output/' . $product_details['folder'] . "/shirt0001.png",
                     'quantity' => 1,
+                    'folder'=>$product_details['folder'],
                     'product_id' => $product_id,
                     'date' => date('Y-m-d'),
                     'time' => date('H:i:s'),
                 );
                 if ($product_details['item_type'] == 'Jacket') {
-                    $product_dict['file_name'] = custome_image_server_suit . '/' . $product_details['sku'] .  "/fabric0001.png";
+                    $product_dict['file_name'] = custome_image_server_suit . '/' . $product_details['folder'] .  "/fabric0001.png";
                 }
                 $session_cart['products'][$product_id] = $product_dict;
                 $this->session->set_userdata('session_cart', $session_cart);

@@ -12,8 +12,8 @@
         meta_tags();
         ?>
         <!-- Favicon -->
-        <link rel="shortcut icon" href="<?php echo base_url() . 'assets/images/logo73.jpg'; ?>" type="image/x-icon">
-        <link rel="icon" href="<?php echo base_url() . 'assets/images/logo73.jpg'; ?>" type="image/x-icon">
+        <link rel="shortcut icon" href="<?php echo base_url() . 'assets/images/logo731.jpg'; ?>" type="image/x-icon">
+        <link rel="icon" href="<?php echo base_url() . 'assets/images/logo731.jpg'; ?>" type="image/x-icon">
 
         <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/theme/rs-plugin/css/settings.css" media="screen" />
@@ -97,7 +97,7 @@
                     <div class="container">
                         <div class="logo">
                             <a href="<?php echo site_url("/"); ?>" style="font-size: 31px;">
-                                HK Tailor
+                                3D Custom Tailor
                             </a> 
                         </div>
 

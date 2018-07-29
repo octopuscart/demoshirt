@@ -79,9 +79,9 @@ $this->load->view('layout/header');
                             <div class='custom_block_slide'> 
                                 <div class="item"   ng-repeat="fab in cartFabrics">
                                     <div class=" fabricblockmobile ">
-                                        <a href="#fabric_{{fab.sku}}" class="fabricblock_a" aria-controls="collars_area" role="tab" data-toggle="tab" ng-click="selectFabric(fab)">
-                                            <div class="elementStyle customization_box_elements fabricblock {{  fab.sku == screencustom.fabric?'active' :'noselected' }}" style="background:url('<?php echo custome_image_server_suit; ?>/{{fab.sku}}/fabric0001.png');" > </div>
-                                            <p class="fabric_title">{{fab.sku}}</p>
+                                        <a href="#fabric_{{fab.folder}}" class="fabricblock_a" aria-controls="collars_area" role="tab" data-toggle="tab" ng-click="selectFabric(fab)">
+                                            <div class="elementStyle customization_box_elements fabricblock {{  fab.folder == screencustom.fabric?'active' :'noselected' }}" style="background:url('<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/fabric0001.png');" > </div>
+                                            <p class="fabric_title">{{fab.folder}}</p>
                                         </a>
                                     </div>
                                 </div>
@@ -96,9 +96,9 @@ $this->load->view('layout/header');
                         <div class="col-sm-3 col-xs-12 fabricblockdesktop customization_items " style="padding: 0">
                             <ul class="nav nav-tabs tabs-left">
                                 <li role="presentation" class="{{$index === 0?'active':''}} " ng-repeat="fab in cartFabrics" >
-                                    <a href="#fabric_{{fab.sku}}" class="fabricblock_a" aria-controls="collars_area" role="tab" data-toggle="tab" ng-click="selectFabric(fab)">
-                                        <div class="elementStyle customization_box_elements fabricblock {{  fab.sku == screencustom.fabric?'active' :'noselected' }}" style="background:url('<?php echo custome_image_server_suit; ?>/{{fab.sku}}/fabric0001.png');" > </div>
-                                        <p class="fabric_title">{{fab.sku}}</p>
+                                    <a href="#fabric_{{fab.folder}}" class="fabricblock_a" aria-controls="collars_area" role="tab" data-toggle="tab" ng-click="selectFabric(fab)">
+                                        <div class="elementStyle customization_box_elements fabricblock {{  fab.folder == screencustom.fabric?'active' :'noselected' }}" style="background:url('<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/fabric0001.png');" > </div>
+                                        <p class="fabric_title">{{fab.folder}}</p>
                                     </a>
 
                                 </li>
@@ -107,7 +107,7 @@ $this->load->view('layout/header');
                         <div class="col-sm-9 col-xs-12"  style="padding: 0">
                             <div class="tab-content">
 
-                                <div class="tab-pane {{$index === 0?'active':''}}" ng-repeat="fab in cartFabrics" id="fabric_{{fab.sku}}">
+                                <div class="tab-pane {{$index === 0?'active':''}}" ng-repeat="fab in cartFabrics" id="fabric_{{fab.folder}}">
                                     <button class="btn btn-default btn-lg custom_rotate_button" ng-click="rotateModel()">
                                         <i class="icon ion-refresh"></i>
                                     </button>
@@ -119,32 +119,38 @@ $this->load->view('layout/header');
                                     </button>
                                     <div class="fontview_custom customization_block animated " ng-if="screencustom.view_type == 'front'">
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/back_no_vent_v20001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/back_no_vent0001.png" class="fixpos animated" >
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/sleeve_new_left_v20001.png" class="fixpos animated" >
-
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/sleeve_new_right_v20001.png" class="fixpos animated" >
-
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/body_single_v20001.png" class="fixpos animated" >
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/breast_pocket_v20001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/sleeve_new0001.png" class="fixpos animated" >
 
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/laple_single_3_notch_upper_v20001.png" class="fixpos animated" >
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/laple_single_notch_classic_v20001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/body_single20001.png" class="fixpos animated" >
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/dart0001.png" class="fixpos animated" >
 
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/lower_pocket_pipe_v20001.png" class="fixpos animated" >
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/button_hole_2_v20001.png" class="fixpos animated" >
-                                        
-                                         <img src="<?php echo custome_image_server_suit; ?>/2_buttons_v20001.png" class="fixpos animated" >
-                                        
-                                        
-                                        
-                                        
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/single_over_lay.png" class="fixpos animated" >
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/shirtss.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/breast_pocket0001.png" class="fixpos animated" >
+
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/laple_upper_top0001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/laple_notch_upper20001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/laple_notch0001.png" class="fixpos animated" >
+
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/lower_pocket_pipe_v20001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/button_1_hole10001.png" class="fixpos animated" >
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/2_buttons_v20001.png" class="fixpos animated" >
+
+
+
+
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/single_over_lay.png" class="fixpos animated" >
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/shirtss.png" class="fixpos animated" >
 
 
 
@@ -156,7 +162,7 @@ $this->load->view('layout/header');
 
 
                                         <!--pocket-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Back Vent'].elements">
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Back Vent'].elements">
 
                                     </div> 
                                 </div>

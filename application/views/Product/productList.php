@@ -143,7 +143,7 @@ $this->load->view('layout/header');
 
                                     <div ng-if ="product.item_type == 'Jacket'">
 
-                                        <div class="product_image_back" style="background: url(<?php echo custome_image_server_suit; ?>/{{product.sku}}/fabric0001.png)"></div>
+                                        <div class="product_image_back" style="background: url(<?php echo custome_image_server_suit; ?>/{{product.folder}}/fabric0001.png)"></div>
                                     </div>
 
                                     <div ng-if ="product.item_type != 'Jacket'">

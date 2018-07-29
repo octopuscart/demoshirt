@@ -69,6 +69,7 @@ $this->load->view('layout/header');
 
     <!-- Content -->
     <div id="content"> 
+      
 
         <!--======= PAGES INNER =========-->
         <section class="item-detail-page padding-top-30 ">
@@ -79,9 +80,9 @@ $this->load->view('layout/header');
                             <div class='custom_block_slide'> 
                                 <div class="item"   ng-repeat="fab in cartFabrics">
                                     <div class=" fabricblockmobile ">
-                                        <a href="#fabric_{{fab.sku}}" class="fabricblock_a" aria-controls="collars_area" role="tab" data-toggle="tab" ng-click="selectFabric(fab)">
-                                            <div class="elementStyle customization_box_elements fabricblock {{  fab.sku == screencustom.fabric?'active' :'noselected' }}" style="background:url('<?php echo custome_image_server_suit; ?>/{{fab.sku}}/fabric0001.png');" > </div>
-                                            <p class="fabric_title">{{fab.sku}}</p>
+                                        <a href="#fabric_{{fab.folder}}" class="fabricblock_a" aria-controls="collars_area" role="tab" data-toggle="tab" ng-click="selectFabric(fab)">
+                                            <div class="elementStyle customization_box_elements fabricblock {{  fab.folder == screencustom.fabric?'active' :'noselected' }}" style="background:url('<?php echo custome_image_server_suit; ?>/{{fab.folder}}/fabric0001.png');" > </div>
+                                            <p class="fabric_title">{{fab.folder}}</p>
                                         </a>
                                     </div>
                                 </div>
@@ -96,9 +97,10 @@ $this->load->view('layout/header');
                         <div class="col-sm-3 col-xs-12 fabricblockdesktop customization_items " style="padding: 0">
                             <ul class="nav nav-tabs tabs-left">
                                 <li role="presentation" class="{{$index === 0?'active':''}} " ng-repeat="fab in cartFabrics" >
-                                    <a href="#fabric_{{fab.sku}}" class="fabricblock_a" aria-controls="collars_area" role="tab" data-toggle="tab" ng-click="selectFabric(fab)">
-                                        <div class="elementStyle customization_box_elements fabricblock {{  fab.sku == screencustom.fabric?'active' :'noselected' }}" style="background:url('<?php echo custome_image_server_suit; ?>/{{fab.sku}}/fabric0001.png');" > </div>
+                                    <a href="#fabric_{{fab.folder}}" class="fabricblock_a" aria-controls="collars_area" role="tab" data-toggle="tab" ng-click="selectFabric(fab)">
+                                        <div class="elementStyle customization_box_elements fabricblock {{  fab.folder == screencustom.fabric?'active' :'noselected' }}" style="background:url('<?php echo custome_image_server_suit; ?>/{{fab.folder}}/fabric0001.png');" > </div>
                                         <p class="fabric_title">{{fab.sku}}</p>
+                                      
                                     </a>
 
                                 </li>
@@ -107,7 +109,7 @@ $this->load->view('layout/header');
                         <div class="col-sm-9 col-xs-12"  style="padding: 0">
                             <div class="tab-content">
 
-                                <div class="tab-pane {{$index === 0?'active':''}}" ng-repeat="fab in cartFabrics" id="fabric_{{fab.sku}}">
+                                <div class="tab-pane {{$index === 0?'active':''}}" ng-repeat="fab in cartFabrics" id="fabric_{{fab.folder}}">
                                     <button class="btn btn-default btn-lg custom_rotate_button" ng-click="rotateModel()">
                                         <i class="icon ion-refresh"></i>
                                     </button>
@@ -118,18 +120,18 @@ $this->load->view('layout/header');
                                         <img src="<?php echo base_url(); ?>assets/images/customization_suit/jacket_without_shirt.png" class="show_shirt_image" >
                                     </button>
                                     <div class="fontview_custom customization_block animated " ng-if="screencustom.view_type == 'front'">
-                                        <img src="<?php echo custome_image_server_suit; ?>/lining/{{selecteElements[fab.sku]['Lining Style'].folder}}/back_no_vent0001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/lining/{{selecteElements[fab.folder]['Lining Style'].folder}}/back_no_vent0001.png" class="fixpos animated" >
 
                                         <img src="<?php echo custome_image_server_suit; ?>/shirtcuff.png" class="fixpos animated" ng-if="screencustom.style_select == 'with_shirt'">
 
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/sleeve_new_rl_n0001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.folder}}/sleeve_new_rl_n0001.png" class="fixpos animated" >
 
 
 
 
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in [selecteElements[fab.sku]['Lapel Style & Width'].laple_style[selecteElements[fab.sku]['Jacket Style'].title].elements[0]]">
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in [selecteElements[fab.folder]['Lapel Style & Width'].laple_style[selecteElements[fab.folder]['Jacket Style'].title].elements[0]]">
 
 
 
@@ -137,44 +139,44 @@ $this->load->view('layout/header');
                                         <img src="<?php echo custome_image_server_suit; ?>/shirto1.png" class="fixpos animated shirt_model" ng-if="screencustom.style_select == 'with_shirt'"> 
 
                                         <!--front-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].elements" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Jacket Style'].elements" >
                                        
                                         <img src="<?php echo custome_image_server_suit; ?>/body_overlay.png" class="fixpos animated shirt_model" >
-                                        <img src="<?php echo custome_image_server_suit; ?>/threads/{{selecteElements[fab.sku]['Button Thread'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].button_hole">
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].button_hole" ng-if="selecteElements[fab.sku]['Button Thread'].title=='Matching'">
+                                        <img src="<?php echo custome_image_server_suit; ?>/threads/{{selecteElements[fab.folder]['Button Thread'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Jacket Style'].button_hole">
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Jacket Style'].button_hole" ng-if="selecteElements[fab.folder]['Button Thread'].title=='Matching'">
 
                                         <!--buttons-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/buttons/{{selecteElements[fab.sku]['Buttons'].folder}}/{{img}}.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].buttons" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/buttons/{{selecteElements[fab.folder]['Buttons'].folder}}/{{img}}.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Jacket Style'].buttons" >
                                         <!--buttons-->
-                                      <!--<img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].extra_button" >-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/buttons/{{selecteElements[fab.sku]['Buttons'].folder}}/{{img}}.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].extra_button" >
-                                         <img src="<?php echo custome_image_server_suit; ?>/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Jacket Style'].overlay" >
+                                      <!--<img src="<?php echo custome_image_server_suit; ?>/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Jacket Style'].extra_button" >-->
+                                        <img src="<?php echo custome_image_server_suit; ?>/buttons/{{selecteElements[fab.folder]['Buttons'].folder}}/{{img}}.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Jacket Style'].extra_button" >
+                                         <img src="<?php echo custome_image_server_suit; ?>/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Jacket Style'].overlay" >
 
 
                                         <!--breast pocket-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Breast Pocket'].elements">
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Breast Pocket'].elements">
 
 
                                         <!--lower pocket-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Lower Pocket'].elements">
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Lower Pocket'].elements">
 
 
                                         <!--Sleeve Buttons-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Sleeve Buttons'].elements">
-                                        <img src="<?php echo custome_image_server_suit; ?>/threads/{{selecteElements[fab.sku]['Button Thread'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Sleeve Buttons'].elements" ng-if="selecteElements[fab.sku]['Button Thread'].title!='Matching'">
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Sleeve Buttons'].elements">
+                                        <img src="<?php echo custome_image_server_suit; ?>/threads/{{selecteElements[fab.folder]['Button Thread'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Sleeve Buttons'].elements" ng-if="selecteElements[fab.folder]['Button Thread'].title!='Matching'">
 
 
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/buttons/{{selecteElements[fab.sku]['Buttons'].folder}}/{{img}}.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Sleeve Buttons'].buttons" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/buttons/{{selecteElements[fab.folder]['Buttons'].folder}}/{{img}}.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Sleeve Buttons'].buttons" >
 
 
                                         <!--laple-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Lapel Style & Width'].laple_style[selecteElements[fab.sku]['Jacket Style'].title].elements">
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Lapel Style & Width'].laple_style[selecteElements[fab.folder]['Jacket Style'].title].elements">
 
                                         <img src="<?php echo custome_image_server_suit; ?>/shirto.png" class="fixpos animated shirt11_model" ng-if="screencustom.style_select == 'with_shirt'">
 
                                         <!--laple overlay-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Lapel Style & Width'].laple_style[selecteElements[fab.sku]['Jacket Style'].title].overelay">
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Lapel Style & Width'].laple_style[selecteElements[fab.folder]['Jacket Style'].title].overelay">
 
 
 
@@ -183,7 +185,7 @@ $this->load->view('layout/header');
 
 
                                         <!--pocket-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.sku}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.sku]['Back Vent'].elements">
+                                        <img src="<?php echo custome_image_server_suit; ?>/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Back Vent'].elements">
 
                                     </div> 
                                 </div>

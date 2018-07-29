@@ -26,7 +26,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
     $scope.shirtimplement = function () {
         for (i in $scope.cartFabrics) {
             var fb = $scope.cartFabrics[i];
-            $scope.selecteElements[fb.sku] = {'sleeve':["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",], 
+            $scope.selecteElements[fb.folder] = {'sleeve':["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",], 
                 'collar_buttons': 'buttonsh1.png',
                 'show_buttons': 'true',
                 "Monogram Initial": "ABC",
@@ -43,8 +43,9 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
         }
         $scope.screencustom = {
             'view_type': 'front',
-            "fabric": $scope.cartFabrics[0].sku,
-            "productobj": $scope.cartFabrics[0]
+            "fabric": $scope.cartFabrics[0].folder,
+            "productobj": $scope.cartFabrics[0],
+            "sku":$scope.cartFabrics[0].sku,
         };
         var url = baseurl + "Api/customeElements";
         $http.get(url).then(function (rdata) {
@@ -61,8 +62,8 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
                     if (temp[j]['status'] == 1) {
                         for (f in $scope.cartFabrics) {
                             var fb = $scope.cartFabrics[f];
-                            $scope.selecteElements[fb.sku][$scope.keys[i].title] = temp[j];
-                            $scope.selecteElements[fb.sku]['summary'][$scope.keys[i].title] = temp[j].title;
+                            $scope.selecteElements[fb.folder][$scope.keys[i].title] = temp[j];
+                            $scope.selecteElements[fb.folder]['summary'][$scope.keys[i].title] = temp[j].title;
                         }
                     }
                 }
@@ -125,7 +126,8 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
 
     //select fabric
     $scope.selectFabric = function (fabric) {
-        $scope.screencustom.fabric = fabric.sku;
+        $scope.screencustom.fabric = fabric.folder;
+         $scope.screencustom.sku = fabric.sku;
         $scope.screencustom.productobj = fabric;
     }
     //

@@ -139,6 +139,7 @@ $this->load->view('layout/header');
                         <!-- Item -->
                         <div class="col-sm-4" ng-repeat="(k, product) in productResults.products">
                             <div class="productblock">
+                              
                                 <article class="shop-artical" style="    margin-bottom: 0px;"> 
 
                                     <div ng-if ="product.item_type == 'Jacket'">

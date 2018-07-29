@@ -164,7 +164,7 @@ class Api extends REST_Controller {
         $categoriesString = $this->Product_model->stringCategories($category_id) . ", " . $category_id;
         $categoriesString = ltrim($categoriesString, ", ");
 
-        $product_query = "select pt.id as product_id, pt.item_type, pt.sku, pt.title, pt.sale_price, pt.regular_price, pt.price, pt.file_name, pt.file_name1 
+        $product_query = "select pt.id as product_id, pt.folder, pt.item_type, pt.sku, pt.title, pt.sale_price, pt.regular_price, pt.price, pt.file_name, pt.file_name1 
             from products as pt where pt.category_id in ($categoriesString) $pricequery $proquery 
                 order by pt.id desc";
         try {

@@ -43,7 +43,8 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
         }
         $scope.screencustom = {
             'view_type': 'front',
-            "fabric": $scope.cartFabrics[0].sku,
+            "fabric": $scope.cartFabrics[0].folder,
+            "sku": $scope.cartFabrics[0].sku,
             "productobj": $scope.cartFabrics[0],
             "style_select":"with_shirt",
         };

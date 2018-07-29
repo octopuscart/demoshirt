@@ -4,7 +4,7 @@
 ClassApartStore.controller('customizationShirt', function ($scope, $http, $location) {
     $scope.fabricurl = "http://api.octopuscart.com/output/";
 
-    var globlecart = baseurl + "Api/cartOperation";
+    var globlecart = baseurl + "Api/cartOperationShirt";
     $scope.product_quantity = 1;
 
     $scope.cartFabrics1 = [

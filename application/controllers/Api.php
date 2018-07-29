@@ -42,6 +42,23 @@ class Api extends REST_Controller {
 
         $this->response($session_cart);
     }
+	
+	function cartOperationShirt_get() {
+        if ($this->checklogin) {
+            $session_cart = $this->Product_model->cartData($this->user_id);
+        } else {
+            $session_cart = $this->Product_model->cartData();
+        }
+
+        $tempss = array();
+        foreach ($session_cart['products'] as $key => $value) {
+            if ($value['item_type'] != 'Jacket') {
+                $tempss[$key] = $value;
+            };
+        }
+        $session_cart['products'] = $tempss;
+        $this->response($session_cart);
+    }
 
     function cartOperationSuit_get() {
         if ($this->checklogin) {

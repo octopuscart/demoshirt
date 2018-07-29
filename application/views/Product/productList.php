@@ -148,13 +148,13 @@ $this->load->view('layout/header');
 
                                     <div ng-if ="product.item_type != 'Jacket'">
 
-                                        <div class="product_image_back" style="background: url(<?php echo custome_image_server; ?>/output/{{product.sku}}/shirt0001.png)"></div>
+                                        <div class="product_image_back" style="background: url(<?php echo custome_image_server; ?>/output/{{product.folder}}/shirt0001.png)"></div>
                                     </div>
 
                                     <!-- Sale -->
                                     <div class="item-sale" ng-if="product.sale_price > 0">Sale</div>
 
-                                    <div class="item-hover" style="background: url(<?php echo custome_image_server; ?>/output/{{product.sku}}/cloth0001.png);background-size: cover;"> 
+                                    <div class="item-hover" style="background: url(<?php echo custome_image_server; ?>/output/{{product.folder}}/cloth0001.png);background-size: cover;"> 
 
                                         <a href="#." class="btn" style="    font-size: 9px;color: white;" ng-click="addToCart(product.product_id, 1)">add to cart</a> 
                                         <a href="#." class="btn by" style="    font-size: 9px;color: white;">Customize</a> 

@@ -376,7 +376,6 @@ class Api2 extends REST_Controller {
                         "image" => "thread/Matching.jpg",
                         "folder" => "Matching",
                     ),
-                   
                 ],
                 "Buttons" => [
                     array(
@@ -484,55 +483,55 @@ class Api2 extends REST_Controller {
                         "show_buttons" => "false",
                         "insert" => "Matching",
                     )],
-                
-                
                 "Handstitching" => [
                     array(
                         "status" => "1",
                         "title" => "No",
                         "image" => "handstitchyes.jpeg",
-                        
                     ), array(
                         "status" => "0",
                         "title" => "Yes",
                         "image" => "handstitchno.jpeg"
                     )],
-                
-                
                 "Sleeve Buttons" => [
                     array(
                         "status" => "1",
                         "title" => "4 Flat Buttons",
                         "customization_category_id" => "4",
-                        "elements" => ["sleeve_buttons_flat_3_hole0001.png", "sleeve_buttons_flat_3_4_hole0001.png",],
+                        "elements" => ["sleeve_buttons_10001.png", "sleeve_buttons_comman0001.png", "sleeve_buttons_40001.png",],
                         "image" => "4fbuttons.jpeg",
                         "buttons" => ["sleeve_buttons_flat_30001", "sleeve_buttons_flat_3_40001"],
+                        "buttonhole" => ["sleeve_button_hole_40001.png", "sleeve_button_hole_comman0001.png", "sleeve_button_hole_10001.png"],
                         "show_buttons" => "true",
-                    ), array(
-                        "status" => "0",
-                        "title" => "4 Kissing Buttons",
-                        "elements" => ["sleeve_buttons_kissing_3_hole0001.png", "sleeve_buttons_kissing_4_hole0001.png",],
-                        "customization_category_id" => "4",
-                        "image" => "4kbuttons.jpeg",
-                        "buttons" => ["sleeve_buttons_kissing_30001", "sleeve_buttons_kissing_40001"],
-                        "show_buttons" => "false",
-                    ), array(
+                    ),
+//                    array(
+//                        "status" => "0",
+//                        "title" => "4 Kissing Buttons",
+//                        "elements" => ["sleeve_buttons_kissing_3_hole0001.png", "sleeve_buttons_kissing_4_hole0001.png",],
+//                        "customization_category_id" => "4",
+//                        "image" => "4kbuttons.jpeg",
+//                        "buttons" => ["sleeve_buttons_kissing_30001", "sleeve_buttons_kissing_40001"],
+//                        "show_buttons" => "false",
+//                    ), 
+                    array(
                         "status" => "1",
                         "title" => "3 Flat Buttons",
                         "customization_category_id" => "4",
-                        "elements" => ["sleeve_buttons_flat_3_hole0001.png",],
+                        "elements" => ["sleeve_buttons_comman0001.png", "sleeve_buttons_40001.png"],
                         "image" => "4fbuttons.jpeg",
                         "buttons" => ["sleeve_buttons_flat_30001"],
+                        "buttonhole" => ["sleeve_button_hole_40001.png", "sleeve_button_hole_comman0001.png",],
                         "show_buttons" => "true",
-                    ), array(
-                        "status" => "0",
-                        "title" => "3 Kissing Buttons",
-                        "elements" => ["sleeve_buttons_kissing_3_hole0001.png",],
-                        "customization_category_id" => "4",
-                        "image" => "4kbuttons.jpeg",
-                        "buttons" => ["sleeve_buttons_kissing_30001"],
-                        "show_buttons" => "false",
                     ),
+//                    array(
+//                        "status" => "0",
+//                        "title" => "3 Kissing Buttons",
+//                        "elements" => ["sleeve_buttons_kissing_3_hole0001.png",],
+//                        "customization_category_id" => "4",
+//                        "image" => "4kbuttons.jpeg",
+//                        "buttons" => ["sleeve_buttons_kissing_30001"],
+//                        "show_buttons" => "false",
+//                    ),
 //                    array(
 //                        "status" => "0",
 //                        "title" => "4 Flat Buttons First Contrast",
@@ -594,7 +593,6 @@ class Api2 extends REST_Controller {
                         "right" => "body_single_right_v40001.png",
                         "buttons" => ["buttons_10001"],
                         "button_hole" => ["button_1_hole10001.png"],
-                        
                         "show_buttons" => "true",
                         "overlay" => ["single_overlay.png"],
                     ), array(
@@ -614,28 +612,28 @@ class Api2 extends REST_Controller {
                     , array(
                         "status" => "0",
                         "title" => "4 Buttons 1 Button Fasten",
-                        "elements" => ["body_double_left_v40001.png", "body_double_right_v40001.png", "button_41_hole0001.png"],
+                        "elements" => ["body_double_left_v40001.png", "body_double_right_v40001.png",],
                         "customization_category_id" => "4",
                         "image" => "41_button.jpg",
                         "left" => "body_double_left_v40001.png",
                         "right" => "body_double_right_v40001.png",
-                        "button_hole" => ["button_41_hole0001.png"],
+                        "button_hole" => [],
                         "buttons" => ["button_410001",],
                         "show_buttons" => "true",
-                        "overlay" => ["body_double_right_42_overlay.png"],
+                        "overlay" => ["body_double_overlay.png"],
                     )
                     , array(
                         "status" => "0",
                         "title" => "4 Buttons 2 Buttons Fasten",
-                        "elements" => ["body_double_left_v40001.png", "body_double_right_v40001.png", "button_41_hole0001.png"],
+                        "elements" => ["body_double_left_v40001.png", "body_double_right_v40001.png",],
                         "customization_category_id" => "4",
                         "left" => "body_double_left_v40001.png",
                         "right" => "body_double_right_v40001.png",
                         "buttons" => ["button_410001", "button_420001"],
-                        "button_hole" => ["button_41_hole0001.png"],
+                        "button_hole" => [],
                         "image" => "42_button.jpg",
                         "show_buttons" => "true",
-                        "overlay" => ["body_double_right_42_overlay.png"],
+                        "overlay" => ["body_double_overlay.png"],
                     )
                 ],
                 "Lapel Style & Width" => [
@@ -648,14 +646,14 @@ class Api2 extends REST_Controller {
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_notch_v20001.png"
                                 ],
-                                "stitcing"=>['laple_notch_stitching.png'],
+                                "stitcing" => ['laple_notch_stitching.png'],
                                 "hole" => ["laple_double_notch_button_hole0001.png"],
                                 "overelay" => ["13notchpeaklapleoverlay.png", "laple_single_notch_modern_overlay.png"]),
                             "2 Buttons" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_notch_v20001.png"
                                 ],
-                                "stitcing"=>['laple_notch_stitching.png'],
+                                "stitcing" => ['laple_notch_stitching.png'],
                                 "hole" => ["laple_double_notch_button_hole0001.png"],
                                 "overelay" => ["13notchpeaklapleoverlay.png", "laple_single_notch_modern_overlay.png"]),
                             "3 Buttons" => array("elements" => [
@@ -669,16 +667,16 @@ class Api2 extends REST_Controller {
                             "4 Buttons 1 Button Fasten" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_double_notch_v20001.png"
-                                ], 
-                                "stitcing"=>['laple_double_notch_stitch.png'],
+                                ],
+                                "stitcing" => ['laple_double_notch_stitch.png'],
                                 "hole" => ["laple_double_notch_button_hole0001.png"],
                                 "overelay" => []),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_double_notch_v20001.png"
-                                ], 
-                                "stitcing"=>['laple_double_notch_stitch.png'],
-                                "hole" => ["laple_double_notch_button_hole0001.png"], 
+                                ],
+                                "stitcing" => ['laple_double_notch_stitch.png'],
+                                "hole" => ["laple_double_notch_button_hole0001.png"],
                                 "overelay" => []),
                             "6 Buttons 1 Button Fasten" => array("elements" => [
                                     "laple_notch_upper0001.png",
@@ -700,15 +698,15 @@ class Api2 extends REST_Controller {
                             "1 Button" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_peak_v20001.png"
-                                ], 
-                                "stitcing"=>['laple_peak_stitch.png'],
+                                ],
+                                "stitcing" => ['laple_peak_stitch.png'],
                                 "hole" => ["laple_double_peak_button_hole0001.png"],
                                 "overelay" => ["laple_peak_overlay.png"]),
                             "2 Buttons" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_peak_v20001.png"
-                                ], 
-                                "stitcing"=>['laple_peak_stitch.png'],
+                                ],
+                                "stitcing" => ['laple_peak_stitch.png'],
                                 "hole" => ["laple_double_peak_button_hole0001.png"],
                                 "overelay" => ["laple_peak_overlay.png"]),
                             "3 Buttons" => array("elements" => [
@@ -722,15 +720,15 @@ class Api2 extends REST_Controller {
                             "4 Buttons 1 Button Fasten" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_double_peak_v20001.png"
-                                ], 
-                                "stitcing"=>['laple_double_peak_stitch.png'],
+                                ],
+                                "stitcing" => ['laple_double_peak_stitch.png'],
                                 "hole" => ["laple_double_peak_button_hole0001.png"],
                                 "overelay" => []),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_double_peak_v20001.png"
-                                ], 
-                                "stitcing"=>['laple_double_peak_stitch.png'],
+                                ],
+                                "stitcing" => ['laple_double_peak_stitch.png'],
                                 "hole" => ["laple_double_peak_button_hole0001.png"],
                                 "overelay" => []),
                             "6 Buttons 1 Button Fasten" => array("elements" => [

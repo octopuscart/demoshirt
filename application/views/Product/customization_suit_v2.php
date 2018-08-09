@@ -125,17 +125,31 @@ $this->load->view('layout/header');
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/shirt.png" class="fixpos animated">
 
 
+                                        <!--jacket sleeves-->  
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/sleeve_new0001.png" class="fixpos animated" >
 
 
+                                        <!--button hole sleeve-->
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Sleeve Buttons'].buttonhole" >
+
+
+
+                                        <!--button sleeve-->
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/buttons/{{selecteElements[fab.folder]['Buttons'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Sleeve Buttons'].elements" >
+
+
+                                        <!--jacket body left-->
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in [selecteElements[fab.folder]['Jacket Style'].left]" >
 
                                         <!--buttons-->
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/buttons/{{selecteElements[fab.folder]['Buttons'].folder}}/{{img}}.png" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Jacket Style'].buttons2" >
 
+                                        <!--jacket body right-->
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in [selecteElements[fab.folder]['Jacket Style'].right]" >
 
+                                        <!--button holes-->
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Jacket Style'].button_hole" >
+
 
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/dart0001.png" class="fixpos animated" >
 
@@ -157,7 +171,7 @@ $this->load->view('layout/header');
                                         </div>
 
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/button_1_hole10001.png" class="fixpos animated" >
+
 
 
 

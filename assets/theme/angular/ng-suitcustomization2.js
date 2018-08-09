@@ -213,7 +213,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
                 $scope.selecteElements[$scope.screencustom.fabric]['Monogram'] = element.monogram_position;
             }
         }
-        $scope.monogramSetting();
+      
 //        $("html, body").animate({scrollTop: 0}, "slow")
     }
 
@@ -222,9 +222,10 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
     }
 
 
-    $scope.selectCollarCuffInsert = function (cctype, insfab) {
-        $scope.selecteElements[$scope.screencustom.fabric][cctype] = insfab;
-        $scope.collarCuffSetting();
+    $scope.laple_button_hole_contrast = function (insfab) {
+       
+        $scope.selecteElements[$scope.screencustom.fabric]['Contrast Lapel Button Hole'] = insfab;
+      
     }
 
     $scope.selectCollarCuffInsertType = function (cctype, insfab) {

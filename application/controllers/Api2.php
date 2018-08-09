@@ -42,8 +42,8 @@ class Api2 extends REST_Controller {
 
         $this->response($session_cart);
     }
-	
-	function cartOperationShirt_get() {
+
+    function cartOperationShirt_get() {
         if ($this->checklogin) {
             $session_cart = $this->Product_model->cartData($this->user_id);
         } else {
@@ -214,8 +214,6 @@ class Api2 extends REST_Controller {
         $this->response("hell");
     }
 
- 
-
     function customeElementsSuit_get() {
         $customeele = array(
             "keys" => [
@@ -229,10 +227,15 @@ class Api2 extends REST_Controller {
                     "viewtype" => "front",
                     "type" => "main",
                 ),
-                 array(
+                array(
                     "title" => "Lapel Button Hole",
                     "viewtype" => "front",
                     "type" => "main",
+                ),
+                array(
+                    "title" => "Contrast Lapel Button Hole",
+                    "viewtype" => "front",
+                    "type" => "submain",
                 ),
                 array(
                     "title" => "Breast Pocket",
@@ -248,22 +251,23 @@ class Api2 extends REST_Controller {
                     "title" => "Sleeve Buttons",
                     "viewtype" => "front",
                     "type" => "main",
+                    "style_side" => "    background-size: 19%!important;",
                 ),
-                array(
-                    "title" => "Back Vent",
-                    "viewtype" => "back",
-                    "type" => "main",
-                ),
+//                array(
+//                    "title" => "Back Vent",
+//                    "viewtype" => "back",
+//                    "type" => "main",
+//                ),
                 array(
                     "title" => "Buttons",
                     "viewtype" => "front",
                     "type" => "main",
                 ),
-                array(
-                    "title" => "Lining Style",
-                    "viewtype" => "front",
-                    "type" => "main",
-                ),
+//                array(
+//                    "title" => "Lining Style",
+//                    "viewtype" => "front",
+//                    "type" => "main",
+//                ),
                 array(
                     "title" => "Button Thread",
                     "viewtype" => "front",
@@ -293,6 +297,74 @@ class Api2 extends REST_Controller {
                     ),
                 ],
                 "Button Thread" => [
+                    array(
+                        "status" => "1",
+                        "title" => "Matching",
+                        "image" => "thread/Matching.jpg",
+                        "folder" => "Matching",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "3223",
+                        "image" => "thread/3223.jpg",
+                        "folder" => "3223",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "3235",
+                        "image" => "thread/3235.jpg",
+                        "folder" => "3235",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "3235",
+                        "image" => "thread/3235.jpg",
+                        "folder" => "3235",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "3241",
+                        "image" => "thread/3241.jpg",
+                        "folder" => "3241",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "3242",
+                        "image" => "thread/3242.jpg",
+                        "folder" => "3242",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "3259",
+                        "image" => "thread/3259.jpg",
+                        "folder" => "3259",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "3276",
+                        "image" => "thread/3276.jpg",
+                        "folder" => "3276",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "3280",
+                        "image" => "thread/3280.jpg",
+                        "folder" => "3280",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "3297",
+                        "image" => "thread/3297.jpg",
+                        "folder" => "3297",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "3316",
+                        "image" => "thread/3316.jpg",
+                        "folder" => "3316",
+                    ),
+                ],
+                "Contrast Lapel Button Hole" => [
                     array(
                         "status" => "1",
                         "title" => "Matching",
@@ -448,16 +520,15 @@ class Api2 extends REST_Controller {
                         "image" => "side_vent.jpeg",
                         "show_buttons" => "true",
                     )],
-                
                 "Lapel Button Hole" => [
                     array(
                         "status" => "1",
                         "title" => "Yes",
                         "customization_category_id" => "4",
                         "elements" => ["back_sleeve0001.png", "back_side__no_vent0001.png"],
-                        
                         "image" => "button_hole_yes.jpeg",
                         "show_buttons" => "true",
+                        "insert" => "Matching",
                     ), array(
                         "status" => "0",
                         "title" => "No",
@@ -465,8 +536,8 @@ class Api2 extends REST_Controller {
                         "customization_category_id" => "4",
                         "image" => "button_hole_no.jpeg",
                         "show_buttons" => "false",
+                        "insert" => "Matching",
                     )],
-                
                 "Sleeve Buttons" => [
                     array(
                         "status" => "1",
@@ -558,10 +629,10 @@ class Api2 extends REST_Controller {
                         "customization_category_id" => "4",
                         "elements" => ['body_single_left_v40001.png', 'body_single_right_v40001.png',],
                         "image" => "1_button.jpg",
-                        "left"=>"body_single_left_v40001.png",
-                        "right"=>"body_single_right_v40001.png",
+                        "left" => "body_single_left_v40001.png",
+                        "right" => "body_single_right_v40001.png",
                         "buttons" => ["buttons_10001"],
-                        "button_hole" => ["button_1_hole0001.png"],
+                        "button_hole" => ["button_1_hole10001.png"],
                         "show_buttons" => "true",
                         "overlay" => ["single_overlay.png"],
                     ), array(
@@ -570,12 +641,13 @@ class Api2 extends REST_Controller {
                         "customization_category_id" => "4",
                         "elements" => ['body_single_left_v40001.png', 'body_single_right_v40001.png',],
                         "image" => "1_button.jpg",
-                        "left"=>"body_single_left_v40001.png",
-                        "right"=>"body_single_right_v40001.png",
-                        "buttons" => ["buttons_10001", "buttons_20001"],
-                        "button_hole" => ["button_1_hole0001.png", "button_2_hole0001.png"],
+                        "left" => "body_single_left_v40001.png",
+                        "right" => "body_single_right_v40001.png",
+                        "buttons" => ["buttons_10001"],
+                        "buttons2" => ["buttons_20001"],
+                        "button_hole" => ["button_1_hole0001.png", "button_1_hole20001.png"],
                         "show_buttons" => "false",
-                         "overlay" => [ "single_overlay.png"],
+                        "overlay" => [ "single_overlay.png"],
                     )
                     , array(
                         "status" => "0",
@@ -583,23 +655,26 @@ class Api2 extends REST_Controller {
                         "elements" => ["body_double_left_v40001.png", "body_double_right_v40001.png", "button_41_hole0001.png"],
                         "customization_category_id" => "4",
                         "image" => "41_button.jpg",
+                        "left" => "body_double_left_v40001.png",
+                        "right" => "body_double_right_v40001.png",
                         "button_hole" => ["button_41_hole0001.png"],
                         "buttons" => ["button_410001",],
                         "show_buttons" => "true",
-                         "overlay" => ["body_double_right_42_overlay.png"],
+                        "overlay" => ["body_double_right_42_overlay.png"],
                     )
                     , array(
                         "status" => "0",
                         "title" => "4 Buttons 2 Buttons Fasten",
                         "elements" => ["body_double_left_v40001.png", "body_double_right_v40001.png", "button_41_hole0001.png"],
                         "customization_category_id" => "4",
+                        "left" => "body_double_left_v40001.png",
+                        "right" => "body_double_right_v40001.png",
                         "buttons" => ["button_410001", "button_420001"],
                         "button_hole" => ["button_41_hole0001.png"],
                         "image" => "42_button.jpg",
                         "show_buttons" => "true",
-                         "overlay" => ["body_double_right_42_overlay.png"],
+                        "overlay" => ["body_double_right_42_overlay.png"],
                     )
-                   
                 ],
                 "Lapel Style & Width" => [
                     array(
@@ -611,13 +686,13 @@ class Api2 extends REST_Controller {
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_notch_v20001.png"
                                 ],
-                                "hole"=>["laple_double_notch_button_hole0001.png"],
+                                "hole" => ["laple_double_notch_button_hole0001.png"],
                                 "overelay" => ["13notchpeaklapleoverlay.png", "laple_single_notch_modern_overlay.png"]),
                             "2 Buttons" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_notch_v20001.png"
                                 ],
-                                "hole"=>["laple_double_notch_button_hole0001.png"],
+                                "hole" => ["laple_double_notch_button_hole0001.png"],
                                 "overelay" => ["13notchpeaklapleoverlay.png", "laple_single_notch_modern_overlay.png"]),
                             "3 Buttons" => array("elements" => [
                                     "laple_single_3_notch_peak_upper0001.png",
@@ -630,11 +705,11 @@ class Api2 extends REST_Controller {
                             "4 Buttons 1 Button Fasten" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_double_notch_v20001.png"
-                                ],"hole"=>["laple_double_notch_button_hole0001.png"], "overelay" => []),
+                                ], "hole" => ["laple_double_notch_button_hole0001.png"], "overelay" => []),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_double_notch_v20001.png"
-                                ],"hole"=>["laple_double_notch_button_hole0001.png"], "overelay" => []),
+                                ], "hole" => ["laple_double_notch_button_hole0001.png"], "overelay" => []),
                             "6 Buttons 1 Button Fasten" => array("elements" => [
                                     "laple_notch_upper0001.png",
                                     "laple_6_notch_modrn0001.png"
@@ -647,7 +722,6 @@ class Api2 extends REST_Controller {
                         "customization_category_id" => "6",
                         "image" => "notch_modern.jpeg"
                     ),
-                  
                     array(
                         "status" => "0",
                         "title" => "Peak Laple Morden",
@@ -655,12 +729,12 @@ class Api2 extends REST_Controller {
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
-                                    "laple_single_peak_morden0001.png"
-                                ],"hole"=>["laple_double_peak_button_hole0001.png"], "overelay" => ["13notchpeaklapleoverlay.png", "laple_single_peak_overlay.png"]),
+                                    "laple_peak_v20001.png"
+                                ], "hole" => ["laple_double_peak_button_hole0001.png"], "overelay" => ["13notchpeaklapleoverlay.png", "laple_single_peak_overlay.png"]),
                             "2 Buttons" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
-                                    "laple_single_peak_morden0001.png"
-                                ],"hole"=>["laple_double_peak_button_hole0001.png"], "overelay" => ["13notchpeaklapleoverlay.png", "laple_single_peak_overlay.png"]),
+                                    "laple_peak_v20001.png"
+                                ], "hole" => ["laple_double_peak_button_hole0001.png"], "overelay" => ["13notchpeaklapleoverlay.png", "laple_single_peak_overlay.png"]),
                             "3 Buttons" => array("elements" => [
                                     "laple_single_3_notch_peak_upper0001.png",
                                     "laple_single_3_peak_morden0001.png"
@@ -672,11 +746,11 @@ class Api2 extends REST_Controller {
                             "4 Buttons 1 Button Fasten" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_double_peak_v20001.png"
-                                ], "hole"=>["laple_double_peak_button_hole0001.png"],"overelay" => ["4_peak_m.png"]),
+                                ], "hole" => ["laple_double_peak_button_hole0001.png"], "overelay" => ["4_peak_m.png"]),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_double_peak_v20001.png"
-                                ],"hole"=>["laple_double_peak_button_hole0001.png"], "overelay" => ["4_peak_m.png"]),
+                                ], "hole" => ["laple_double_peak_button_hole0001.png"], "overelay" => ["4_peak_m.png"]),
                             "6 Buttons 1 Button Fasten" => array("elements" => [
                                     "laple_peak_upper0001.png",
                                     "laple_6_peack_morden0001.png"
@@ -689,9 +763,6 @@ class Api2 extends REST_Controller {
                         "customization_category_id" => "6",
                         "image" => "peak_modern.jpeg"
                     ),
-                    
-                   
-                   
                 ],
                 "Collar" => [
                     array(

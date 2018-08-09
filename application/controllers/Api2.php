@@ -371,66 +371,7 @@ class Api2 extends REST_Controller {
                         "image" => "thread/Matching.jpg",
                         "folder" => "Matching",
                     ),
-                    array(
-                        "status" => "0",
-                        "title" => "3223",
-                        "image" => "thread/3223.jpg",
-                        "folder" => "3223",
-                    ),
-                    array(
-                        "status" => "0",
-                        "title" => "3235",
-                        "image" => "thread/3235.jpg",
-                        "folder" => "3235",
-                    ),
-                    array(
-                        "status" => "0",
-                        "title" => "3235",
-                        "image" => "thread/3235.jpg",
-                        "folder" => "3235",
-                    ),
-                    array(
-                        "status" => "0",
-                        "title" => "3241",
-                        "image" => "thread/3241.jpg",
-                        "folder" => "3241",
-                    ),
-                    array(
-                        "status" => "0",
-                        "title" => "3242",
-                        "image" => "thread/3242.jpg",
-                        "folder" => "3242",
-                    ),
-                    array(
-                        "status" => "0",
-                        "title" => "3259",
-                        "image" => "thread/3259.jpg",
-                        "folder" => "3259",
-                    ),
-                    array(
-                        "status" => "0",
-                        "title" => "3276",
-                        "image" => "thread/3276.jpg",
-                        "folder" => "3276",
-                    ),
-                    array(
-                        "status" => "0",
-                        "title" => "3280",
-                        "image" => "thread/3280.jpg",
-                        "folder" => "3280",
-                    ),
-                    array(
-                        "status" => "0",
-                        "title" => "3297",
-                        "image" => "thread/3297.jpg",
-                        "folder" => "3297",
-                    ),
-                    array(
-                        "status" => "0",
-                        "title" => "3316",
-                        "image" => "thread/3316.jpg",
-                        "folder" => "3316",
-                    ),
+                   
                 ],
                 "Buttons" => [
                     array(

@@ -121,36 +121,44 @@ $this->load->view('layout/header');
 
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/back_no_vent0001.png" class="fixpos animated" >
 
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/shirt.png" class="fixpos animated">
+
+
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/sleeve_new0001.png" class="fixpos animated" >
 
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/body_single20001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Jacket Style'].elements" >
+
 
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/dart0001.png" class="fixpos animated" >
 
 
 
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/breast_pocket0001.png" class="fixpos animated" >
+                          
+                                         <!--breast pocket-->
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Breast Pocket'].elements">
 
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/laple_upper_top0001.png" class="fixpos animated" >
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/laple_notch_upper20001.png" class="fixpos animated" >
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/laple_notch0001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Lapel Style & Width'].laple_style[selecteElements[fab.folder]['Jacket Style'].title].elements">
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Lapel Style & Width'].laple_style[selecteElements[fab.folder]['Jacket Style'].title].hole" ng-if="selecteElements[fab.folder]['Lapel Button Hole'].title=='Yes'">
 
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/lower_pocket_pipe_v20001.png" class="fixpos animated" >
+
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/button_1_hole10001.png" class="fixpos animated" >
 
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/2_buttons_v20001.png" class="fixpos animated" >
 
 
 
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Jacket Style'].overlay" >
 
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/single_over_lay.png" class="fixpos animated" >
+                                        <!--<img src="<?php echo custome_image_server_suit; ?>/v2/output/single_over_lay.png" class="fixpos animated" >-->
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/shirtss.png" class="fixpos animated" >
+                                        <!--<img src="<?php echo custome_image_server_suit; ?>/v2/output/shirtss.png" class="fixpos animated" >-->
 
 
 
@@ -174,8 +182,8 @@ $this->load->view('layout/header');
                         <!--shirt customization-->
                         <div class="row" style="margin-top: -10px;padding: 5px;">
                             <?php
-//                            $this->load->view('Product/custome_support_suit');
-                            ?>
+                            $this->load->view('Product/custome_support_suit2');
+                            ?> 
                         </div>
                     </div>
                 </div>
@@ -214,7 +222,7 @@ $this->load->view('layout/header');
 <scirpt></scirpt>
 
 <!--angular controllers-->
-<script src="<?php echo base_url(); ?>assets/theme/angular/ng-suitcustomization.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme/angular/ng-suitcustomization2.js"></script>
 
 
 <?php

@@ -4,6 +4,17 @@ $this->load->view('layout/header');
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.7.1/lazyload.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Bungee|Orbitron|Six+Caps|Wallpoet" rel="stylesheet">
 
+<!-- get jQuery from the google apis or use your own -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- CSS STYLE-->
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/xzoom@1.0.14/dist/xzoom.css" media="all" />
+
+<!-- XZOOM JQUERY PLUGIN  -->
+<script type="text/javascript" src="https://unpkg.com/xzoom@1.0.14/dist/xzoom.min.js"></script>
+
+
+
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/css/bootstrap.vertical-tabs.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/css/style_custome.css">
 <style>
@@ -117,7 +128,7 @@ $this->load->view('layout/header');
                                     <button class="btn btn-default btn-lg custom_rotate_button show_shirt_button" ng-click="show_shirt('without_shirt')">
                                         <img src="<?php echo base_url(); ?>assets/images/customization_suit/jacket_without_shirt.png" class="show_shirt_image" >
                                     </button>
-                                    <div class="fontview_custom customization_block animated " ng-if="screencustom.view_type == 'front'">
+                                    <div class="fontview_custom customization_block animated xzoom5" ng-if="screencustom.view_type == 'front'" >
 
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/back_no_vent0001.png" class="fixpos animated" >
 
@@ -153,8 +164,13 @@ $this->load->view('layout/header');
 
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/dart0001.png" class="fixpos animated" >
 
+                                        <!--breast pocket-->
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Breast Pocket'].elements">
 
+                                        <!--lower pocket-->
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Lower Pocket'].elements">
+                                        
+                                        
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Lapel Style & Width'].laple_style[selecteElements[fab.folder]['Jacket Style'].title].elements">
 
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Lapel Style & Width'].laple_style[selecteElements[fab.folder]['Jacket Style'].title].overelay">
@@ -250,7 +266,7 @@ $this->load->view('layout/header');
 
 </div>
 
-<scirpt></scirpt>
+
 
 <!--angular controllers-->
 <script src="<?php echo base_url(); ?>assets/theme/angular/ng-suitcustomization2.js"></script>

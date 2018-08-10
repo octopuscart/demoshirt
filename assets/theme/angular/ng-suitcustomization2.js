@@ -123,6 +123,8 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
             animation: "fade",
             controlNav: "thumbnails"
         });
+        
+         $('.xzoom5').xzoom({tint: '#006699', Xoffset: 15});
     }, 500)
 
 

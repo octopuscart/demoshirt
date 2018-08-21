@@ -217,7 +217,7 @@
                                 <div class="row" style="margin: 0;opacity: {{selecteElements[screencustom.fabric]['summary'][k.title]=='No'?0.2:1 }};" >
                                     <div class="col-md-12 monogram_init">
                                         <h6>Monogram Initial</h6>
-                                        <input type="text" maxlength="5"  ng-model="selecteElements[screencustom.fabric]['Monogram Initial']">
+                                        <input type="text" maxlength="5"  ng-model="selecteElements[screencustom.fabric]['Monogram Initial']" >
                                     </div>
 
                                     <div class="col-md-12 monogram_init">
@@ -234,13 +234,19 @@
                                     <div class="col-md-12 monogram_init">
                                         <h6>Monogram Style</h6>
                                         <div class="row" style="margin: 0">
-                                            <div class="col-md-2 col-xs-4 " style="padding-left: 0px;" ng-repeat="mgf in monogram_style" ng-click="monogramFont(mgf)" >
-                                                <div class="monogram_color_style" style="
-                                                     background:  {{selecteElements[screencustom.fabric]['Monogram Background']}};
-                                                     color: {{selecteElements[screencustom.fabric]['Monogram Color']}};{{mgf.font_style}}">
-                                                    {{selecteElements[screencustom.fabric]['Monogram Initial']}}
+                                            
+                                            
+                                            <div class="col-md-4 col-xs-6 custome_element_col" ng-repeat="mgf in monogram_style" ng-click="monogramFont(mgf)" >
+                                                <div class="item elementItem "  >
+                                                    <div >
+                                                        <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/customization/monogram/{{mgf.image}}')" > </div>
+                                                        <div class='customization_title'>
+                                                            {{mgf.title}} 
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                     <div style="clear:both "></div>

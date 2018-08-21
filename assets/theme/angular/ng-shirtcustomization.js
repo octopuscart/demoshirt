@@ -37,7 +37,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
                 "Monogram ColorBack": "White-Black",
                 "Monogram Color": "white",
                 "Monogram Background": "black",
-                "Monogram Style": "Style 1",
+                "Monogram Style": "10",
                 "summary": {},
             };
         }

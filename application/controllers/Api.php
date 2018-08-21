@@ -653,19 +653,23 @@ class Api extends REST_Controller {
             "monogram_style" => [
                 array(
                     "font_style" => "font-family: 'Orbitron';",
-                    "title" => "Style 1"
+                    "title" => "10",
+                    "image" => "10.jpg",
                 ),
                 array(
                     "font_style" => "font-family: 'Black Ops One';",
-                    "title" => "Style 2"
+                    "title" => "13",
+                    "image" => "13.jpg",
                 ),
                 array(
                     "font_style" => "font-family: 'Bungee';",
-                    "title" => "Style 3"
+                    "title" => "16",
+                    "image" => "16.jpg",
                 ),
                 array(
                     "font_style" => "font-family: 'Wallpoet';",
-                    "title" => "Style 4"
+                    "title" => "21",
+                    "image" => "21.jpg",
                 ),
             ],
         );

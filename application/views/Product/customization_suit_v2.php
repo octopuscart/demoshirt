@@ -181,7 +181,7 @@ $this->load->view('layout/header');
 
 
                     <div class="col-sm-5 large-detail shirtcontainer  " >
-                        <div class="col-sm-3 col-xs-12 fabricblockdesktop customization_items " style="padding: 0">
+                        <div class="col-sm-3 col-xs-12 fabricblockdesktop customization_items " style="padding: 0;    z-index: 10000;">
                             <ul class="nav nav-tabs tabs-left">
                                 <li role="presentation" class="{{$index === 0?'active':''}} " ng-repeat="fab in cartFabrics" >
                                     <a href="#fabric_{{fab.folder}}" class="fabricblock_a" aria-controls="collars_area" role="tab" data-toggle="tab" ng-click="selectFabric(fab)">
@@ -222,8 +222,8 @@ $this->load->view('layout/header');
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/sleeve_new0001.png" class="fixpos animated" >
 
                                         <!--jacket pant-->  
-                                        <div class="pant_model " style="background:url(<?php echo custome_image_server_suit; ?>/pant/{{fab.folder}}/pant_f_front_1_pleat_v10001.png);    background-size: 723px;"></div>
-                                        <!--<img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/pantmasterv130001.png" class="fixpos animated pantmodel" >-->
+                                        <!--<div class="pant_model " style="background:url(<?php // echo custome_image_server_suit; ?>/pant/{{fab.folder}}/pant_f_front_1_pleat_v10001.png);    background-size: 723px;"></div>-->
+                                        <img src="<?php echo custome_image_server_suit; ?>/pant/{{fab.folder}}/pant_suit_model0001.png" class="fixpos animated " >
 
 
 <!--<img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/shirt2.png" class="fixpos animated">-->
@@ -307,10 +307,10 @@ $this->load->view('layout/header');
                                         <!--font-->
                                         <img src="<?php echo custome_image_server_suit; ?>/pant/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Number of Pleat'].elements">
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/pant/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Waistband'].elements">
+                                        
 
                                         <img src="<?php echo custome_image_server_suit; ?>/pant/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Front Pocket Style'].elements">
-
+<img src="<?php echo custome_image_server_suit; ?>/pant/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Waistband'].elements">
                                     </div> 
                                 </div>
                             </div>

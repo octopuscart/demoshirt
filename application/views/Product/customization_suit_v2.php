@@ -11,7 +11,7 @@ $this->load->view('layout/header');
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/xzoom@1.0.14/dist/xzoom.css" media="all" />
 
 <!-- XZOOM JQUERY PLUGIN  -->
-<script type="text/javascript" src="https://unpkg.com/xzoom@1.0.14/dist/xzoom.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/theme/js/jquery.zoom.js"></script>
 
 
 
@@ -61,15 +61,83 @@ $this->load->view('layout/header');
     .show_shirt_button{
         right: -30px;
     }
-    
+
     .pant_model{
-        height: 193px;
+            height: 190px;
     width: 596px;
     position: absolute;
-    margin-top: 248px;
-    margin-left: -100px;
-    background-size: 635px;
+    margin-top: 251px;
+    left: -160px;
     }
+
+
+
+    .frame {
+
+        font-family: sans-serif;
+        overflow: hidden;
+        width: 25vw;
+        margin: 3vw;
+        display: inline-block;
+
+        .zoom {
+
+            font-size: 1.3vw;
+            transition: transform 0.2s linear;
+
+        }
+
+
+        img {
+
+            max-width: 25vw;
+
+        }
+
+
+        .lorem {
+
+            padding: 2% 2%;
+
+        }
+
+
+        form {
+
+            margin : 2% auto;    
+            text-align: center;
+
+            button {
+
+                font-size: inherit;
+                margin: inherit;
+
+            }
+
+            input {
+
+                border {
+                    radius : 5px;
+                    style: 1px solid;
+                }    
+
+                width :20vw;
+                margin : 2% auto;
+                padding: .5vw .8vw;
+                font-size: 1.3vw;
+
+            }
+        }
+    }
+    
+    .pantoverlay{
+        top: 294px;
+    width: 702px;
+    left: -149px;
+    height: auto;
+    }
+
+
 </style>
 <!-- Slider -->
 
@@ -127,7 +195,7 @@ $this->load->view('layout/header');
                         <div class="col-sm-9 col-xs-12"  style="padding: 0">
                             <div class="tab-content">
 
-                                <div class="tab-pane {{$index === 0?'active':''}}" ng-repeat="fab in cartFabrics" id="fabric_{{fab.folder}}">
+                                <div class="tab-pane {{$index === 0?'active':''}} frame" ng-repeat="fab in cartFabrics" id="fabric_{{fab.folder}}" style="width: 380px;">
                                     <button class="btn btn-default btn-lg custom_rotate_button" ng-click="rotateModel()">
                                         <i class="icon ion-refresh"></i>
                                     </button>
@@ -137,24 +205,29 @@ $this->load->view('layout/header');
                                     <button class="btn btn-default btn-lg custom_rotate_button show_shirt_button" ng-click="show_shirt('without_shirt')">
                                         <img src="<?php echo base_url(); ?>assets/images/customization_suit/jacket_without_shirt.png" class="show_shirt_image" >
                                     </button>
-                                    <div class="fontview_custom customization_block animated xzoom5" ng-if="screencustom.view_type == 'front'" >
+                                    <div class="fontview_custom customization_block animated zoom "  ng-if="screencustom.view_type == 'front'" >
 
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/back_no_vent0001.png" class="fixpos animated" >
 
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/shirt.png" class="fixpos animated">
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/shirt2.png" class="fixpos animated">
+
+
+                                        <!--pant overlaying-->
+                                        <!--<img src="<?php echo custome_image_server_suit; ?>/pant/{{fab.folder}}/pant_f_front_1_pleat_v10001.png" class="fixpos animated pantoverlay" >-->
+
 
 
                                         <!--jacket sleeves-->  
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/sleeve_new0001.png" class="fixpos animated" >
 
                                         <!--jacket pant-->  
-                                        <!--<div class="pant_model" style="background:url(<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/pantmasterv130001.png);    background-size: 635px;"></div>-->
+                                        <div class="pant_model " style="background:url(<?php echo custome_image_server_suit; ?>/pant/{{fab.folder}}/pant_f_front_1_pleat_v10001.png);    background-size: 723px;"></div>
                                         <!--<img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/pantmasterv130001.png" class="fixpos animated pantmodel" >-->
 
-                                        
-                                        <!--<img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/shirt2.png" class="fixpos animated">-->
-                                        
+
+<!--<img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/shirt2.png" class="fixpos animated">-->
+
                                         <!--button hole sleeve-->
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Sleeve Buttons'].buttonhole" >
 
@@ -228,11 +301,15 @@ $this->load->view('layout/header');
 
 
                                     </div>   
-                                    <div class="backview_custom customization_block  animated " ng-if="screencustom.view_type == 'back'">
+                                    <div class="backview_custom customization_block zoom animated " ng-if="screencustom.view_type == 'pant'">
 
 
-                                        <!--pocket-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Back Vent'].elements">
+                                        <!--font-->
+                                        <img src="<?php echo custome_image_server_suit; ?>/pant/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Number of Pleat'].elements">
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/pant/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Waistband'].elements">
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/pant/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Front Pocket Style'].elements">
 
                                     </div> 
                                 </div>

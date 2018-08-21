@@ -26,7 +26,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
     $scope.shirtimplement = function () {
         for (i in $scope.cartFabrics) {
             var fb = $scope.cartFabrics[i];
-            $scope.selecteElements[fb.folder] = {'sleeve':["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",], 
+            $scope.selecteElements[fb.folder] = {'sleeve': ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png", ],
                 'collar_buttons': 'buttonsh1.png',
                 'show_buttons': 'true',
                 "Monogram Initial": "ABC",
@@ -46,7 +46,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
             "fabric": $scope.cartFabrics[0].folder,
             "sku": $scope.cartFabrics[0].sku,
             "productobj": $scope.cartFabrics[0],
-            "style_select":"with_shirt",
+            "style_select": "with_shirt",
         };
         var url = baseurl + "Api2/customeElementsSuit";
         $http.get(url).then(function (rdata) {
@@ -75,9 +75,9 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
     }
 
 
-     $scope.show_shirt = function(shirtstyle){
-         $scope.screencustom.style_select = shirtstyle;
-     }
+    $scope.show_shirt = function (shirtstyle) {
+        $scope.screencustom.style_select = shirtstyle;
+    }
 
 
     $scope.fabricCartData = {};//cart data
@@ -123,8 +123,46 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
             animation: "fade",
             controlNav: "thumbnails"
         });
-        
-         $('.xzoom5').xzoom({tint: '#006699', Xoffset: 15});
+
+
+        //zoom plugin
+
+        $(document).on('mousemove', '.frame', function () {
+
+            var element = {
+                width: $(this).width(),
+                height: $(this).height()
+            };
+
+            var mouse = {
+                x: event.pageX,
+                y: event.pageY
+            };
+
+            var offset = $(this).offset();
+
+            var origin = {
+                x: (offset.left + (element.width / 2)),
+                y: (offset.top + (element.height / 2))
+            };
+
+            var trans = {
+                left: (origin.x - mouse.x) / 2,
+                down: (origin.y - mouse.y) / 2
+            };
+
+            var transform = ("scale(2,2) translateX(" + trans.left + "px) translateY(" + trans.down + "px)");
+
+            $(this).children(".zoom").css("transform", transform);
+
+        });
+
+        $(document).on('mouseleave', '.frame', function () {
+            $(this).children(".zoom").css("transform", "none");
+        });
+
+        //end of zoom
+
     }, 500)
 
 
@@ -195,7 +233,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
 
 
     $scope.selectElement = function (obj, element) {
-         console.log(element)
+        console.log(element)
 
         $scope.screencustom.view_type = obj.viewtype;
         $scope.selecteElements[$scope.screencustom.fabric][obj.title] = element;
@@ -215,7 +253,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
                 $scope.selecteElements[$scope.screencustom.fabric]['Monogram'] = element.monogram_position;
             }
         }
-      
+
 //        $("html, body").animate({scrollTop: 0}, "slow")
     }
 
@@ -225,9 +263,9 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
 
 
     $scope.laple_button_hole_contrast = function (insfab) {
-       
+
         $scope.selecteElements[$scope.screencustom.fabric]['Contrast Lapel Button Hole'] = insfab;
-      
+
     }
 
     $scope.selectCollarCuffInsertType = function (cctype, insfab) {

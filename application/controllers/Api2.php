@@ -283,9 +283,105 @@ class Api2 extends REST_Controller {
                     "viewtype" => "front",
                     "type" => "main",
                 ),
+                array(
+                    "title" => "Number of Pleat",
+                    "viewtype" => "pant",
+                    "type" => "main",
+                ),
+                array(
+                    "title" => "Waistband",
+                    "viewtype" => "pant",
+                    "type" => "main",
+                ),
+                array(
+                    "title" => "Front Pocket Style",
+                    "viewtype" => "pant",
+                    "type" => "main",
+                ),
             ],
             "collar_cuff_insert" => array(),
             "data" => array(
+                "Number of Pleat" => [
+                    array(
+                        "status" => "1",
+                        "title" => "No Pleat",
+                        "customization_category_id" => "4",
+                        "elements" => ["pant_slimlb0001.png", "pant_slimrb0001.png","pant_front_left_block0001.png",  "pant_front_no_pleat_v10001.png"],
+                        "image" => "no_pleat.jpeg",
+                        "show_buttons" => "true",
+                    ), array(
+                        "status" => "0",
+                        "title" => "1 Pleat Standard",
+                          "elements" => ["pant_slimlb0001.png", "pant_slimrb0001.png","pant_front_left_block0001.png",  "pant_front_1_pleat_v10001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "1_pleat_s.jpeg",
+                        "show_buttons" => "true",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "2 Pleats Standard",
+                          "elements" => ["pant_slimlb0001.png", "pant_slimrb0001.png","pant_front_left_block0001.png",  "pant_front_2_pleat_v10001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "2_pleat_s.jpeg",
+                        "show_buttons" => "true",
+                    )
+                ],
+                
+                
+                "Waistband" => [
+                    array(
+                        "status" => "1",
+                        "title" => "No Belt Loop",
+                        "customization_category_id" => "4",
+                        "elements" => ["pant_waitband0001.png"],
+                        "image" => "no_belt_loop.jpeg",
+                        "show_buttons" => "true",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Belt Loop",
+                        "elements" => ["pant_waitband0001.png", "pant_belt_loop0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "belt_loop.jpeg",
+                        "show_buttons" => "true",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Adjustable With Button",
+                        "elements" => ["pant_waitband0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "adjustable_button.jpeg",
+                        "show_buttons" => "true",
+                    )
+                ],
+                
+                
+                
+                "Front Pocket Style" => [
+                    array(
+                        "status" => "1",
+                        "title" => "Slenting Pocket",
+                        "customization_category_id" => "4",
+                        "elements" => ["pant_pocket_slanted0001.png"],
+                        "image" => "slenting_pocket_pant.jpeg",
+                        "show_buttons" => "true",
+                    ), array(
+                        "status" => "0",
+                        "title" => "Piped",
+                        "elements" => ["pant_pocket_pipe0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "pipe_pocket_pant.jpeg",
+                        "show_buttons" => "true",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "Seam",
+                        "elements" => ["pant_pocket_seam0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "seam_pocket_pant.jpeg",
+                        "show_buttons" => "true",
+                    )
+                ],
+                
                 "Lining Style" => [
                     array(
                         "status" => "1",
@@ -588,7 +684,7 @@ class Api2 extends REST_Controller {
 //                        "image" => "lower_slanting_pipe.jpeg",
 //                        "show_buttons" => "true",
 //                    )
-                    ],
+                ],
                 "Jacket Style" => [
                     array(
                         "status" => "1",
@@ -638,7 +734,7 @@ class Api2 extends REST_Controller {
                         "left" => "body_double_left_v40001.png",
                         "right" => "body_double_right_v40001.png",
                         "button_hole" => ["button_4_hole_10001.png", "button_4_hole_20001.png"],
-                        "buttons" => ["button_4_10001",  "button_4_30001", "button_4_40001", "button_6_10001", "button_6_20001"],
+                        "buttons" => ["button_4_10001", "button_4_30001", "button_4_40001", "button_6_10001", "button_6_20001"],
                         "buttons2" => ["button_4_20001"],
                         "image" => "62_button.jpg",
                         "show_buttons" => "true",

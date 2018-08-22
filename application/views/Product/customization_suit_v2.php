@@ -303,15 +303,23 @@ $this->load->view('layout/header');
                                     </div>   
                                     <div class="backview_custom customization_block zoom animated " ng-if="screencustom.view_type == 'pant'">
 
+                                        <img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay3.png" class="fixpos animated">
+										<img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay1.png" class="fixpos animated">
 
                                         <!--font-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/pant/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Number of Pleat'].elements">
+                                        <img src="<?php echo custome_image_server_suit; ?>/pant2/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Number of Pleat'].elements">
 
                                         
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/pant/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Front Pocket Style'].elements">
-<img src="<?php echo custome_image_server_suit; ?>/pant/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Waistband'].elements">
-                                    </div> 
+                                        <img src="<?php echo custome_image_server_suit; ?>/pant2/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Front Pocket Style'].elements">      
+										
+                   <img src="<?php echo custome_image_server_suit; ?>/pant2/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Waistband'].elements">
+                                   
+										<img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay5.png" class="fixpos animated">
+																				<img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay2.png" class="fixpos animated">
+
+
+								   </div> 
                                 </div>
                             </div>
                         </div>

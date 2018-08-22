@@ -293,7 +293,11 @@ class Api2 extends REST_Controller {
                     "viewtype" => "pant",
                     "type" => "main",
                 ),
-                
+                array(
+                    "title" => "Front Pocket Style",
+                    "viewtype" => "pant",
+                    "type" => "main",
+                ),
             ],
             "collar_cuff_insert" => array(),
             "data" => array(
@@ -306,7 +310,22 @@ class Api2 extends REST_Controller {
                         "image" => "no_pleat.jpeg",
                         "show_buttons" => "true",
                     ),
-					
+					array(
+                        "status" => "0",
+                        "title" => "1 Pleat Standard",
+                          "elements" => ["pant_slimlb0001.png", "pant_slimrb0001.png", "pant_front_1_pleat_v10001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "1_pleat_s.jpeg",
+                        "show_buttons" => "true",
+                    ),
+                    array(
+                        "status" => "0",
+                        "title" => "2 Pleats Standard",
+                          "elements" => ["pant_slimlb0001.png", "pant_slimrb0001.png",  "pant_front_2_pleat_v10001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "2_pleat_s.jpeg",
+                        "show_buttons" => "true",
+                    )
                 ],
                 
                 
@@ -326,7 +345,14 @@ class Api2 extends REST_Controller {
                         "image" => "belt_loop.jpeg",
                         "show_buttons" => "true",
                     ),
-                    
+                    array(
+                        "status" => "0",
+                        "title" => "Adjustable With Button",
+                        "elements" => ["pant_waitband0001.png", "pant_waitband_adjustable0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "adjustable_button.jpeg",
+                        "show_buttons" => "true",
+                    )
                 ],
                 
                 

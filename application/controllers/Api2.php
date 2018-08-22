@@ -293,7 +293,6 @@ class Api2 extends REST_Controller {
                     "viewtype" => "pant",
                     "type" => "main",
                 ),
-                
             ],
             "collar_cuff_insert" => array(),
             "data" => array(
@@ -306,10 +305,15 @@ class Api2 extends REST_Controller {
                         "image" => "no_pleat.jpeg",
                         "show_buttons" => "true",
                     ),
-					
+                    array(
+                        "status" => "0",
+                        "title" => "1 Pleat Standard",
+                         "elements" => ["pant_1_pleat0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "1_pleat_s.jpeg",
+                        "show_buttons" => "true",
+                    ),
                 ],
-                
-                
                 "Waistband" => [
                     array(
                         "status" => "1",
@@ -326,11 +330,7 @@ class Api2 extends REST_Controller {
                         "image" => "belt_loop.jpeg",
                         "show_buttons" => "true",
                     ),
-                    
                 ],
-                
-                
-                
                 "Front Pocket Style" => [
                     array(
                         "status" => "1",
@@ -356,7 +356,6 @@ class Api2 extends REST_Controller {
                         "show_buttons" => "true",
                     )
                 ],
-                
                 "Lining Style" => [
                     array(
                         "status" => "1",

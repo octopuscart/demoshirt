@@ -308,11 +308,19 @@ class Api2 extends REST_Controller {
                     array(
                         "status" => "0",
                         "title" => "1 Pleat Standard",
-                         "elements" => ["pant_1_pleat0001.png"],
+                        "elements" => ["pant_1_pleat0001.png"],
                         "customization_category_id" => "4",
                         "image" => "1_pleat_s.jpeg",
                         "show_buttons" => "true",
                     ),
+                    array(
+                        "status" => "0",
+                        "title" => "2 Pleats Standard",
+                        "elements" => ["pant_2_pleat0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "2_pleat_s.jpeg",
+                        "show_buttons" => "true",
+                    )
                 ],
                 "Waistband" => [
                     array(

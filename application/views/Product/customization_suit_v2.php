@@ -308,7 +308,7 @@ $this->load->view('layout/header');
 
                                         <!--font-->
                                         <img src="<?php echo custome_image_server_suit; ?>/pant2/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Number of Pleat'].elements">
-                                        <img src="<?php echo custome_image_server_suit; ?>/pant2/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Number of Pleat'].overlay">
+                                        <img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Number of Pleat'].overlay">
 
 
 

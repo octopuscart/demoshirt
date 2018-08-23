@@ -313,6 +313,16 @@ class Api2 extends REST_Controller {
                         "image" => "1_pleat_s.jpeg",
                         "show_buttons" => "true",
                     ),
+                    
+                    array(
+                        "status" => "0",
+                        "title" => "1 Pleat English (Reverse Pleat)",
+                        "elements" => ["pant_r1_pleat0001.png"],
+                        "customization_category_id" => "4",
+                        "image" => "1_pleat_s.jpeg",
+                        "show_buttons" => "true",
+                    ),
+                    
                     array(
                         "status" => "0",
                         "title" => "2 Pleats Standard",

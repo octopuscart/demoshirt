@@ -63,11 +63,11 @@ $this->load->view('layout/header');
     }
 
     .pant_model{
-            height: 190px;
-    width: 596px;
-    position: absolute;
-    margin-top: 251px;
-    left: -160px;
+        height: 190px;
+        width: 596px;
+        position: absolute;
+        margin-top: 251px;
+        left: -160px;
     }
 
 
@@ -129,12 +129,12 @@ $this->load->view('layout/header');
             }
         }
     }
-    
+
     .pantoverlay{
         top: 294px;
-    width: 702px;
-    left: -149px;
-    height: auto;
+        width: 702px;
+        left: -149px;
+        height: auto;
     }
 
 
@@ -222,7 +222,7 @@ $this->load->view('layout/header');
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/sleeve_new0001.png" class="fixpos animated" >
 
                                         <!--jacket pant-->  
-                                        <!--<div class="pant_model " style="background:url(<?php // echo custome_image_server_suit; ?>/pant/{{fab.folder}}/pant_f_front_1_pleat_v10001.png);    background-size: 723px;"></div>-->
+                                        <!--<div class="pant_model " style="background:url(<?php // echo custome_image_server_suit;  ?>/pant/{{fab.folder}}/pant_f_front_1_pleat_v10001.png);    background-size: 723px;"></div>-->
                                         <img src="<?php echo custome_image_server_suit; ?>/pant/{{fab.folder}}/pant_suit_model0001.png" class="fixpos animated " >
 
 
@@ -304,22 +304,23 @@ $this->load->view('layout/header');
                                     <div class="backview_custom customization_block zoom animated " ng-if="screencustom.view_type == 'pant'">
 
                                         <img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay3.png" class="fixpos animated">
-										<img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay1.png" class="fixpos animated">
+                                        <img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay1.png" class="fixpos animated">
 
                                         <!--font-->
                                         <img src="<?php echo custome_image_server_suit; ?>/pant2/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Number of Pleat'].elements">
+                                        <img src="<?php echo custome_image_server_suit; ?>/pant2/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Number of Pleat'].overlay">
 
-                                        
+
 
                                         <img src="<?php echo custome_image_server_suit; ?>/pant2/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Front Pocket Style'].elements">      
-										
-                   <img src="<?php echo custome_image_server_suit; ?>/pant2/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Waistband'].elements">
-                                   
-										<img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay5.png" class="fixpos animated">
-																				<img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay2.png" class="fixpos animated">
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/pant2/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Waistband'].elements">
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay5.png" class="fixpos animated">
+                                        <img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay2.png" class="fixpos animated">
 
 
-								   </div> 
+                                    </div> 
                                 </div>
                             </div>
                         </div>

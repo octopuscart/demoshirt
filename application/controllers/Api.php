@@ -422,7 +422,7 @@ class Api extends REST_Controller {
                         "status" => "0",
                         "title" => "French Cuff Rounded",
                         "customization_category_id" => "3",
-                        "elements" => ["sleev_full0001.png", "cuff_franch_rounded0001.png"],
+                        "elements" => ["sleev_full0001.png", "cuff_franch_rounded20001.png"],
                         "image" => "cuff_franch_rounded.jpg",
                         "insert_style_css" => "",
                         "insert_style" => "cuff_franch_insert0001.png",

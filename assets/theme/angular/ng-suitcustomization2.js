@@ -267,6 +267,13 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
         $scope.selecteElements[$scope.screencustom.fabric]['Contrast Lapel Button Hole'] = insfab;
 
     }
+    
+    $scope.sleeve_button_hole_contrast = function (insfab) {
+
+        $scope.selecteElements[$scope.screencustom.fabric]['Button Thread'] = insfab;
+
+    }
+    
 
     $scope.selectCollarCuffInsertType = function (cctype, insfab) {
         $scope.selecteElements[$scope.screencustom.fabric][cctype] = insfab;

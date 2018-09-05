@@ -153,7 +153,7 @@
                                         <h6>Contrast First Sleeve Button Hole </h6>
                                         <div class="row" style="margin: 0">
                                             <div class="col-md-4 col-xs-6 custome_element_col" ng-repeat="ele in data_list['Button Thread']" >
-                                                <div class="item elementItem {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'' :'noselected' }} "  ng-click='laple_button_hole_contrast(ele)'>
+                                                <div class="item elementItem {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'' :'noselected' }} "  ng-click='sleeve_button_hole_contrast(ele)'>
                                                     <div >
                                                         <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/customization_suit/{{ele.image}}'); {{k.style_side}}" > </div>
                                                         <div class='customization_title'>

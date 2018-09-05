@@ -229,12 +229,13 @@ $this->load->view('layout/header');
 <!--<img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/shirt2.png" class="fixpos animated">-->
 
                                         <!--button hole sleeve-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Sleeve Buttons'].buttonhole" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/thread/{{selecteElements[fab.folder]['Button Thread'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Sleeve Buttons'].buttonhole" >
 
 
 
                                         <!--button sleeve-->
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/buttons/{{selecteElements[fab.folder]['Buttons'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Sleeve Buttons'].elements" >
+                                        
 
 
                                         <!--jacket body left-->
@@ -247,7 +248,7 @@ $this->load->view('layout/header');
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in [selecteElements[fab.folder]['Jacket Style'].right]" >
 
                                         <!--button holes-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Jacket Style'].button_hole" >
+                                        <!--<img src="<?php echo custome_image_server_suit; ?>/v2/thread/{{selecteElements[fab.folder]['Contrast Lapel Button Hole'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Jacket Style'].button_hole" >-->
 
 
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/dart0001.png" class="fixpos animated" >

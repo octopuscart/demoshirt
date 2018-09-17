@@ -602,7 +602,7 @@ p.selected-element-title_text_price{
 
 .customization_items::-webkit-scrollbar
 {
-    width: 5px;
+    width: 15px;
     background-color: red;
 }
 

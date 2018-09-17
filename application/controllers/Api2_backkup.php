@@ -652,8 +652,6 @@ class Api2 extends REST_Controller {
                         "elements" => ["pocket_lower_flap_left0001.png", "pocket_lower_flap_right0001.png"],
                         "image" => "lower_flap_pocket.jpeg",
                         "show_buttons" => "true",
-                        "style_l"=>"    margin-left: 2px;",
-                        "style_r"=>"    margin-left: -2px;",
                     )
                     , array(
                         "status" => "0",
@@ -662,8 +660,6 @@ class Api2 extends REST_Controller {
                         "customization_category_id" => "4",
                         "image" => "lower_patch_pocket.jpeg",
                         "show_buttons" => "false",
-                        "style_l"=>"    margin-left: 2px;",
-                        "style_r"=>"    margin-left: -2px;",
                     )
 //                    , array(
 //                        "status" => "0",
@@ -687,10 +683,10 @@ class Api2 extends REST_Controller {
                         "status" => "1",
                         "title" => "1 Button",
                         "customization_category_id" => "4",
-                        "elements" => ['body_single_410001.png',],
+                        "elements" => ['body_single_left_v40001.png', 'body_single_right_v40001.png',],
                         "image" => "1_button.jpg",
-                        "left" => "body_single_410001.png",
-                        "right" => "body_single_410001.png",
+                        "left" => "body_single_left_v40001.png",
+                        "right" => "body_single_right_v40001.png",
                         "buttons" => ["buttons_10001"],
                         "button_hole" => ["button_1_hole10001.png"],
                         "show_buttons" => "true",

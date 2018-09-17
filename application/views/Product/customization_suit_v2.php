@@ -257,7 +257,7 @@ $this->load->view('layout/header');
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Breast Pocket'].elements">
 
                                         <!--lower pocket-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Lower Pocket'].elements">
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Lower Pocket'].elements" style="{{$index==0?selecteElements[fab.folder]['Lower Pocket'].style_l:selecteElements[fab.folder]['Lower Pocket'].style_r}}}">
 
 
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Lapel Style & Width'].laple_style[selecteElements[fab.folder]['Jacket Style'].title].elements">

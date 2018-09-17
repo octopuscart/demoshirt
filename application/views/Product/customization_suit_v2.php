@@ -220,6 +220,7 @@ $this->load->view('layout/header');
 
                                         <!--jacket sleeves-->  
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/sleeve_new0001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/sleeve_new_olverlay.png" class="fixpos animated" >
 
                                         <!--jacket pant-->  
                                         <!--<div class="pant_model " style="background:url(<?php // echo custome_image_server_suit;   ?>/pant/{{fab.folder}}/pant_f_front_1_pleat_v10001.png);    background-size: 723px;"></div>-->

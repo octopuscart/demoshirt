@@ -319,8 +319,8 @@ $this->load->view('layout/header');
 
                                         <img src="<?php echo custome_image_server_suit; ?>/pant2/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Waistband'].elements">
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay5.png" class="fixpos animated">
-                                        <img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay2.png" class="fixpos animated">
+                                        <!--<img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay5.png" class="fixpos animated">-->
+                                        <!--<img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay2.png" class="fixpos animated">-->
 
 
                                     </div> 

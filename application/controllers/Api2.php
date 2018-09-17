@@ -658,7 +658,7 @@ class Api2 extends REST_Controller {
                     , array(
                         "status" => "0",
                         "title" => "Patch Pocket",
-                        "elements" => ["pocket_lower_patch_left0001.png", "pocket_lower_patch_right0001.png"],
+                        "elements" => ["pocket_lower_patch_left10001.png", "pocket_lower_patch_right10001.png"],
                         "customization_category_id" => "4",
                         "image" => "lower_patch_pocket.jpeg",
                         "show_buttons" => "false",

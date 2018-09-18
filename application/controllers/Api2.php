@@ -723,7 +723,7 @@ class Api2 extends REST_Controller {
                         "buttons" => ["button_4_10001", "button_4_30001", "button_4_40001"],
                         "buttons2" => ["button_4_20001"],
                         "show_buttons" => "true",
-                        "overlay" => ["body_double_overlay.png"],
+                        "overlay" => ["body_double_overlay2.png", "body_double_overlay.png"],
                     )
                     , array(
                         "status" => "0",
@@ -737,7 +737,7 @@ class Api2 extends REST_Controller {
                         "buttons2" => ["button_4_20001"],
                         "image" => "62_button.jpg",
                         "show_buttons" => "true",
-                        "overlay" => ["body_double_overlay.png"],
+                         "overlay" => ["body_double_overlay2.png", "body_double_overlay.png"],
                     )
                 ],
                 "Lapel Style & Width" => [

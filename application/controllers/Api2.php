@@ -709,7 +709,7 @@ class Api2 extends REST_Controller {
                         "buttons2" => ["buttons_20001"],
                         "button_hole" => ["button_1_hole10001.png", "button_1_hole20001.png"],
                         "show_buttons" => "false",
-                        "overlay" => [ "single_overlay.png"],
+                        "overlay" => ["single_overlay2.png","single_overlay.png"],
                     )
                     , array(
                         "status" => "0",

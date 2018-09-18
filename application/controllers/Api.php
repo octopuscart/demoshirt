@@ -365,6 +365,7 @@ class Api extends REST_Controller {
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_rounded0001.png"],
                         "sleeve" => ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
+                        "sleeveoverlay" => ["sleev_full_overlay.png",],
                         "buttons" => "buttons_1_round.png",
                     ), array(
                         "status" => "0",
@@ -378,6 +379,7 @@ class Api extends REST_Controller {
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_cutaway0001.png"],
                         "sleeve" => ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
+                        "sleeveoverlay" => ["sleev_full_overlay.png",],
                         "buttons" => "buttons_1_cutaway.png",
                     ), array(
                         "status" => "0",
@@ -391,6 +393,7 @@ class Api extends REST_Controller {
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_cutaway0001.png"],
                         "sleeve" => ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
+                        "sleeveoverlay" => ["sleev_full_overlay.png",],
                         "buttons" => "buttons_2_cutaway.png",
                     ), array(
                         "status" => "0",
@@ -404,6 +407,7 @@ class Api extends REST_Controller {
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_rounded0001.png"],
                         "sleeve" => ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
+                        "sleeveoverlay" => ["sleev_full_overlay.png",],
                         "buttons" => "buttons_2_round.png",
                     ), array(
                         "status" => "0",
@@ -417,6 +421,7 @@ class Api extends REST_Controller {
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_single_rounded0001.png"],
                         "sleeve" => ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
+                        "sleeveoverlay" => ["sleev_full_overlay.png",],
                         "buttons" => "buttons_1_convertible_round.png",
                     ), array(
                         "status" => "0",
@@ -430,6 +435,7 @@ class Api extends REST_Controller {
                         "insert_overlay_css" => "",
                         "insert_full" => ["cuff_franch_rounded0001.png"],
                         "sleeve" => ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
+                        "sleeveoverlay" => ["sleev_full_overlay.png",],
                     )],
                 "Back" => [
                     array(

@@ -104,6 +104,7 @@ $this->load->view('layout/header');
 
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].elements">
                                         <img src="<?php echo custome_image_server; ?>/output/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].overlay">
+                                         <img src="<?php echo custome_image_server; ?>/output/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].sleeveoverlay">
 
 
                                         <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Cuff Insert']}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].insert_full" style="{{selecteElements[fab.folder]['Cuff & Sleeve'].style}}"  ng-if="selecteElements[fab.folder]['Cuff Insert Full'] == 'Full Insert'">

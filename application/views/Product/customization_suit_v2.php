@@ -207,7 +207,7 @@ $this->load->view('layout/header');
                                     </button>
                                     <div class="fontview_custom customization_block animated zoom "  ng-if="screencustom.view_type == 'front'" >
 
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/back_no_vent0001.png" class="fixpos animated" >
+                                        <!--<img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/back_no_vent0001.png" class="fixpos animated" >-->
 
 
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/shirt2.png" class="fixpos animated">
@@ -219,7 +219,7 @@ $this->load->view('layout/header');
 
 
                                         <!--jacket sleeves-->  
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/sleeve_new0001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/sleeve_new10001.png" class="fixpos animated" >
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/sleeve_new_olverlay.png" class="fixpos animated" >
 
                                         <!--jacket pant-->  

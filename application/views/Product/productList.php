@@ -7,7 +7,7 @@ $this->load->view('layout/header');
     .product_image_back {
         background-size: cover!important;
         background-repeat: no-repeat!important;
-        height: 288px!important;
+        height: 400px!important;
         background-position-x: center!important;
         background-position-y: center!important;
     }
@@ -53,61 +53,61 @@ $this->load->view('layout/header');
 
 
                 <!-- Shop Side Bar -->
-                <div class="col-md-3" ng-if="checkproduct == 1">
-                    <div class="side-bar">
-                        <!-- HEADING -->
-                        <div class="heading">
-                            <h6>Products Categories</h6>
-                            <hr class="dotted">
-                        </div>
-
-                        <!-- CATEGORIES -->
-                        <ul class="cate">
-                            <?php
-                            foreach ($categories as $key => $value) {
-                                ?>                                   
-                                <li><a href="<?php echo site_url("Product/ProductList/" . $value['id']); ?>"><?php echo $value['category_name']; ?></a></li>
-                                <?php
-                            }
-                            ?>                           
-                        </ul>
-
-                        <!-- HEADING -->
-                        <div class="heading">
-                            <h6>Filter by price</h6>
-                            <hr class="dotted">
-                        </div>
-                        <!-- PRICE -->
-                        <div class="cost-price-content">
-                            <div id="price-range" class="price-range"></div>
-                            <span id="price-min" class="price-min">{{productResults.price.minprice}}</span> <span id="price-max" class="price-max">{{productResults.price.maxprice}}</span> <a href="#." class="btn btn-small btn-inverse pull-right" ng-click="filterPrice()">FILTER</a> 
-                        </div>
-
-                        <div ng-repeat="(attrk, attrv) in productResults.attributes" ng-if="attrv.length > 1">
-                            <!-- HEADING -->
-                            <div class="heading">
-                                <h6>{{attrk}}</h6>
-                                <hr class="dotted">
-                            </div>
-                            <!-- COLORE -->
-                            <ul class="cate">
-                                <li ng-repeat="atv in attrv">
-                                    <a href="#.">
-                                        <label style="font-weight: 500">
-                                            <input type="checkbox"  ng-model="atv.checked" ng-click="attributeProductGet(atv)">  {{atv.attribute_value}} ({{atv.product_count}})
-                                        </label>
-                                    </a>
-
-                                    <!--<a href="#."><input type="checkbox">{{atv.attribute_value}} <span>(32) </span></a>-->
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <!--                <div class="col-md-3" ng-if="checkproduct == 1">
+                                    <div class="side-bar">
+                                         HEADING 
+                                        <div class="heading">
+                                            <h6>Products Categories</h6>
+                                            <hr class="dotted">
+                                        </div>
+                
+                                         CATEGORIES 
+                                        <ul class="cate">
+                <?php
+                foreach ($categories as $key => $value) {
+                    ?>                                   
+                                                    <li><a href="<?php echo site_url("Product/ProductList/" . $value['id']); ?>"><?php echo $value['category_name']; ?></a></li>
+                    <?php
+                }
+                ?>                           
+                                        </ul>
+                
+                                         HEADING 
+                                        <div class="heading">
+                                            <h6>Filter by price</h6>
+                                            <hr class="dotted">
+                                        </div>
+                                         PRICE 
+                                        <div class="cost-price-content">
+                                            <div id="price-range" class="price-range"></div>
+                                            <span id="price-min" class="price-min">{{productResults.price.minprice}}</span> <span id="price-max" class="price-max">{{productResults.price.maxprice}}</span> <a href="#." class="btn btn-small btn-inverse pull-right" ng-click="filterPrice()">FILTER</a> 
+                                        </div>
+                
+                                        <div ng-repeat="(attrk, attrv) in productResults.attributes" ng-if="attrv.length > 1">
+                                             HEADING 
+                                            <div class="heading">
+                                                <h6>{{attrk}}</h6>
+                                                <hr class="dotted">
+                                            </div>
+                                             COLORE 
+                                            <ul class="cate">
+                                                <li ng-repeat="atv in attrv">
+                                                    <a href="#.">
+                                                        <label style="font-weight: 500">
+                                                            <input type="checkbox"  ng-model="atv.checked" ng-click="attributeProductGet(atv)">  {{atv.attribute_value}} ({{atv.product_count}})
+                                                        </label>
+                                                    </a>
+                
+                                                    <a href="#."><input type="checkbox">{{atv.attribute_value}} <span>(32) </span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>-->
 
 
                 <!-- Main Shop Itesm -->
-                <div class="col-md-9" ng-if="checkproduct == 1" style="margin-top: 30px;"> 
+                <div class="col-md-12" ng-if="checkproduct == 1" style="margin-top: 30px;"> 
                     <!-- SHOWING INFO -->
                     <!--                    <div class="showing-info">
                     
@@ -139,12 +139,12 @@ $this->load->view('layout/header');
                         <!-- Item -->
                         <div class="col-sm-4" ng-repeat="(k, product) in productResults.products">
                             <div class="productblock">
-                              
+
                                 <article class="shop-artical" style="    margin-bottom: 0px;"> 
 
                                     <div ng-if ="product.item_type == 'Jacket'">
 
-                                        <div class="product_image_back" style="background: url(<?php echo custome_image_server_suit; ?>/{{product.folder}}/fabric0001.png)"></div>
+                                        <div class="product_image_back" style="background: url(<?php echo custome_image_server_suit; ?>/v2/output/{{product.folder}}/s1_master_style60001.png)"></div>
                                     </div>
 
                                     <div ng-if ="product.item_type != 'Jacket'">
@@ -155,11 +155,19 @@ $this->load->view('layout/header');
                                     <!-- Sale -->
                                     <div class="item-sale" ng-if="product.sale_price > 0">Sale</div>
 
-                                    <div class="item-hover" style="background: url(<?php echo custome_image_server; ?>/output/{{product.folder}}/cloth0001.png);background-size: cover;"> 
+                                    <div ng-if ="product.item_type == 'Jacket'">
 
-                                        <a href="#." class="btn" style="    font-size: 9px;color: white;" ng-click="addToCart(product.product_id, 1)">add to cart</a> 
-                                        <a href="#." class="btn by" style="    font-size: 9px;color: white;">Customize</a> 
+                                        <div class="item-hover" style="background: url(<?php echo custome_image_server_suit; ?>/v2/output/{{product.folder}}/style_buttons.png);background-size: cover;"> 
+
+                                        </div>
                                     </div>
+                                    <div ng-if ="product.item_type != 'Jacket'">
+
+                                        <div class="item-hover" style="background: url(<?php echo custome_image_server; ?>/output/{{product.folder}}/cloth0001.png);background-size: cover;"> 
+
+                                        </div>
+                                    </div>
+
                                 </article>
                                 <div class="info" style="    height: 80px;"> 
                                     <a href="<?php echo site_url("Product/ProductDetails/"); ?>{{product.product_id}}">{{product.title}} ({{product.sku}})  </a> 
@@ -167,6 +175,9 @@ $this->load->view('layout/header');
                                         <span class="line-through" ng-if="product.sale_price > 0">{{product.regular_price|currency:"<?php echo globle_currency_type; ?>"}}</span>
                                         <span>{{product.price|currency:"<?php echo globle_currency_type; ?>"}}</span>
                                     </span>
+                                    <a href="#." class="btn" style="    font-size: 9px;color: white;" ng-click="addToCart(product.product_id, 1)">add to cart</a> 
+                                    <a href="#." class="btn by" style="    font-size: 9px;color: white;">Customize</a> 
+
                                 </div>
                             </div>
                         </div>

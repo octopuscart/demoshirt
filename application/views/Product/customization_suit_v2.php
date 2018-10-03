@@ -299,14 +299,9 @@ $this->load->view('layout/header');
 
                                         <!--<img src="<?php echo custome_image_server_suit; ?>/v2/output/shirtss.png" class="fixpos animated" >-->
 
-
-
-
-
-
                                     </div>   
+                                    
                                     <div class="backview_custom customization_block zoom animated " ng-if="screencustom.view_type == 'pant'">
-
                                         <!--<img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay3.png" class="fixpos animated">-->
                                         <!--<img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay1.png" class="fixpos animated">-->
 
@@ -325,6 +320,10 @@ $this->load->view('layout/header');
 
 
                                     </div> 
+                                    
+                                    
+                                    
+                                    
                                 </div>
                             </div>
                         </div>

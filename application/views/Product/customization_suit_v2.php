@@ -223,7 +223,7 @@ $this->load->view('layout/header');
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/sleeve_new_olverlay.png" class="fixpos animated" >
 
                                         <!--jacket pant-->  
-                                        <!--<div class="pant_model " style="background:url(<?php // echo custome_image_server_suit;   ?>/pant/{{fab.folder}}/pant_f_front_1_pleat_v10001.png);    background-size: 723px;"></div>-->
+                                        <!--<div class="pant_model " style="background:url(<?php // echo custome_image_server_suit;    ?>/pant/{{fab.folder}}/pant_f_front_1_pleat_v10001.png);    background-size: 723px;"></div>-->
                                         <img src="<?php echo custome_image_server_suit; ?>/pant/{{fab.folder}}/pant_suit_model0001.png" class="fixpos animated " >
 
 
@@ -300,7 +300,21 @@ $this->load->view('layout/header');
                                         <!--<img src="<?php echo custome_image_server_suit; ?>/v2/output/shirtss.png" class="fixpos animated" >-->
 
                                     </div>   
-                                    
+
+                                    <div class="backview_custom customization_block zoom animated " ng-if="screencustom.view_type == 'back'">
+
+
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Back Vent'].elements">
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Back Vent'].overlay">
+
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/overlayback1.png" class="fixpos animated" >
+
+
+                                    </div> 
+
+
                                     <div class="backview_custom customization_block zoom animated " ng-if="screencustom.view_type == 'pant'">
                                         <!--<img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay3.png" class="fixpos animated">-->
                                         <!--<img src="<?php echo custome_image_server_suit; ?>/pant2/overlay/pantoverlay1.png" class="fixpos animated">-->
@@ -320,10 +334,10 @@ $this->load->view('layout/header');
 
 
                                     </div> 
-                                    
-                                    
-                                    
-                                    
+
+
+
+
                                 </div>
                             </div>
                         </div>

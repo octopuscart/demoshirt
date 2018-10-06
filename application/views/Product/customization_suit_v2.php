@@ -219,7 +219,7 @@ $this->load->view('layout/header');
 
 
                                         <!--jacket sleeves-->  
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/sleeve_new1v10001.png" class="fixpos animated" >
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/output/{{fab.folder}}/sleeve_new120001.png" class="fixpos animated" >
                                         <img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/sleeve_new_olverlay.png" class="fixpos animated" >
 
                                         <!--jacket pant-->  

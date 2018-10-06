@@ -543,13 +543,13 @@ class Api2 extends REST_Controller {
                         "status" => "0",
                         "title" => "No Vent",
                         "customization_category_id" => "4",
-                        "elements" => ["back_sleeve0001.png", "back_upper0001.png", "back_body0001.png",],
+                        "elements" => ["back_sleeve10001.png", "back_upper0001.png", "back_body0001.png",],
                         "image" => "no_vent.jpeg",
                         "show_buttons" => "true",
                     ), array(
                         "status" => "0",
                         "title" => "Center Vent",
-                        "elements" => ["back_sleeve0001.png", "back_upper0001.png", "back_body0001.png",],
+                        "elements" => ["back_sleeve10001.png", "back_upper0001.png", "back_body0001.png",],
                         "customization_category_id" => "4",
                         "image" => "center_vent.jpeg",
                         "show_buttons" => "false",
@@ -557,7 +557,7 @@ class Api2 extends REST_Controller {
                     ), array(
                         "status" => "1",
                         "title" => "Side Vent",
-                        "elements" => ["back_sleeve0001.png", "back_upper0001.png", "back_body0001.png",],
+                        "elements" => ["back_sleeve10001.png", "back_upper0001.png", "back_body0001.png",],
                         "customization_category_id" => "4",
                         "image" => "side_vent.jpeg",
                         "show_buttons" => "true",
@@ -601,6 +601,7 @@ class Api2 extends REST_Controller {
                         "buttons" => ["sleeve_buttons_flat_30001", "sleeve_buttons_flat_3_40001"],
                         "buttonhole" => ["sleeve_button_hole_40001.png", "sleeve_button_hole_comman0001.png", "sleeve_button_hole_10001.png"],
                         "show_buttons" => "true",
+                        "firstbuttonhole"=>["sleeve_button_hole_40001.png"],
                     ),
 //                    array(
 //                        "status" => "0",
@@ -620,6 +621,7 @@ class Api2 extends REST_Controller {
                         "buttons" => ["sleeve_buttons_flat_30001"],
                         "buttonhole" => ["sleeve_button_hole_40001.png", "sleeve_button_hole_comman0001.png",],
                         "show_buttons" => "true",
+                        "firstbuttonhole"=>["sleeve_button_hole_40001.png"],
                     ),
 //                    array(
 //                        "status" => "0",

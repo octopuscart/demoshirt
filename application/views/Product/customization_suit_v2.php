@@ -230,7 +230,8 @@ $this->load->view('layout/header');
 <!--<img src="<?php echo custome_image_server_suit; ?>/v2/output/overlay/shirt2.png" class="fixpos animated">-->
 
                                         <!--button hole sleeve-->
-                                        <img src="<?php echo custome_image_server_suit; ?>/v2/thread/{{selecteElements[fab.folder]['Button Thread'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Sleeve Buttons'].buttonhole" >
+                                        <!--<img src="<?php echo custome_image_server_suit; ?>/v2/thread/{{selecteElements[fab.folder]['Button Thread'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Sleeve Buttons'].buttonhole" >-->
+                                        <img src="<?php echo custome_image_server_suit; ?>/v2/thread/{{selecteElements[fab.folder]['Button Thread'].folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Sleeve Buttons'].firstbuttonhole" >
 
 
 

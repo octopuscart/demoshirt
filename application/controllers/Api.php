@@ -322,7 +322,7 @@ class Api extends REST_Controller {
                     ), array(
                         "status" => "0",
                         "title" => "Squared",
-                        "elements" => ["body_squre0001.png"],
+                        "elements" => ["body_squre20001.png"],
                         "customization_category_id" => "6",
                         "image" => "bottom_squred.jpeg"
                     )],
@@ -605,7 +605,8 @@ class Api extends REST_Controller {
                         "elements" => ["collar_full_cutaway0001.png"],
                         "image" => "collar_full_cutaway.jpeg",
                         "buttons" => "buttonsh12.png",
-                    ), array(
+                    ), 
+                    array(
                         "status" => "0",
                         "title" => "Wing Tip",
                         "customization_category_id" => "2",
@@ -616,9 +617,10 @@ class Api extends REST_Controller {
                         "elements" => ["collar_wintip0001.png"],
                         "insert_full" => ["collar_wintip0001.png"],
                         "image" => "collar_wingtip.jpeg",
-                        "buttons" => "buttons_m_w_collar.png",
+                        "buttons" => "buttonsh12md.png",
                         "monogram_style" => "top:11px;height: 8px;",
-                    ), array(
+                    ),
+                    array(
                         "status" => "0",
                         "title" => "Mandarin",
                         "elements" => ["collar_manderian0001.png"],
@@ -630,7 +632,7 @@ class Api extends REST_Controller {
                         "insert_full" => ["collar_manderian0001.png"],
                         "image" => "collar_mandarin.jpeg",
                         "monogram_style" => "top:11px;height: 8px;",
-                        "buttons" => "buttons_m_w_collar.png",
+                        "buttons" => "buttonsh12md.png",
                     )]
             ),
             "cuff_collar_insert" => ["p10", "p11", "p12", "p13", "p14", "p15", "p16", "p18", "p2",

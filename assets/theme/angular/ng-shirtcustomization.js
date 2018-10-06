@@ -27,7 +27,7 @@ ClassApartStore.controller('customizationShirt', function ($scope, $http, $locat
         for (i in $scope.cartFabrics) {
             var fb = $scope.cartFabrics[i];
             $scope.selecteElements[fb.folder] = {'sleeve':["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",], 
-                'collar_buttons': 'buttonsh1.png',
+                'collar_buttons': 'buttonsh12.png',
                 'show_buttons': 'true',
                 "Monogram Initial": "ABC",
                 "Collar Insert": "No",

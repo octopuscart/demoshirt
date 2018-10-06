@@ -380,7 +380,7 @@ class Api extends REST_Controller {
                         "insert_full" => ["cuff_single_cutaway0001.png"],
                         "sleeve" => ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
                         "sleeveoverlay" => ["sleev_full_overlay.png",],
-                        "buttons" => "buttons_1_cutaway.png",
+                        "buttons" => "buttons_1_round.png",
                     ), array(
                         "status" => "0",
                         "title" => "2 Buttons Cutaway",
@@ -394,7 +394,7 @@ class Api extends REST_Controller {
                         "insert_full" => ["cuff_single_cutaway0001.png"],
                         "sleeve" => ["back_full_sleeve_cuff0001.png", "back_full_sleeve0001.png",],
                         "sleeveoverlay" => ["sleev_full_overlay.png",],
-                        "buttons" => "buttons_2_cutaway.png",
+                        "buttons" => "buttons_2_round.png",
                     ), array(
                         "status" => "0",
                         "title" => "2 Buttons Rounded",
@@ -493,13 +493,15 @@ class Api extends REST_Controller {
                         "title" => "1 Pocket",
                         "customization_category_id" => "7",
                         "elements" => ["pocket_leftv10001.png",],
-                        "image" => "pocket_one.jpeg"
+                        "image" => "pocket_one.jpeg",
+                        "overlay"=>["leftpocket.png"],
                     ), array(
                         "status" => "0",
                         "title" => "2 Pocket",
                         "customization_category_id" => "7",
                         "elements" => ["pocket_leftv10001.png", "pocket_rightv10001.png"],
-                        "image" => "pocket_two.jpeg"
+                        "image" => "pocket_two.jpeg",
+                        "overlay"=>["rightpocket.png", "leftpocket.png"],
                     )],
                 "Front" => [
                     array(
@@ -537,7 +539,7 @@ class Api extends REST_Controller {
                         "insert_overlay_css" => "margin-top: -4px;margin-left: -1px;",
                         "insert_full" => ["collar_regular0001.png"],
                         "image" => "collar_regular.jpeg",
-                        "buttons" => "buttonsh1.png",
+                        "buttons" => "buttonsh12.png",
                     ), array(
                         "status" => "0",
                         "title" => "Medium Spread",
@@ -550,7 +552,7 @@ class Api extends REST_Controller {
                         "elements" => ["collar_spread_medium0001.png"],
                         "insert_full" => ["collar_spread_medium0001.png"],
                         "image" => "collar_medium_spread.jpeg",
-                        "buttons" => "buttonsh1.png",
+                        "buttons" => "buttonsh12.png",
                     ), array(
                         "status" => "0",
                         "title" => "Wide Spread",
@@ -562,7 +564,7 @@ class Api extends REST_Controller {
                         "insert_overlay" => "collar_simple_insert_overlay.png",
                         "insert_overlay_css" => "margin-top: -4px;margin-left: -1px;",
                         "insert_full" => ["collar_spread_wide0001.png"],
-                        "buttons" => "buttonsh1.png",
+                        "buttons" => "buttonsh12.png",
                     ), array(
                         "status" => "0",
                         "title" => "Short Point",
@@ -575,7 +577,7 @@ class Api extends REST_Controller {
                         "insert_overlay_css" => "margin-top: -4px;margin-left: -2px;",
                         "insert_full" => ["collar_short_point0001.png"],
                         "image" => "collar_shirt_point.jpeg",
-                        "buttons" => "buttonsh1.png",
+                        "buttons" => "buttonsh12.png",
                     ), array(
                         "status" => "0",
                         "title" => "Regular Button Down",
@@ -589,7 +591,7 @@ class Api extends REST_Controller {
                         "insert_full" => ["collar_regular0001.png"],
                         "image" => "collar_regular_button_down.jpeg",
                         "button_down" => "buttons_collar_down.png",
-                        "buttons" => "buttonsh1.png",
+                        "buttons" => "buttonsh12.png",
                     ), array(
                         "status" => "0",
                         "title" => "Full Cutaway",
@@ -602,7 +604,7 @@ class Api extends REST_Controller {
                         "insert_full" => ["collar_full_cutaway0001.png"],
                         "elements" => ["collar_full_cutaway0001.png"],
                         "image" => "collar_full_cutaway.jpeg",
-                        "buttons" => "buttonsh1.png",
+                        "buttons" => "buttonsh12.png",
                     ), array(
                         "status" => "0",
                         "title" => "Wing Tip",
@@ -1341,7 +1343,7 @@ class Api extends REST_Controller {
                         "insert_overlay_css" => "margin-top: -4px;margin-left: -1px;",
                         "insert_full" => ["collar_regular0001.png"],
                         "image" => "collar_regular.jpeg",
-                        "buttons" => "buttonsh1.png",
+                        "buttons" => "buttonsh12.png",
                     ), array(
                         "status" => "0",
                         "title" => "Medium Spread",
@@ -1354,7 +1356,7 @@ class Api extends REST_Controller {
                         "elements" => ["collar_spread_medium0001.png"],
                         "insert_full" => ["collar_spread_medium0001.png"],
                         "image" => "collar_medium_spread.jpeg",
-                        "buttons" => "buttonsh1.png",
+                        "buttons" => "buttonsh12.png",
                     ), array(
                         "status" => "0",
                         "title" => "Wide Spread",
@@ -1366,7 +1368,7 @@ class Api extends REST_Controller {
                         "insert_overlay" => "collar_simple_insert_overlay.png",
                         "insert_overlay_css" => "margin-top: -4px;margin-left: -1px;",
                         "insert_full" => ["collar_spread_wide0001.png"],
-                        "buttons" => "buttonsh1.png",
+                        "buttons" => "buttonsh12.png",
                     ), array(
                         "status" => "0",
                         "title" => "Short Point",
@@ -1379,7 +1381,7 @@ class Api extends REST_Controller {
                         "insert_overlay_css" => "margin-top: -4px;margin-left: -2px;",
                         "insert_full" => ["collar_short_point0001.png"],
                         "image" => "collar_shirt_point.jpeg",
-                        "buttons" => "buttonsh1.png",
+                        "buttons" => "buttonsh12.png",
                     ), array(
                         "status" => "0",
                         "title" => "Regular Button Down",
@@ -1393,7 +1395,7 @@ class Api extends REST_Controller {
                         "insert_full" => ["collar_regular0001.png"],
                         "image" => "collar_regular_button_down.jpeg",
                         "button_down" => "buttons_collar_down.png",
-                        "buttons" => "buttonsh1.png",
+                        "buttons" => "buttonsh12.png",
                     ), array(
                         "status" => "0",
                         "title" => "Full Cutaway",
@@ -1406,7 +1408,7 @@ class Api extends REST_Controller {
                         "insert_full" => ["collar_full_cutaway0001.png"],
                         "elements" => ["collar_full_cutaway0001.png"],
                         "image" => "collar_full_cutaway.jpeg",
-                        "buttons" => "buttonsh1.png",
+                        "buttons" => "buttonsh12.png",
                     ), array(
                         "status" => "0",
                         "title" => "Wing Tip",

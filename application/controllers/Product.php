@@ -145,7 +145,7 @@ class Product extends CI_Controller {
     //customization shirt
 
 
-    function customizationShirt($product_id) {
+    function customizationShirt($product_id=0) {
         
         
         

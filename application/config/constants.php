@@ -11,7 +11,6 @@ define('imageserver', $baselinkmain . "assets_main/productimages/");
 
 
 //define('custome_image_server', 'http://api.octopuscart.com');
-
 //
 //if (strpos($baselink, '192.168')) {
 //    define('custome_image_server', 'http://127.0.0.1/fabrics');
@@ -19,14 +18,18 @@ define('imageserver', $baselinkmain . "assets_main/productimages/");
 //    define('custome_image_server', 'http://w2p.nitafashions.com');
 //} 
 
-define('custome_image_server', $baselink.'/fabrics');
+if (strpos($baselink, "192.168.1.2")) {
+    $baselinkmain = "http://test.costcointernational.com/";
+    define('custome_image_server', $baselinkmain . '/');
+} else {
+    define('custome_image_server', $baselink . '/fabrics');
+}
+
+define('custome_image_server_suit', $baselink . '/suitapi');
 
 
-define('custome_image_server_suit', $baselink.'/suitapi');
 
-
-
- // define('custome_image_server', 'http://w2p.nitafashions.com');
+// define('custome_image_server', 'http://w2p.nitafashions.com');
 
 define("globle_currency_type", '$HK ');
 /*

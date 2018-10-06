@@ -72,7 +72,7 @@ $this->load->view('layout/header');
                                         <div class="elementStyle customization_box_elements fabricblock {{  fab.folder == screencustom.fabric?'active' :'noselected' }}" style="background:url('<?php echo custome_image_server; ?>/output/{{fab.folder}}/cloth0001.png');" > </div>
                                         <p class="fabric_title">{{fab.sku}}</p>
                                     </a>
-                                  
+
                                 </li>
                             </ul>
                         </div>
@@ -104,7 +104,7 @@ $this->load->view('layout/header');
 
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].elements">
                                         <img src="<?php echo custome_image_server; ?>/output/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].overlay">
-                                         <img src="<?php echo custome_image_server; ?>/output/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].sleeveoverlay">
+                                        <img src="<?php echo custome_image_server; ?>/output/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].sleeveoverlay">
 
 
                                         <img src="<?php echo custome_image_server; ?>/output_insert/{{selecteElements[fab.folder]['Cuff Insert']}}/{{img}}" class="fixpos animated"  ng-repeat="img in selecteElements[fab.folder]['Cuff & Sleeve'].insert_full" style="{{selecteElements[fab.folder]['Cuff & Sleeve'].style}}"  ng-if="selecteElements[fab.folder]['Cuff Insert Full'] == 'Full Insert'">
@@ -128,6 +128,7 @@ $this->load->view('layout/header');
 
                                         <!--pocket-->
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Pocket'].elements">
+                                        <img src="<?php echo custome_image_server; ?>/output/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Pocket'].overlay">
 
                                         <!--collar section-->
                                         <img src="<?php echo custome_image_server; ?>/output/{{fab.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.folder]['Collar'].elements" style="{{selecteElements[fab.folder]['Collar'].style}}">

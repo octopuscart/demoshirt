@@ -492,13 +492,13 @@ class Api extends REST_Controller {
                         "status" => "1",
                         "title" => "1 Pocket",
                         "customization_category_id" => "7",
-                        "elements" => ["pocket_leftvl0001.png",],
+                        "elements" => ["pocket_leftv10001.png",],
                         "image" => "pocket_one.jpeg"
                     ), array(
                         "status" => "0",
                         "title" => "2 Pocket",
                         "customization_category_id" => "7",
-                        "elements" => ["pocket_leftvl0001.png", "pocket_rightvl0001.png"],
+                        "elements" => ["pocket_leftv10001.png", "pocket_rightv10001.png"],
                         "image" => "pocket_two.jpeg"
                     )],
                 "Front" => [

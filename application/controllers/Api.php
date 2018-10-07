@@ -322,7 +322,7 @@ class Api extends REST_Controller {
                     ), array(
                         "status" => "0",
                         "title" => "Squared",
-                        "elements" => ["body_squre20001.png"],
+                        "elements" => ["body_squre0001.png"],
                         "customization_category_id" => "6",
                         "image" => "bottom_squred.jpeg"
                     )],
